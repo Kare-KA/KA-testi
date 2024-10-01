@@ -13,6 +13,24 @@ tags.async=!0,tags.src="https://kare-ka.containers.piwik.pro/"+id+".js"+qPString
 })(window, document, 'dataLayer', '5b3fb268-b67c-45c6-8a58-a2fa7da17c0f');
 </script>
 
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://test-japetus.narc.fi/piwik/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '82']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
 </head>
 <body>
 
