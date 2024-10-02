@@ -2,30 +2,95 @@
 <html>
 <head>
 
+
+
 <!-- Piwik Tag Manager -->
 <script type="text/javascript">
 (function(window, document, dataLayerName, id) {
-window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
-function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString();f="; SameSite=Strict"}document.cookie=a+"="+b+d+f+"; path=/"}
-var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
-var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
-tags.async=!0,tags.src="https://kare-ka.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
-!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+
+  // Tarkistetaan tai luodaan dataLayer-niminen objekti ja asetetaan siihen aloitusaika
+  window[dataLayerName] = window[dataLayerName] || [];
+  window[dataLayerName].push({
+    start: (new Date).getTime(),       // Tallennetaan aloitusaika
+    event: "stg.start"                 // Lähetetään Tag Managerin käynnistystapahtuma "stg.start"
+  });
+
+  // Luodaan uusi script-elementti ja sijoitetaan se ensimmäisen scriptin eteen
+  var scripts = document.getElementsByTagName('script')[0],
+      tags = document.createElement('script');
+
+  // Funktio evästeiden luomiseen
+  function stgCreateCookie(a,b,c) {
+    var d = "";
+    if (c) {  // Jos evästeen voimassaoloaika on määritelty
+      var e = new Date();
+      e.setTime(e.getTime() + 24 * c * 60 * 60 * 1e3);  // Määritetään vanhenemisajaksi c päivää
+      d = "; expires=" + e.toUTCString();               // Määritetään vanhenemispäivä evästeelle
+      f = "; SameSite=Strict";                          // Asetetaan eväste SameSite=Strict-moodiin
+    }
+    document.cookie = a + "=" + b + d + f + "; path=/";  // Luodaan eväste annetulla nimellä, arvolla ja polulla
+  }
+
+  // Tarkistetaan, onko Tag Manager debug-tilassa (stg_debug)
+  var isStgDebug = (window.location.href.match("stg_debug") || document.cookie.match("stg_debug")) && !window.location.href.match("stg_disable_debug");
+  stgCreateCookie("stg_debug", isStgDebug ? 1 : "", isStgDebug ? 14 : -1);  // Luo debug-evästeen, joka on voimassa 14 päivää, jos debug-tila on aktiivinen
+
+  // Kootaan query-parametrit mahdollisille data layer - ja debug-parametreille
+  var qP = [];
+  dataLayerName !== "dataLayer" && qP.push("data_layer_name=" + dataLayerName);  // Lisätään data layer -parametri, jos nimi on jotain muuta kuin "dataLayer"
+  isStgDebug && qP.push("stg_debug");  // Lisätään debug-parametri, jos debug-tila on aktiivinen
+
+  var qPString = qP.length > 0 ? ("?" + qP.join("&")) : "";  // Muodostetaan query-parametrit merkkijonoksi
+
+  // Asetetaan Piwik PRO Tag Managerin JS-tiedoston lataus asynkronisesti
+  tags.async = true;
+  tags.src = "https://kare-ka.containers.piwik.pro/" + id + ".js" + qPString;  // Asetetaan Tag Managerin lähde-URL, mukaan lukien mahdolliset parametrit
+  scripts.parentNode.insertBefore(tags, scripts);  // Lisätään luotu script ensimmäisen script-elementin eteen
+  
+  // Määritetään API-funktiot Piwik PRO:n tm (tag manager) ja cm (consent manager) komponenteille
+  !function(a, n, i) {
+    a[n] = a[n] || {};
+    for (var c = 0; c < i.length; c++) !function(i) {
+      a[n][i] = a[n][i] || {};
+      a[n][i].api = a[n][i].api || function() {
+        var a = [].slice.call(arguments, 0);
+        "string" == typeof a[0] && window[dataLayerName].push({
+          event: n + "." + i + ":" + a[0],  // Tallennetaan tapahtuma dataLayeriin muodossa "ppms.[komponentti]:[tapahtuma]"
+          parameters: [].slice.call(arguments, 1)
+        });
+      }
+    }(i[c]);
+  }(window, "ppms", ["tm", "cm"]);  // ppms (Piwik PRO Management System) -komponentit ovat tag manager (tm) ja consent manager (cm)
+
 })(window, document, 'dataLayer', '5b3fb268-b67c-45c6-8a58-a2fa7da17c0f');
 </script>
 <!-- End Piwik Tag Manager -->
 
 
+
+
 <!-- Matomo Tag Manager -->
 <script>
   var _mtm = window._mtm = window._mtm || [];
+  
+  // Matomo Tag Managerin aloitusaika ja tapahtuman määrittely
   _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  
   (function() {
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='https://test-japetus.narc.fi/piwik/js/container_UvlCc0RV.js'; s.parentNode.insertBefore(g,s);
+    var d=document, 
+        g=d.createElement('script'),            // Luodaan uusi <script> elementti
+        s=d.getElementsByTagName('script')[0];  // Haetaan ensimmäinen <script> elementti dokumentista
+    g.async=true;                               // Asetetaan skripti ladattavaksi asynkronisesti (jotta se ei estä sivun latausta)
+    
+    // Asetetaan Matomo Tag Manager -containerin JS-tiedoston lähde
+    g.src='https://test-japetus.narc.fi/piwik/js/container_UvlCc0RV.js'; 
+    
+    // Lisätään luotu skripti ensimmäisen skriptin eteen
+    s.parentNode.insertBefore(g,s);
   })();
 </script>
 <!-- End Matomo Tag Manager -->
+
 
 
 </head>
