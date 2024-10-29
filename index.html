@@ -132,8 +132,9 @@ function setCookie() {
     d.setTime(d.getTime() + (7*24*60*60*1000)); // 7 päivää
     var expires = "expires=" + d.toUTCString();
 
-    // Asetetaan eväste
-    document.cookie = "Suklaakeksi=" + cookieValue + ";" + expires + ";path=/";
+    // Asetetaan eväste ja otetaan huomioon Firefoxin tuleva muutos, jossa evästeitä käsitellään jatkossa oletuksena "Lax"-asetuksella
+	document.cookie = "Suklaakeksi=" + cookieValue + ";" + expires + ";path=/;SameSite=Lax";
+
 
     // Näytetään käyttäjälle tallennettu eväste
     document.getElementById('cookieDisplay').innerHTML = "Tallennettu eväste: " + getCookie("Suklaakeksi");
