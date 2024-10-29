@@ -7,15 +7,17 @@
 
 
 
-<!-- Seuranta ilman evästeitä -->
+<!-- Klaro -->
 <script>
     function KlaroWatcher() {};
     KlaroWatcher.prototype.update = function(obj, name, data) { 
       if (data !== 'undefined' && data.hasOwnProperty('matomo')) {
-        if (data.matomo) {           
+        if (data.matomo) { 
+          _paq.push(['rememberCookieConsentGiven']);
           _paq.push(['setConsentGiven']);
         } else {
-          _paq.push(['forgetConsentGiven']);          
+          _paq.push(['forgetCookieConsentGiven']);
+          _paq.push(['deleteCookies']);
         }
       }  
     }; 
@@ -35,7 +37,7 @@
     }  
     document.addEventListener('DOMContentLoaded', matomoWaitForTracker());
     </script>
-<!-- End Seuranta ilman evästeitä -->
+<!-- End Klaro -->
 
 
 
