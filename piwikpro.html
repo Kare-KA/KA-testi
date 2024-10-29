@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evästeen tallentaminen</title>
 
+
+
+
+
+
+
+
     <!-- Piwik PRO Consent Manager -->
     <script type="text/javascript">
     (function(window, document, dataLayerName, id) {
@@ -27,28 +34,28 @@
     </script>
     <!-- End Piwik PRO Consent Manager -->
 
-    <!-- Matomo Tag Manager -->
-    <script>
-      // Suoritetaan Matomo vasta suostumuksen jälkeen
-      ppms.cm.api('isConsentGrantedFor', 'analytics', function(isGranted) {
-        if (isGranted) {
-          var _mtm = window._mtm = window._mtm || [];
-          
-          // Matomo Tag Managerin aloitusaika ja tapahtuman määrittely
-          _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-          
-          (function() {
-            var d=document, 
-                g=d.createElement('script'),            // Luodaan uusi <script> elementti
-                s=d.getElementsByTagName('script')[0];  // Haetaan ensimmäinen <script> elementti dokumentista
-            g.async=true;                               // Asetetaan skripti ladattavaksi asynkronisesti
-            g.src='https://test-japetus.narc.fi/piwik/js/container_UvlCc0RV.js'; 
-            s.parentNode.insertBefore(g,s);
-          })();
-        }
-      });
-    </script>
-    <!-- End Matomo Tag Manager -->
+
+
+
+
+
+
+<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='https://test-japetus.narc.fi/piwik/js/container_UvlCc0RV.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager -->
+
+
+
+
+
+
 
 </head>
 <body>
