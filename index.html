@@ -5,105 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evästeen tallentaminen</title>
 
+    <!-- Klaro -->
+    <script>
+        function KlaroWatcher() {};
+        KlaroWatcher.prototype.update = function(obj, name, data) { 
+          if (data !== 'undefined' && data.hasOwnProperty('matomo')) {
+            if (data.matomo) { 
+              _paq.push(['rememberCookieConsentGiven']);
+              _paq.push(['setConsentGiven']);
+            } else {
+              _paq.push(['forgetCookieConsentGiven']);
+              _paq.push(['deleteCookies']);
+            }
+          }  
+        }; 
+        window.kw = new KlaroWatcher();
 
-
-<!-- Klaro -->
-<script>
-    function KlaroWatcher() {};
-    KlaroWatcher.prototype.update = function(obj, name, data) { 
-      if (data !== 'undefined' && data.hasOwnProperty('matomo')) {
-        if (data.matomo) { 
-          _paq.push(['rememberCookieConsentGiven']);
-          _paq.push(['setConsentGiven']);
-        } else {
-          _paq.push(['forgetCookieConsentGiven']);
-          _paq.push(['deleteCookies']);
-        }
-      }  
-    }; 
-    window.kw = new KlaroWatcher();
-
-    var waitForTrackerCount = 0;
-    function matomoWaitForTracker() {
-      if (typeof _paq === 'undefined' || typeof klaro === 'undefined') {                
-        if (waitForTrackerCount < 40) {
-          setTimeout(matomoWaitForTracker, 250);
-          waitForTrackerCount++;  
-          return;
-        }
-      } else {
-        klaro.getManager().watch(kw);
-      }
-    }  
-    document.addEventListener('DOMContentLoaded', matomoWaitForTracker());
+        var waitForTrackerCount = 0;
+        function matomoWaitForTracker() {
+          if (typeof _paq === 'undefined' || typeof klaro === 'undefined') {                
+            if (waitForTrackerCount < 40) {
+              setTimeout(matomoWaitForTracker, 250);
+              waitForTrackerCount++;  
+              return;
+            }
+          } else {
+            klaro.getManager().watch(kw);
+          }
+        }  
+        document.addEventListener('DOMContentLoaded', matomoWaitForTracker());
     </script>
-<!-- End Klaro -->
+    <!-- End Klaro -->
 
-
-
-
-<!-- Klaro -->
-<script defer src="https://api.kiprotect.com/v1/privacy-managers/38382829eae931db262cb5af8c8cf28d/klaro.js">
-</script>
-<!-- End Klaro -->
-
-
-
-
-<!-- Cookie Information Tag Manager 
-<script id="CookieConsent" src="https://policy.app.cookieinformation.com/uc.js"
-    data-culture="FI" data-gcm-version="2.0" type="text/javascript"></script>
- End Cookie Information Tag Manager -->
-
-
-
-
-
-
-    <!-- Piwik PRO Consent Manager 
-    <script type="text/javascript">
-    (function(window, document, dataLayerName, id) {
-        window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});
-        var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
-        
-        function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString();f="; SameSite=Strict"}
-            document.cookie=a+"="+b+d+f+"; path=/"}
-        
-        var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");
-        stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
-        
-        var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
-        tags.async=!0,tags.src="https://kare-ka.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
-        
-        !function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);
-            "string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
-        
-    })(window, document, 'dataLayer', '5b3fb268-b67c-45c6-8a58-a2fa7da17c0f');
+    <!-- Matomo Tag Manager -->
+    <script>
+      var _mtm = window._mtm = window._mtm || [];
+      _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+      (function() {
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src='https://test-japetus.narc.fi/piwik/js/container_UvlCc0RV.js'; s.parentNode.insertBefore(g,s);
+      })();
     </script>
-     End Piwik PRO Consent Manager -->
-
-
-
-
-
-
-
-<!-- Matomo Tag Manager -->
-<script>
-  var _mtm = window._mtm = window._mtm || [];
-  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-  (function() {
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='https://test-japetus.narc.fi/piwik/js/container_UvlCc0RV.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Tag Manager -->
-
-
-
-
-
-
+    <!-- End Matomo Tag Manager -->
 
 </head>
 <body>
@@ -123,26 +66,15 @@
 <script>
 // Funktio evästeen asettamiseen
 function setCookie() {
-    // Estetään lomakkeen normaali lähetys (sivun päivitys)
     event.preventDefault();
-
-    // Haetaan syötetty arvo
     var cookieValue = document.getElementById('cookieValue').value;
-
-    // Asetetaan eväste nimellä "Suklaakeksi" ja käyttäjän antamalla arvolla
     var d = new Date();
     d.setTime(d.getTime() + (7*24*60*60*1000)); // 7 päivää
     var expires = "expires=" + d.toUTCString();
-
-    // Asetetaan eväste ja otetaan huomioon Firefoxin tuleva muutos, jossa evästeitä käsitellään jatkossa oletuksena "Lax"-asetuksella
-	document.cookie = "Suklaakeksi=" + cookieValue + ";" + expires + ";path=/;SameSite=Lax";
-
-
-    // Näytetään käyttäjälle tallennettu eväste
+    document.cookie = "Suklaakeksi=" + cookieValue + ";" + expires + ";path=/;SameSite=Lax";
     document.getElementById('cookieDisplay').innerHTML = "Tallennettu eväste: " + getCookie("Suklaakeksi");
 }
 
-// Funktio evästeen arvon hakemiseen
 function getCookie(name) {
     var cookieArr = document.cookie.split(";");
     for(var i = 0; i < cookieArr.length; i++) {
@@ -153,6 +85,21 @@ function getCookie(name) {
     }
     return null;
 }
+</script>
+
+<!-- Matomon seurannan painike -->
+<button id="trackingButton">Paina minua</button>
+
+<script>
+// Matomon tapahtumaseuranta
+document.getElementById('trackingButton').addEventListener('click', function() {
+    if (typeof _paq !== 'undefined') {
+        _paq.push(['trackEvent', 'Painallukset', 'Nappipainallus', 'Tracking Button Pressed']);
+        alert('Painallus rekisteröity Matomossa!');
+    } else {
+        alert('Matomo ei ole käytettävissä.');
+    }
+});
 </script>
 
 <p>I'm hosted with GitHub Pages.</p>
