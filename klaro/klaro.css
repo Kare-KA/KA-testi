@@ -1,11 +1,11 @@
 
 #klaro .cookie-notice {
-    position: fixed !important;
+    position: fixed;
     bottom: 0;
     left: 0;
     max-width: 100%;
     height: 100px;
-    background-color: #fff9d1 !important;
+    background-color: #fff9d1;
     z-index: 9999;
     padding: 40px;
     display: flex;
