@@ -1,22 +1,31 @@
 var klaroConfig = {
+    version: 1,
     elementID: 'klaro',
-    storageMethod: 'cookie',
-    storageName: 'klaro',
-    lang: 'fi',
+    styling: {
+        theme: ['none']
+    },
+    noticeAsModal: false,
+    mustConsent: false,
+    noticeOnly: true,
+    acceptAll: true,
+    hideDeclineAll: false,
+    hideLearnMore: true,
     htmlTexts: true,
     embedded: false,
-    noticeOnly: true,
-    mustConsent: false,
-    acceptAll: true,
-    hideLearnMore: true,
+    showNoticeTitle: false,
+    cookieName: 'klaro',
+    cookieExpiresAfterDays: 365,
+    default: false,
+    storageMethod: 'cookie',
+    lang: 'fi',
     translations: {
         fi: {
             consentNotice: {
-                description: 'Käytämme teknologioita, kuten evästeitä, tarjotaksemme paremman käyttökokemuksen.'
+                description: 'Käytämme teknologioita, kuten evästeitä, tarjotaksemme paremman käyttökokemuksen.',
             },
             ok: 'Kyllä',
             acceptAll: 'Kyllä',
-            decline: 'Ei'
+            decline: 'Ei',
         }
     },
     services: []
