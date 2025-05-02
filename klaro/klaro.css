@@ -611,6 +611,7 @@ to create a white background.
 
 
 
+
 .klaro .cookie-notice:not(.cookie-modal-notice) {
   background-color: var(--dark1, #333);
   z-index: 999;
@@ -669,13 +670,24 @@ to create a white background.
 .klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded .cn-body {
   padding-top: 0.5em;
 }
+
+
+
+
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body {
-  margin-bottom: 0;
-  margin-right: 0;
-  bottom: 0;
-  padding: 1em;
-  padding-top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+
+
+
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p {
   margin-bottom: 0.5em;
 }
