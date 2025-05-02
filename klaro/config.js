@@ -1,3 +1,4 @@
+
 var klaroConfig = {
     version: 1,
     elementID: 'klaro',
