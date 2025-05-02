@@ -13,19 +13,14 @@ var klaroConfig = {
     htmlTexts: true,
     embedded: false,
     showNoticeTitle: false,
-    cookieName: 'klaro',
-    cookieExpiresAfterDays: 365,
-    default: false,
-    storageMethod: 'cookie',
     lang: 'fi',
     translations: {
         fi: {
             consentNotice: {
-                description: 'Käytämme teknologioita, kuten evästeitä, tarjotaksemme paremman käyttökokemuksen.',
+                description: 'Käytämme teknologioita, kuten evästeitä, tarjotaksemme paremman käyttökokemuksen.'
             },
-            ok: 'Kyllä',
             acceptAll: 'Kyllä',
-            decline: 'Ei',
+            decline: 'Ei'
         }
     },
     services: []
