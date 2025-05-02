@@ -34,6 +34,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+	margin-right: 40px;
 }
 
 #klaro .cookie-notice .cn-buttons .cm-btn.cm-btn-success {
