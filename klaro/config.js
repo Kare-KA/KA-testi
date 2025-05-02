@@ -5,19 +5,19 @@ var klaroConfig = {
     lang: 'fi',
     htmlTexts: true,
     embedded: false,
-    noticeOnly: true,   // 🔹 tämä pakottaa bannerimuodon
-    mustConsent: false, // 🔹 estetään modal-popup
+    noticeOnly: true,
+    mustConsent: false,
     acceptAll: true,
     hideLearnMore: true,
     translations: {
         fi: {
             consentNotice: {
-                description: 'Käytämme teknologioita, kuten evästeitä, tarjotaksemme paremman käyttökokemuksen.',
+                description: 'Käytämme teknologioita, kuten evästeitä, tarjotaksemme paremman käyttökokemuksen.'
             },
             ok: 'Kyllä',
             acceptAll: 'Kyllä',
-            decline: 'Ei',
+            decline: 'Ei'
         }
     },
-    services: [] // Ei yksittäisiä palveluita näkyvissä
+    services: []
 };
