@@ -407,18 +407,13 @@ to create a white background.
   font-size: var(--font-size, 14px);
 }
 .klaro .cookie-modal {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: auto;
   width: 100%;
-  height: auto;
-  max-height: 300px; /* tai oma korkeus */
-  background-color: #fef4c0; /* haalea keltainen esim. */
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  top: 0;
   z-index: 1000;
-  padding: 1em;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 .klaro .cookie-modal.cm-embedded {
   position: relative;
@@ -614,13 +609,20 @@ to create a white background.
   font-size: 0.8em;
 }
 .klaro .cookie-notice:not(.cookie-modal-notice) {
-  background-color: #333;
-  background-color: var(--dark1, #333);
-  z-index: 999;
   position: fixed;
-  width: 100%;
   bottom: 0;
+  left: 0;
   right: 0;
+  top: auto;
+  width: 100%;
+  height: 100px;
+  background-color: #fef4c0; /* Haalea keltainen */
+  z-index: 1000;
+  padding: 1em;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 @media (min-width: 1024px) {
   .klaro .cookie-notice:not(.cookie-modal-notice) {
