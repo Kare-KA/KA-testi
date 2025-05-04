@@ -608,6 +608,7 @@ to create a white background.
   padding-left: 0.2em;
   font-size: 0.8em;
 }
+/* --- MUOKATTU: Bannerin yhtenäinen ulkoasu kaikilla näytöillä --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) {
   position: fixed;
   bottom: 0;
@@ -616,33 +617,41 @@ to create a white background.
   top: auto;
   width: 100%;
   height: 100px;
-  background-color: #fef4c0; /* Haalea keltainen */
+  max-width: 100%;
+  background-color: #fef4c0;
   z-index: 1000;
   padding: 1em;
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 0;
 }
+
+
+
+/* --- MUOKATTU: Poistetaan leveiden näyttöjen erityisasettelu --- */
 @media (min-width: 1024px) {
   .klaro .cookie-notice:not(.cookie-modal-notice) {
-    border-radius: 4px;
-    border-radius: var(--border-radius, 4px);
     position: fixed;
-    position: var(--notice-position, fixed);
-    right: 20px;
-    right: var(--notice-right, 20px);
-    left: auto;
-    left: var(--notice-left, auto);
-    bottom: 20px;
-    bottom: var(--notice-bottom, 20px);
+    bottom: 0;
+    left: 0;
+    right: 0;
     top: auto;
-    top: var(--notice-top, auto);
-    max-width: 400px;
-    max-width: var(--notice-max-width, 400px);
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    height: 100px;
+    max-width: 100%;
+    background-color: #fef4c0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0;
   }
 }
+
+
+
 @media (max-width: 1023px) {
   .klaro .cookie-notice:not(.cookie-modal-notice) {
     border-style: none;
