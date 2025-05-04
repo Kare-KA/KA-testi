@@ -407,13 +407,18 @@ to create a white background.
   font-size: var(--font-size, 14px);
 }
 .klaro .cookie-modal {
-  width: 100%;
-  height: 100%;
   position: fixed;
-  overflow: hidden;
+  bottom: 0;
   left: 0;
-  top: 0;
+  right: 0;
+  top: auto;
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* tai oma korkeus */
+  background-color: #fef4c0; /* haalea keltainen esim. */
   z-index: 1000;
+  padding: 1em;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 .klaro .cookie-modal.cm-embedded {
   position: relative;
