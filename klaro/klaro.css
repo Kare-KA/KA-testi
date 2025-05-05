@@ -311,7 +311,7 @@ to create a white background.
 
 
 
-
+/* --- MUOKATTU: Säädetään painikkeiden uudet koot --- */
 .klaro .cookie-modal .cm-btn,
 .klaro .context-notice .cm-btn,
 .klaro .cookie-notice .cm-btn {
@@ -321,11 +321,11 @@ to create a white background.
   background-color: var(--dark2, #5c5c5c);
   border-radius: 4px;
   border-radius: var(--border-radius, 4px);
-  padding: 0.8em 2em;
+  padding: 1.0em 2.3em;
   margin-right: 0.5em;
   border-style: none;
   padding: 0.4em;
-  font-size: 1.1em;
+  font-size: 1.4em;
   cursor: pointer;
   min-width: 120px;
 }
