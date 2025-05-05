@@ -608,7 +608,10 @@ to create a white background.
   padding-left: 0.2em;
   font-size: 0.8em;
 }
-/* --- MUOKATTU: Bannerin yhtenäinen ulkoasu kaikilla näytöillä --- */
+
+
+
+/* --- MUOKATTU: Muutetaan evästekysely banneriksi alareunaan --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) {
   position: fixed;
   bottom: 0;
@@ -630,7 +633,7 @@ to create a white background.
 
 
 
-/* --- MUOKATTU: Poistetaan leveiden näyttöjen erityisasettelu --- */
+/* --- MUOKATTU: Muutetaan evästekysely banneriksi alareunaan myös minimileveys 1024px koossa --- */
 @media (min-width: 1024px) {
   .klaro .cookie-notice:not(.cookie-modal-notice) {
     position: fixed;
