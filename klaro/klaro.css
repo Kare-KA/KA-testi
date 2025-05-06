@@ -682,13 +682,28 @@ to create a white background.
 .klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded .cn-body {
   padding-top: 0.5em;
 }
+
+
+
+
+/* --- MUOKATTU: Linkin siirtäminen painikkeiden vasemmalta niiden yläpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body {
   margin-bottom: 0;
   margin-right: 0;
   bottom: 0;
   padding: 1em;
   padding-top: 0;
+  
+/* Uudet lisäykset linkin siirtoa varten */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+
+
+
+
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p {
   margin-bottom: 0.5em;
 }
@@ -703,6 +718,11 @@ to create a white background.
   /* display: none;  */
   /* display: inline-block; */
   /* flex-grow: 1; */
+  
+  order: -1;                /* vie elementin ylimmäksi */
+  margin-bottom: 1em;       /* lisää väliä painikkeisiin */
+  display: block;           /* varmista että näkyy */
+  text-align: center;       /* keskittää linkin */
 }
 
 
