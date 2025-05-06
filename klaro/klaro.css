@@ -698,8 +698,9 @@ to create a white background.
 
 
 
-/* --- MUOKATTU: Keskitetään painikkeet paremmin kun linkki on siirretty niiden ylöpuolelle --- */
+/* --- MUOKATTU: Linkin siirtäminen painikkeiden vasemmalta niiden yläpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
+  display: none;
   /* display: inline-block; */
   /* flex-grow: 1; */
 }
