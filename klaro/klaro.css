@@ -693,11 +693,6 @@ to create a white background.
   bottom: 0;
   padding: 1em;
   padding-top: 0;
-  
-/* Uudet lisäykset linkin siirtoa varten */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 
@@ -718,11 +713,6 @@ to create a white background.
   /* display: none;  */
   /* display: inline-block; */
   /* flex-grow: 1; */
-  
-  order: -1;                /* vie elementin ylimmäksi */
-  margin-bottom: 1em;       /* lisää väliä painikkeisiin */
-  display: block;           /* varmista että näkyy */
-  text-align: center;       /* keskittää linkin */
 }
 
 
@@ -806,4 +796,15 @@ to create a white background.
 }
 .klaro .cookie-notice-hidden {
   display: none !important;
+}
+
+
+
+
+.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok .cn-learn-more {
+  order: -1;               /* Nosta linkki painikkeiden yläpuolelle */
+  margin-bottom: 1em;      /* Lisää väliä linkin ja painikkeiden väliin */
+  display: block;
+  text-align: center;
+  width: 100%;             /* Saa linkin keskitettyä flex-rivillä */
 }
