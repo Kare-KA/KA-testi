@@ -26,6 +26,22 @@
 
 
 
+<script>
+  // Odotetaan, että Klaro on valmis
+  window.addEventListener('klaro-ready', function() {
+    // Kun suostumusbanneri näytetään
+    document.addEventListener('klaro-ui-visible', function() {
+      document.getElementById('cookie-settings-button').style.display = 'none';
+    });
+
+    // Kun suostumusbanneri suljetaan
+    document.addEventListener('klaro-ui-hidden', function() {
+      document.getElementById('cookie-settings-button').style.display = 'block';
+    });
+  });
+</script>
+
+
 
 
 <!-- Matomo seurantakoodi (muokattu Klaroa varten) -->
