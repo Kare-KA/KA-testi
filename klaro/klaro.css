@@ -695,10 +695,19 @@ to create a white background.
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p.cn-changes {
   text-decoration: underline;
 }
+
+
+
+/* --- MUOKATTU: Keskitetään painikkeet paremmin kun linkki on siirretty niiden ylöpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
-  display: inline-block;
-  flex-grow: 1;
+  /* display: inline-block; */
+  /* flex-grow: 1; */
 }
+
+
+
+
+
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons {
   display: inline-block;
   margin-top: -0.5em;
@@ -716,14 +725,25 @@ to create a white background.
     width: calc(50% - 0.5em);
   }
 }
+
+
+
+
+/* --- MUOKATTU: Keskitetään painikkeet paremmin kun linkki on siirretty niiden ylöpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok {
   margin-top: -0.5em;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  justify-content: right;
-  align-items: baseline;
+  justify-content: center;
+  align-items: center;
+  gap: 1em; /* (Lisäys) Luo tilaa painikkeiden väliin */
 }
+
+
+
+
+
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok a,
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok div {
   margin-top: 0.5em;
