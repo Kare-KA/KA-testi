@@ -820,3 +820,25 @@ to create a white background.
   --font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   --font-size: 17px;
 }
+
+
+
+/* --- Evästebannerin paluu --- */
+#cookie-settings-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.6em 1.2em;
+  font-size: 14px;
+  border-radius: 8px;
+  z-index: 9999;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+}
+#cookie-settings-button:hover {
+  background-color: #555;
+}
