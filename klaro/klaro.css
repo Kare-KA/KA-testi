@@ -325,7 +325,7 @@ to create a white background.
   margin-right: 0.5em;
   border-style: none;
   max-height: 51px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   cursor: pointer;
   min-width: 120px;
 }
@@ -819,8 +819,4 @@ to create a white background.
 .klaro {
   --font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   --font-size: 17px;
-}
-
-.klaro .cm-btn {
-  font-size: 17px;
 }
