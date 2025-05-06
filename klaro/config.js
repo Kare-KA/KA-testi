@@ -128,7 +128,7 @@ var klaroConfig = {
     fi: {
         privacyPolicyUrl: '/#privacy',
         consentNotice: {
-            description: 'Sivustomme käyttää evästeitä parantaakseen käyttökokemusta. <a href="/privacy">Lue lisää</a>'
+            description: 'Sivustomme käyttää evästeitä parantaakseen käyttökokemusta. <a href="#" data-klaro="open-modal">Lue lisää</a>'
         },
         consentModal: {
             description: 'Tässä voit valita, mihin evästeisiin suostut.'
