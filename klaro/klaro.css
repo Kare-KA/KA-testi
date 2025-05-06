@@ -635,7 +635,7 @@ to create a white background.
   padding: 1em;
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 0;
 }
@@ -779,7 +779,7 @@ to create a white background.
 .klaro .cookie-modal-notice .cn-ok {
   display: flex;
   flex-flow: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 1em;
 }
