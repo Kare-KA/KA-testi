@@ -656,7 +656,7 @@ to create a white background.
     background-color: #fef4c0;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-radius: 0;
   }
