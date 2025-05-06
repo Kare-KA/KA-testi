@@ -700,7 +700,7 @@ to create a white background.
 
 /* --- MUOKATTU: Linkin siirtäminen painikkeiden vasemmalta niiden yläpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
-  /* display: none; */
+  display: none;
   /* display: inline-block; */
   /* flex-grow: 1; */
 }
