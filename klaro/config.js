@@ -136,7 +136,7 @@ var klaroConfig = {
         acceptAll: 'Hyväksy kaikki',
         acceptSelected: 'Hyväksy valitut',
         decline: 'Hylkää'
-
+		},
 
 
 
