@@ -635,7 +635,7 @@ to create a white background.
   padding: 1em;
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-radius: 0;
 }
@@ -700,8 +700,8 @@ to create a white background.
 
 /* --- MUOKATTU: Keskitetään painikkeet paremmin kun linkki on siirretty niiden ylöpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
-  display: inline-block;
-  flex-grow: 1;
+  /* display: inline-block; */
+  /* flex-grow: 1; */
 }
 
 
