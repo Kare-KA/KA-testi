@@ -823,7 +823,7 @@ to create a white background.
 
 
 
-/* --- Evästebannerin paluu --- */
+/* Leijuva "Evästeasetukset" -nappi */
 #cookie-settings-button {
   position: fixed;
   bottom: 20px;
@@ -839,6 +839,15 @@ to create a white background.
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   transition: background-color 0.3s;
 }
-#cookie-settings-button:hover {
-  background-color: #555;
+
+/* Piilotetaan asetusnappi, kun evästebanneri tai modaali näkyy */
+.klaro .cookie-notice:not(.cookie-modal-notice),
+.klaro .cookie-modal {
+  /* Nämä tulevat näkyviin kun Klaron UI aktivoituu */
 }
+
+.klaro .cookie-notice:not(.cookie-modal-notice) ~ #cookie-settings-button,
+.klaro .cookie-modal ~ #cookie-settings-button {
+  display: none !important;
+}
+
