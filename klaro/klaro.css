@@ -321,7 +321,7 @@ to create a white background.
   background-color: var(--dark2, #5c5c5c);
   border-radius: 4px;
   border-radius: var(--border-radius, 4px);
-  padding: 0.7em 3.0em;
+  padding: 0.5em 2.0em;
   margin-right: 0.5em;
   border-style: none;
 
