@@ -249,6 +249,13 @@ var klaroConfig = {
             default: true,
             purposes: ['marketing'],
         },
+		
+		
+		
+		
+		
+		
+		
         {
             // Each service should have a unique (and short) name.
             name: 'matomo',
@@ -257,7 +264,7 @@ var klaroConfig = {
             // Overwrites global "default" setting.
             // We recommend leaving this to "false" for services that collect
             // personal information.
-            default: true,
+            default: false,
 
             // The title of your service as listed in the consent modal.
             title: 'Matomo/Piwik',
@@ -295,13 +302,13 @@ var klaroConfig = {
                 );
                 // To be used in conjunction with Matomo 'requireCookieConsent' Feature, Matomo 3.14.0 or newer
                 // For further Information see https://matomo.org/faq/new-to-piwik/how-can-i-still-track-a-visitor-without-cookies-even-if-they-decline-the-cookie-consent/
-                /*
+                
                 if(consent==true){
                     _paq.push(['rememberCookieConsentGiven']);
                 } else {
                     _paq.push(['forgetCookieConsentGiven']);
                 }
-                */
+                
             },
 
             // If "required" is set to true, Klaro will not allow this service to
@@ -317,6 +324,12 @@ var klaroConfig = {
             // once regardless how often the user toggles it on and off.
             onlyOnce: true,
         },
+		
+		
+		
+		
+		
+		
 
         // The services will appear in the modal in the same order as defined here.
         {
