@@ -830,18 +830,18 @@ to create a white background.
   position: fixed;
   bottom: 20px;
   left: 0;
-  writing-mode: vertical-rl;         /* Teksti pystyyn oikealta vasemmalle */
-  transform: rotate(180deg);         /* Käännetään teksti oikein päin */
-  background-color: #005a5a;         /* Taustaväri (mukauta tarvittaessa) */
+  writing-mode: vertical-lr;         /* Teksti ylhäältä alas */
+  background-color: #005a5a;
   color: white;
   padding: 6px 4px;
   font-size: 13px;
   font-weight: bold;
-  border-radius: 0 4px 4px 0;
-  z-index: 500;                      /* Alempi kuin Klaron banneri/modaali */
+  border-radius: 0 8px 8px 0;        /* Pyöristykset oikealle */
+  z-index: 500;
   text-align: center;
   text-decoration: none;
-  display: none;                     /* Aluksi piilossa */
+  display: none;
+  line-height: 1.4;
 }
 
 
