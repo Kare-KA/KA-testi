@@ -311,6 +311,7 @@ to create a white background.
 
 
 
+
 /* --- MUOKATTU: Säädetään painikkeiden uudet koot --- */
 .klaro .cookie-modal .cm-btn,
 .klaro .context-notice .cm-btn,
@@ -642,6 +643,7 @@ to create a white background.
 
 
 
+
 /* --- MUOKATTU: Muutetaan evästekysely banneriksi alareunaan myös minimileveys 1024px koossa --- */
 @media (min-width: 1024px) {
   .klaro .cookie-notice:not(.cookie-modal-notice) {
@@ -661,6 +663,7 @@ to create a white background.
     border-radius: 0;
   }
 }
+
 
 
 
@@ -842,8 +845,3 @@ to create a white background.
 
 
 
-
-
-body.klaro-visible #cookie-settings-button {
-  display: none !important;
-}

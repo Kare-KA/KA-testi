@@ -37,6 +37,33 @@
 
 
 
+<script>
+  window.addEventListener('klaro-ready', function () {
+    const btn = document.getElementById('cookie-settings-button');
+
+    // Näytetään nappi vasta kun käyttäjä on vastannut
+    if (klaro.getManager().hasConsented('matomo') || klaro.getManager().confirmed) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }
+
+    // Banneri tai modaali avautuu – piilotetaan nappi
+    document.addEventListener('klaro-ui-visible', function () {
+      btn.style.display = 'none';
+    });
+
+    // Banneri tai modaali sulkeutuu – näytetään nappi
+    document.addEventListener('klaro-ui-hidden', function () {
+      btn.style.display = 'block';
+    });
+  });
+</script>
+
+
+
+
+
 <!-- Matomo seurantakoodi (muokattu Klaroa varten) -->
 <script>
   var _paq = window._paq = window._paq || [];
