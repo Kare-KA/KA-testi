@@ -20,19 +20,20 @@
 
 
 <script>
-  // Odotetaan, että Klaro on valmis
-  window.addEventListener('klaro-ready', function() {
-    // Kun suostumusbanneri näytetään
-    document.addEventListener('klaro-ui-visible', function() {
-      document.getElementById('cookie-settings-button').style.display = 'none';
+  // Kun Klaro on ladattu ja valmis, reagoidaan UI:n näkyvyyteen
+  window.addEventListener('klaro-ready', function () {
+    const btn = document.getElementById('cookie-settings-button');
+
+    document.addEventListener('klaro-ui-visible', function () {
+      btn.style.display = 'none';
     });
 
-    // Kun suostumusbanneri suljetaan
-    document.addEventListener('klaro-ui-hidden', function() {
-      document.getElementById('cookie-settings-button').style.display = 'block';
+    document.addEventListener('klaro-ui-hidden', function () {
+      btn.style.display = 'block';
     });
   });
 </script>
+
 
 
 
