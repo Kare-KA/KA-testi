@@ -844,7 +844,10 @@ to create a white background.
   line-height: 1.4;
 }
 
-
+#cookie-settings-button span {
+  display: block;
+  line-height: 1.8; /* Lisää väliä kirjainten väliin */
+}
 
 
 
