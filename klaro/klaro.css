@@ -866,3 +866,23 @@ body:not(.klaro-visible) #cookie-settings-button {
 #klaro .cookie-modal ~ #cookie-settings-button {
   display: none !important;
 }
+
+
+
+
+/* --- LISÄYS: Mahdollista kielekkeen käyttö bannerin päällä ilman, että estetään painikkeiden käyttö --- */
+
+/* Estetään taustaelementin blokkaava vaikutus */
+.klaro .cookie-notice {
+  pointer-events: none;
+}
+
+/* Sallitut klikkialueet säilyvät käyttökelpoisina */
+.klaro .cookie-notice .cm-buttons,
+.klaro .cookie-notice .cm-description,
+.klaro .cookie-notice .cm-header,
+.klaro .cookie-notice .cm-footer,
+.klaro .cookie-notice .cn-ok,
+.klaro .cookie-notice .cn-body {
+  pointer-events: auto;
+}
