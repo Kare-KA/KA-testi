@@ -840,14 +840,10 @@ to create a white background.
   transition: background-color 0.3s;
 }
 
-/* Piilotetaan asetusnappi, kun evästebanneri tai modaali näkyy */
-.klaro .cookie-notice:not(.cookie-modal-notice),
-.klaro .cookie-modal {
-  /* Nämä tulevat näkyviin kun Klaron UI aktivoituu */
-}
 
-.klaro .cookie-notice:not(.cookie-modal-notice) ~ #cookie-settings-button,
-.klaro .cookie-modal ~ #cookie-settings-button {
+
+
+
+body.klaro-visible #cookie-settings-button {
   display: none !important;
 }
-

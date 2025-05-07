@@ -18,13 +18,6 @@
 
 
 
-<!-- Evästeasetukset-nappi -->
-<div id="cookie-settings-button" onclick="klaro.show()" aria-label="Muuta evästeasetuksia">
-  Evästeasetukset
-</div>
-
-
-
 
 <script>
   // Odotetaan, että Klaro on valmis
@@ -161,13 +154,16 @@ document.getElementById('trackingButton').addEventListener('click', function() {
 </script>
 
 
+
+<!-- Konsolille infoa -->	
 <script>
     console.log('KlaroConfig löytyy?', typeof klaroConfig);
 </script>
 
 
 
-
+<!-- Evästeasetukset-nappi -->
+<button id="cookie-settings-button" onclick="klaro.show()">Evästeasetukset</button>
 
 
 <p>I'm hosted with GitHub Pages.</p>
