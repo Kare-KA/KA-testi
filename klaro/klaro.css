@@ -828,7 +828,7 @@ to create a white background.
 
 #cookie-settings-button {
   position: fixed;
-  bottom: 20px;
+  bottom: 40px;
   left: 0;
   writing-mode: vertical-lr;         /* Teksti ylhäältä alas */
   background-color: #005a5a;
