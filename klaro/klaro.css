@@ -836,6 +836,7 @@ to create a white background.
   padding: 12px 6px;
   font-size: 14px;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 2px;            /* Lisää vaakasuuntaista väliä (kirjainten sisällä) */
   line-height: 2.0;               /* Lisää pystysuuntaista tilaa */
   border-radius: 0 10px 10px 0;        /* Pyöristykset oikealle */
