@@ -826,23 +826,24 @@ to create a white background.
 
 
 
-/* Leijuva "Evästeasetukset" -nappi */
 #cookie-settings-button {
   position: fixed;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
-  padding: 0.6em 1.2em;
-  font-size: 14px;
-  border-radius: 8px;
-  z-index: 500;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  transition: background-color 0.3s;
-  display: none; /* Lisäys – estetään näkymä ennen kuin JS sanoo "näytä" */
+  left: 0;
+  writing-mode: vertical-rl;         /* Teksti pystyyn oikealta vasemmalle */
+  transform: rotate(180deg);         /* Käännetään teksti oikein päin */
+  background-color: #005a5a;         /* Taustaväri (mukauta tarvittaessa) */
+  color: white;
+  padding: 6px 4px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 0 4px 4px 0;
+  z-index: 500;                      /* Alempi kuin Klaron banneri/modaali */
+  text-align: center;
+  text-decoration: none;
+  display: none;                     /* Aluksi piilossa */
 }
+
 
 
 
