@@ -857,3 +857,16 @@ body.klaro-visible #cookie-settings-button {
 body:not(.klaro-visible) #cookie-settings-button {
   display: block;
 }
+
+
+
+/* Piilota "Evästeasetukset" -nappi, kun evästebanneri tai modaali on näkyvissä */
+.klaro .cookie-notice:not(.cookie-modal-notice),
+.klaro .cookie-modal {
+  /* banneri tai modaali näkyvissä */
+}
+
+.klaro .cookie-notice:not(.cookie-modal-notice) ~ #cookie-settings-button,
+.klaro .cookie-modal ~ #cookie-settings-button {
+  display: none !important;
+}
