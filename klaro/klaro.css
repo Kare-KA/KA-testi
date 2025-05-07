@@ -841,7 +841,14 @@ to create a white background.
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   transition: background-color 0.3s;
+  display: none; /* Lisäys – estetään näkymä ennen kuin JS sanoo "näytä" */
 }
 
 
+
+
+
+body.klaro-visible #cookie-settings-button {
+  display: none !important;
+}
 
