@@ -19,22 +19,6 @@
 
 
 
-<script>
-  // Kun Klaro on ladattu ja valmis, reagoidaan UI:n näkyvyyteen
-  window.addEventListener('klaro-ready', function () {
-    const btn = document.getElementById('cookie-settings-button');
-
-    document.addEventListener('klaro-ui-visible', function () {
-      btn.style.display = 'none';
-    });
-
-    document.addEventListener('klaro-ui-hidden', function () {
-      btn.style.display = 'block';
-    });
-  });
-</script>
-
-
 
 
 
