@@ -847,8 +847,13 @@ to create a white background.
 
 
 
-
+/* Leijuva "Evästeasetukset" -nappi pois näkyvistä */
 body.klaro-visible #cookie-settings-button {
   display: none !important;
 }
 
+
+/* Leijuva "Evästeasetukset" -nappi näkyviin */
+body:not(.klaro-visible) #cookie-settings-button {
+  display: block;
+}
