@@ -19,10 +19,12 @@
 
 
 <!-- Evästeasetukset-nappi -->
-<div id="cookie-settings-button" onclick="klaro.show()" aria-label="Muuta evästeasetuksia">
-  Evästeasetukset
+<div id="klaro">
+    <!-- Klaro UI renderöityy tähän automaattisesti -->
+    <button id="cookie-settings-button" onclick="klaro.show()">
+        Evästeasetukset
+    </button>
 </div>
-
 
 
 
@@ -161,6 +163,8 @@ document.getElementById('trackingButton').addEventListener('click', function() {
 </script>
 
 
+
+<!-- Konsolille infoa -->	
 <script>
     console.log('KlaroConfig löytyy?', typeof klaroConfig);
 </script>
