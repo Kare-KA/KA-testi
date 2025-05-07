@@ -21,7 +21,7 @@
 
 
 
-
+<!--
 <script>
   window.addEventListener('klaro-ready', function () {
     const btn = document.getElementById('cookie-settings-button');
@@ -44,8 +44,24 @@
     });
   });
 </script>
+-->	
 
 
+
+
+<script>
+window.addEventListener('klaro-ready', function () {
+    const btn = document.getElementById('cookie-settings-button');
+
+    function updateButton() {
+        btn.style.display = klaro.getManager().confirmed ? 'block' : 'none';
+    }
+
+    document.addEventListener('klaro-ui-hidden', updateButton);
+
+    updateButton();
+});
+</script>
 
 
 
@@ -124,6 +140,8 @@ End Alkuperäinen Matomo seurantakoodi -->
 
 <p id="cookieDisplay"></p>
 
+
+
 <script>
 // Funktio evästeen asettamiseen
 function setCookie() {
@@ -150,8 +168,11 @@ function getCookie(name) {
 
 
 
+
 <!-- Matomon seurannan painike -->
 <button id="trackingButton">Paina minua</button>
+
+
 
 <script>
 // Matomon tapahtumaseuranta
@@ -174,8 +195,16 @@ document.getElementById('trackingButton').addEventListener('click', function() {
 
 
 
-<!-- Evästeasetukset-nappi -->
+<!-- Evästeasetukset-nappi 
 <button id="cookie-settings-button" onclick="klaro.show()">Evästeasetukset</button>
+-->
+
+
+<button id="cookie-settings-button" onclick="klaro.show()" style="display:none;">
+    Evästeasetukset
+</button>
+
+
 
 
 <p>I'm hosted with GitHub Pages.</p>
