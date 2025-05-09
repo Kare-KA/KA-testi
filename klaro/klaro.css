@@ -866,6 +866,7 @@ body.klaro-visible #cookie-settings-button {
   display: inline-block;
   min-width: 150px;
   text-align: center;
+  justify-content: space-evenly;
   margin-right: 0;
   flex-shrink: 0;
   display: inline-flex;     /* Varmistaa keskityksen */
@@ -910,7 +911,7 @@ body.klaro-visible #cookie-settings-button {
   width: 100%;
   flex: 1;
   max-width: 100%;
-
+  align-content: flex-end;
 
   margin-top: auto;
   margin-bottom: 0.5em;
