@@ -27,33 +27,33 @@ window.addEventListener('klaro-ready', function () {
     const btn = document.getElementById('cookie-settings-button');
     const body = document.body;
 
-    // Klaron suostumustilan valvonta
-    klaro.getManager().watch({
-        update(manager, type) {
-            if (type === 'consents' || type === 'applyConsents') {
-                const isConfirmed = manager.confirmed;
-                const isVisible =
-                    document.querySelector('.cookie-notice:not(.cookie-modal-notice)')?.offsetParent !== null ||
-                    document.querySelector('.cookie-modal')?.offsetParent !== null;
-
-                if (isConfirmed && !isVisible) {
-                    btn.style.display = 'block';
-                    body.classList.add('klaro-confirmed');
-                } else {
-                    btn.style.display = 'none';
-                    body.classList.remove('klaro-confirmed');
-                }
-            }
-        }
-    });
-
-    // Tarkista myös heti alkuun
-    if (klaro.getManager().confirmed) {
+    // 1. Näytä nappi jos suostumus on jo olemassa JA UI ei ole näkyvissä
+    if (klaro.getManager().confirmed && !body.classList.contains('klaro-visible')) {
         btn.style.display = 'block';
         body.classList.add('klaro-confirmed');
     }
+
+    // 2. Seuraa body-luokkia (Klaro lisää/poistaa .klaro-visible)
+    const klaroObserver = new MutationObserver(() => {
+        const isConfirmed = klaro.getManager().confirmed;
+        const isBannerVisible = body.classList.contains('klaro-visible');
+
+        if (isConfirmed && !isBannerVisible) {
+            btn.style.display = 'block';
+            body.classList.add('klaro-confirmed');
+        } else {
+            btn.style.display = 'none';
+            body.classList.remove('klaro-confirmed');
+        }
+    });
+
+    klaroObserver.observe(body, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
 });
 </script>
+
 
 
 
