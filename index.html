@@ -23,35 +23,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-<!--
-<script>
-window.addEventListener('klaro-ready', function () {
-    const btn = document.getElementById('cookie-settings-button');
-
-    function updateButton() {
-        btn.style.display = klaro.getManager().confirmed ? 'block' : 'none';
-    }
-
-    document.addEventListener('klaro-ui-hidden', updateButton);
-
-    updateButton();
-});
-</script>
--->
-
-
-
-
-
 <!-- Matomo seurantakoodi (muokattu Klaroa varten) -->
 <script>
   var _paq = window._paq = window._paq || [];
@@ -183,10 +154,6 @@ document.getElementById('trackingButton').addEventListener('click', function() {
 
 
 
-<!-- Konsolille infoa -->	
-<script>
-    console.log('KlaroConfig löytyy?', typeof klaroConfig);
-</script>
 
 
 
@@ -196,47 +163,6 @@ document.getElementById('trackingButton').addEventListener('click', function() {
    aria-label="Avaa evästeasetukset">
   Evästeasetukset
 </a>
-
-
-
-
-<!--
-<button id="cookie-settings-button" onclick="klaro.show()" style="display:none;">
-    Evästeasetukset
-</button>
--->
-
-
-
-<script>
-window.addEventListener('klaro-ready', function () {
-    const btn = document.getElementById('cookie-settings-button');
-    const body = document.body;
-
-    if (klaro.getManager().confirmed && !body.classList.contains('klaro-visible')) {
-        btn.style.display = 'block';
-        body.classList.add('klaro-confirmed');
-    }
-
-    const klaroObserver = new MutationObserver(() => {
-        const isConfirmed = klaro.getManager().confirmed;
-        const isBannerVisible = body.classList.contains('klaro-visible');
-
-        if (isConfirmed && !isBannerVisible) {
-            btn.style.display = 'block';
-            body.classList.add('klaro-confirmed');
-        } else {
-            btn.style.display = 'none';
-            body.classList.remove('klaro-confirmed');
-        }
-    });
-
-    klaroObserver.observe(body, {
-        attributes: true,
-        attributeFilter: ['class']
-    });
-});
-</script>
 
 
 

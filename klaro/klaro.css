@@ -855,10 +855,6 @@ to create a white background.
 
 
 
-/* Näytä nappi, jos suostumus on annettu */
-body.klaro-confirmed #cookie-settings-button {
-  display: block;
-}
 
 
 /* Piilota nappi, jos Klaro-banneri tai -modaali on näkyvissä */
@@ -884,11 +880,6 @@ body.klaro-visible #cookie-settings-button {
 .klaro .cookie-notice .cn-body {
   pointer-events: auto;
 }
-
-
-
-
-
 
 
 
