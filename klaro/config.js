@@ -130,6 +130,11 @@ var klaroConfig = {
         consentNotice: {
             description: 'Sivustomme käyttää evästeitä parantaakseen käyttökokemusta.'
         },
+		
+		consentNotice: {
+			learnMore: 'Evästeasetukset',
+		}
+		
         consentModal: {
             description: 'Tässä voit valita, mihin evästeisiin suostut.'
         },
