@@ -636,8 +636,8 @@ to create a white background.
   padding: 1em;
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* estää keskittämisen vaakasuunnassa */
+  align-items: stretch;   /* venyttää täyteen leveyteen */
   border-radius: 0;
 }
 
@@ -658,8 +658,8 @@ to create a white background.
     background-color: #fef4c0;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* estää keskittämisen vaakasuunnassa */
+    align-items: stretch;   /* venyttää täyteen leveyteen */
     border-radius: 0;
   }
 }
@@ -886,4 +886,6 @@ body.klaro-visible #cookie-settings-button {
   gap: 1em;
   width: 100%;
   margin-top: -0.5em;
+  flex: 1;
+  max-width: 100%;
 }
