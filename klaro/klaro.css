@@ -852,9 +852,20 @@ to create a white background.
 
 
 /* Leijuva "Evästeasetukset" -nappi näkyviin */
-body.klaro-confirmed:not(.klaro-visible) #cookie-settings-button {
+body.klaro-confirmed #cookie-settings-button {
   display: block;
 }
+
+#klaro.cookie-modal,
+#klaro .cookie-notice:not(.cookie-modal-notice) {
+  /* Kun Klaro näkyvissä, piilotetaan kieleke */
+}
+
+#klaro.cookie-modal ~ #cookie-settings-button,
+#klaro .cookie-notice:not(.cookie-modal-notice) ~ #cookie-settings-button {
+  display: none !important;
+}
+
 
 
 
