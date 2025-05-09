@@ -23,38 +23,38 @@
 
 
 <script>
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('klaro-ready', function () {
     const btn = document.getElementById('cookie-settings-button');
     const body = document.body;
 
-    function checkAndShowButton() {
-        const isConfirmed = klaro.getManager().confirmed;
-        const bannerVisible = document.querySelector('.cookie-notice:not(.cookie-modal-notice)')?.offsetParent !== null;
-        const modalVisible = document.querySelector('.cookie-modal')?.offsetParent !== null;
-        const uiVisible = bannerVisible || modalVisible;
+    // Klaron suostumustilan valvonta
+    klaro.getManager().watch({
+        update(manager, type) {
+            if (type === 'consents' || type === 'applyConsents') {
+                const isConfirmed = manager.confirmed;
+                const isVisible =
+                    document.querySelector('.cookie-notice:not(.cookie-modal-notice)')?.offsetParent !== null ||
+                    document.querySelector('.cookie-modal')?.offsetParent !== null;
 
-        if (isConfirmed && !uiVisible) {
-            btn.style.display = 'block';
-            body.classList.add('klaro-confirmed');
+                if (isConfirmed && !isVisible) {
+                    btn.style.display = 'block';
+                    body.classList.add('klaro-confirmed');
+                } else {
+                    btn.style.display = 'none';
+                    body.classList.remove('klaro-confirmed');
+                }
+            }
         }
+    });
+
+    // Tarkista myös heti alkuun
+    if (klaro.getManager().confirmed) {
+        btn.style.display = 'block';
+        body.classList.add('klaro-confirmed');
     }
-
-    // Tarkista heti alkuun
-    checkAndShowButton();
-
-    // Tarkkaile DOM-muutoksia
-    const observer = new MutationObserver(() => {
-        checkAndShowButton();
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ['class', 'style']
-    });
 });
 </script>
+
 
 
 
