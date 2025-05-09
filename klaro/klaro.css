@@ -754,10 +754,11 @@ to create a white background.
 
 
 
-.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok a,
-.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok div {
-  margin-top: 0.5em;
-}
+
+
+
+
+
 .klaro .cookie-modal-notice {
   background-color: #333;
   background-color: var(--dark1, #333);
@@ -906,3 +907,6 @@ body.klaro-visible #cookie-settings-button {
   flex: 1;
   max-width: 100%;
 }
+
+
+
