@@ -19,27 +19,31 @@
 
 
 <script>
-window.addEventListener('klaro-ready', function () {
-  const btn = document.getElementById('cookie-settings-button');
+function toggleCookieSettingsButton() {
+    const btn = document.getElementById('cookie-settings-button');
+    const body = document.body;
 
-function updateButton() {
-  const body = document.body;
-  if (klaro.getManager().confirmed) {
-    btn.style.display = 'block';
-    body.classList.add('klaro-confirmed');
-  } else {
-    btn.style.display = 'none';
-    body.classList.remove('klaro-confirmed');
-  }
+    // Jos Klaro on näkyvissä, älä näytä kielekettä
+    const klaroVisible = document.querySelector('#klaro .cookie-notice, #klaro .cookie-modal');
+    const isVisible = klaroVisible && window.getComputedStyle(klaroVisible).display !== 'none';
+
+    if (klaro.getManager().confirmed && !isVisible) {
+        btn.style.display = 'block';
+        body.classList.add('klaro-confirmed');
+    } else {
+        btn.style.display = 'none';
+        body.classList.remove('klaro-confirmed');
+    }
 }
 
-
-  document.addEventListener('klaro-ui-hidden', updateButton);
-  document.addEventListener('klaro-ui-visible', () => btn.style.display = 'none');
-
-  updateButton(); // Kutsu heti sivun latautuessa
+// Odota että DOM on valmis ja Klaro ladattu
+window.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('klaro-ui-hidden', toggleCookieSettingsButton);
+    document.addEventListener('klaro-ui-visible', toggleCookieSettingsButton);
+    setTimeout(toggleCookieSettingsButton, 1000); // Tarkistus hetken päästä ladauksen jälkeen
 });
 </script>
+
 
 
 
@@ -125,6 +129,14 @@ End Alkuperäinen Matomo seurantakoodi -->
     End Matomo Tag Manager -->
 
 </head>
+
+
+
+
+
+
+
+
 <body>
 
 <h1>Tällä sivulla testataan kävijäseurantaa ja evästekyselyä.</h1>

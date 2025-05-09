@@ -908,3 +908,13 @@ body.klaro-confirmed #cookie-settings-button {
 body.klaro-visible #cookie-settings-button {
   display: none !important;
 }
+
+
+
+#cookie-settings-button {
+  display: none;
+}
+
+body.klaro-confirmed #cookie-settings-button {
+  display: block;
+}
