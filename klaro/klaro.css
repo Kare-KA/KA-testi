@@ -749,10 +749,12 @@ to create a white background.
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between; /* nyt jakaa "Lue lisää" vasemmalle, muut oikealle */
   align-items: center;
-  gap: 0em; /* (Lisäys) Luo tilaa painikkeiden väliin */
+  gap: 1em;
+  width: 100%;
 }
+
 
 
 
