@@ -23,38 +23,37 @@ window.addEventListener('klaro-ready', function () {
     const btn = document.getElementById('cookie-settings-button');
     const body = document.body;
 
-    // Watcher-olio
-    const watcher = {
-        update(manager, type, data) {
-            if (type === 'consents' || type === 'applyConsents') {
-                const isConfirmed = manager.confirmed;
+    function showIfReady() {
+        const isConfirmed = klaro.getManager().confirmed;
+        const banner = document.querySelector('.cookie-notice:not(.cookie-modal-notice)');
+        const modal = document.querySelector('.cookie-modal');
 
-                // Tarkista että UI ei ole näkyvissä
-                const banner = document.querySelector('.cookie-notice:not(.cookie-modal-notice)');
-                const modal = document.querySelector('.cookie-modal');
+        const isVisible = (banner && banner.offsetParent !== null) ||
+                          (modal && modal.offsetParent !== null);
 
-                const isVisible = (banner && banner.offsetParent !== null) || 
-                                  (modal && modal.offsetParent !== null);
-
-                if (isConfirmed && !isVisible) {
-                    btn.style.display = 'block';
-                    body.classList.add('klaro-confirmed');
-                } else {
-                    btn.style.display = 'none';
-                    body.classList.remove('klaro-confirmed');
-                }
-            }
+        if (isConfirmed && !isVisible) {
+            btn.style.display = 'block';
+            body.classList.add('klaro-confirmed');
+        } else {
+            btn.style.display = 'none';
+            body.classList.remove('klaro-confirmed');
         }
-    };
-
-    klaro.getManager().watch(watcher);
-
-    // Tarkistus heti alussa, jos suostumus on jo tallennettu
-    if (klaro.getManager().confirmed) {
-        watcher.update(klaro.getManager(), 'consents');
     }
+
+    // Suoraan jos suostumus on jo annettu
+    if (klaro.getManager().confirmed) {
+        showIfReady();
+    }
+
+    // Kun suostumus annetaan
+    document.addEventListener('klaro-consent-confirmed', () => {
+        // Viivästetty tarkistus useamman aikavälin päästä
+        setTimeout(showIfReady, 200);  // banneri ehtii kadota
+        setTimeout(showIfReady, 400);  // varmistus
+    });
 });
 </script>
+
 
 
 
