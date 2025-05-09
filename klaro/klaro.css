@@ -903,10 +903,14 @@ body.klaro-visible #cookie-settings-button {
   align-items: center;
   gap: 1em;
   width: 100%;
-  margin-top: -0.5em;
   flex: 1;
   max-width: 100%;
+
+
+  margin-top: auto;
+  margin-bottom: 0.5em;
 }
+
 
 
 
