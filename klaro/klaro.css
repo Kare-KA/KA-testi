@@ -827,6 +827,7 @@ to create a white background.
 
 
 #cookie-settings-button {
+  display: block;
   position: fixed;
   bottom: 40px;
   left: 0;
@@ -843,44 +844,13 @@ to create a white background.
   z-index: 9999;
   text-align: center;
   text-decoration: none;
-  display: none;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
 }
 
 
 
-#cookie-settings-button {
-  display: none;
-}
-
-
-
-
-
-/* Piilota nappi, jos Klaro-banneri tai -modaali on näkyvissä */
 body.klaro-visible #cookie-settings-button {
-  display: none !important;
-}
-
-
-
-/* Estetään taustaelementin blokkaava vaikutus */
-.klaro .cookie-notice {
   pointer-events: none;
+  opacity: 0.6; /* Halutessasi visuaalinen himmennys */
 }
-
-
-
-/* Sallitut klikkialueet säilyvät käyttökelpoisina */
-.klaro .cookie-notice .cm-buttons,
-.klaro .cookie-notice .cm-description,
-.klaro .cookie-notice .cm-header,
-.klaro .cookie-notice .cm-footer,
-.klaro .cookie-notice .cn-ok,
-.klaro .cookie-notice .cn-body {
-  pointer-events: auto;
-}
-
-
-
 
