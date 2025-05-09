@@ -22,42 +22,6 @@
 
 
 
-<script>
-window.addEventListener('klaro-ready', function () {
-    const btn = document.getElementById('cookie-settings-button');
-    const body = document.body;
-
-    // 1. Näytä nappi jos suostumus on jo olemassa JA UI ei ole näkyvissä
-    if (klaro.getManager().confirmed && !body.classList.contains('klaro-visible')) {
-        btn.style.display = 'block';
-        body.classList.add('klaro-confirmed');
-    }
-
-    // 2. Seuraa body-luokkia (Klaro lisää/poistaa .klaro-visible)
-    const klaroObserver = new MutationObserver(() => {
-        const isConfirmed = klaro.getManager().confirmed;
-        const isBannerVisible = body.classList.contains('klaro-visible');
-
-        if (isConfirmed && !isBannerVisible) {
-            btn.style.display = 'block';
-            body.classList.add('klaro-confirmed');
-        } else {
-            btn.style.display = 'none';
-            body.classList.remove('klaro-confirmed');
-        }
-    });
-
-    klaroObserver.observe(body, {
-        attributes: true,
-        attributeFilter: ['class']
-    });
-});
-</script>
-
-
-
-
-
 
 
 
@@ -241,6 +205,41 @@ document.getElementById('trackingButton').addEventListener('click', function() {
     Evästeasetukset
 </button>
 -->
+
+
+
+<script>
+window.addEventListener('klaro-ready', function () {
+    const btn = document.getElementById('cookie-settings-button');
+    const body = document.body;
+
+    if (klaro.getManager().confirmed && !body.classList.contains('klaro-visible')) {
+        btn.style.display = 'block';
+        body.classList.add('klaro-confirmed');
+    }
+
+    const klaroObserver = new MutationObserver(() => {
+        const isConfirmed = klaro.getManager().confirmed;
+        const isBannerVisible = body.classList.contains('klaro-visible');
+
+        if (isConfirmed && !isBannerVisible) {
+            btn.style.display = 'block';
+            body.classList.add('klaro-confirmed');
+        } else {
+            btn.style.display = 'none';
+            body.classList.remove('klaro-confirmed');
+        }
+    });
+
+    klaroObserver.observe(body, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+});
+</script>
+
+
+
 
 
 
