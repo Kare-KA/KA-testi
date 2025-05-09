@@ -841,7 +841,7 @@ to create a white background.
   letter-spacing: 2px;            /* Lisää vaakasuuntaista väliä (kirjainten sisällä) */
   line-height: 2.0;               /* Lisää pystysuuntaista tilaa */
   border-radius: 0 10px 10px 0;        /* Pyöristykset oikealle */
-  z-index: 9999;
+  z-index: 500;
   text-align: center;
   text-decoration: none;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
