@@ -861,23 +861,24 @@ body.klaro-confirmed #cookie-settings-button {
   /* Kun Klaro näkyvissä, piilotetaan kieleke */
 }
 
+/*
 #klaro.cookie-modal ~ #cookie-settings-button,
 #klaro .cookie-notice:not(.cookie-modal-notice) ~ #cookie-settings-button {
   display: none !important;
 }
+*/
 
 
 
 
 
-
-
+/*
 /* Piilota painike kun Klaro on näkyvissä */
 #klaro .cookie-notice:not(.cookie-modal-notice) ~ #cookie-settings-button,
 #klaro .cookie-modal ~ #cookie-settings-button {
   display: none !important;
 }
-
+*/
 
 
 
