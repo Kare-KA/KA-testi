@@ -743,21 +743,6 @@ to create a white background.
 
 
 
-/* --- MUOKATTU: Keskitetään painikkeet paremmin kun linkki on siirretty niiden ylöpuolelle --- */
-.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok {
-  margin-top: -0.5em;
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  justify-content: space-between; /* nyt jakaa "Lue lisää" vasemmalle, muut oikealle */
-  align-items: center;
-  gap: 1em;
-  width: 100%;
-}
-
-
-
-
 
 
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok a,
@@ -852,18 +837,6 @@ body.klaro-visible #cookie-settings-button {
 
 
 
-
-
-
-
-/* Tasaus: Lue lisää vasemmalle, Hyväksy ja Hylkää oikealle */
-.klaro .cookie-notice .cn-ok {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1em;
-}
-
 /* "Lue lisää" linkin muotoilu painikkeeksi */
 .klaro .cookie-notice .cn-learn-more {
   order: -1;
@@ -899,4 +872,18 @@ body.klaro-visible #cookie-settings-button {
 .klaro .cookie-notice .cn-ok::before {
   content: '';
   flex: 1;
+}
+
+
+
+
+
+.klaro .cookie-notice .cn-ok {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  margin-top: -0.5em;
 }
