@@ -22,13 +22,17 @@
 window.addEventListener('klaro-ready', function () {
   const btn = document.getElementById('cookie-settings-button');
 
-  function updateButton() {
-    if (klaro.getManager().confirmed) {
-      btn.style.display = 'block';
-    } else {
-      btn.style.display = 'none';
-    }
+function updateButton() {
+  const body = document.body;
+  if (klaro.getManager().confirmed) {
+    btn.style.display = 'block';
+    body.classList.add('klaro-confirmed');
+  } else {
+    btn.style.display = 'none';
+    body.classList.remove('klaro-confirmed');
   }
+}
+
 
   document.addEventListener('klaro-ui-hidden', updateButton);
   document.addEventListener('klaro-ui-visible', () => btn.style.display = 'none');
