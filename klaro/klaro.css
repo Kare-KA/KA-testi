@@ -862,7 +862,6 @@ body.klaro-visible #cookie-settings-button {
   text-align: center;
   margin-right: 0;
   flex-shrink: 0;
-  min-height: 2.5em;        /* Tuo visuaalista tasapainoa */
   display: inline-flex;     /* Varmistaa keskityksen */
   align-items: center;      /* Teksti pystysuunnassa keskelle */
 }
