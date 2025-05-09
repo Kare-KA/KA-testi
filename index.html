@@ -18,12 +18,10 @@
 
 
 
-<script>
 function toggleCookieSettingsButton() {
     const btn = document.getElementById('cookie-settings-button');
     const body = document.body;
 
-    // Jos Klaro on näkyvissä, älä näytä kielekettä
     const klaroVisible = document.querySelector('#klaro .cookie-notice, #klaro .cookie-modal');
     const isVisible = klaroVisible && window.getComputedStyle(klaroVisible).display !== 'none';
 
@@ -36,13 +34,12 @@ function toggleCookieSettingsButton() {
     }
 }
 
-// Odota että DOM on valmis ja Klaro ladattu
 window.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('klaro-ui-hidden', toggleCookieSettingsButton);
     document.addEventListener('klaro-ui-visible', toggleCookieSettingsButton);
-    setTimeout(toggleCookieSettingsButton, 1000); // Tarkistus hetken päästä ladauksen jälkeen
+    toggleCookieSettingsButton(); // Tarkistus heti alussa
 });
-</script>
+
 
 
 
