@@ -636,7 +636,7 @@ to create a white background.
   max-width: 100%;
   background-color: #fef4c0;
   z-index: 1000;
-  padding: 1em;
+  padding: 1em 1em 0 1em; /* ⬅️ Ei alatyhjää tilaa */
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column; /* estää keskittämisen vaakasuunnassa */
@@ -682,6 +682,11 @@ to create a white background.
     border-radius: 0;
   }
 }
+
+
+
+
+
 .klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded {
   position: relative;
   height: inherit;
@@ -920,4 +925,5 @@ body.klaro-visible #cookie-settings-button {
   flex-direction: column;
   justify-content: flex-end; /* Työntää painikkeet alas */
   flex-grow: 1;              /* Laajenee käytettävään tilaan */
+  height: 100%;
 }
