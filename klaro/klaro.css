@@ -849,20 +849,29 @@ body.klaro-visible #cookie-settings-button {
 /* "Lue lisää" linkin muotoilu painikkeeksi */
 .klaro .cookie-notice .cn-learn-more {
   order: -1;
-  padding: 0.5em 2em;
+  padding: 0.5em 2.0em;
   background-color: #2581c4;
   color: white;
   text-decoration: none;
   border: none;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: 1.2em;
   cursor: pointer;
   display: inline-block;
   min-width: 150px;
   text-align: center;
   margin-right: 0;
   flex-shrink: 0;
+  min-height: 2.5em;        /* Tuo visuaalista tasapainoa */
+  display: inline-flex;     /* Varmistaa keskityksen */
+  align-items: center;      /* Teksti pystysuunnassa keskelle */
 }
+
+
+
+
+
+
 
 /* Hover-efekti "Lue lisää" painikkeelle */
 .klaro .cookie-notice .cn-learn-more:hover {
