@@ -879,6 +879,7 @@ body.klaro-visible #cookie-settings-button {
   display: inline-block;
   min-width: 150px;
   text-align: center;
+  margin-right: auto;
 }
 
 /* Hover-efekti "Lue lisää" painikkeelle */
