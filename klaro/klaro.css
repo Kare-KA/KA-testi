@@ -872,8 +872,9 @@ body.klaro-confirmed #cookie-settings-button {
 
 
 
-/*
+
 /* Piilota painike kun Klaro on näkyvissä */
+/*
 #klaro .cookie-notice:not(.cookie-modal-notice) ~ #cookie-settings-button,
 #klaro .cookie-modal ~ #cookie-settings-button {
   display: none !important;
