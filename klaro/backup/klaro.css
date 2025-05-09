@@ -308,6 +308,11 @@ to create a white background.
   margin-right: 0.5em;
   vertical-align: middle;
 }
+
+
+
+
+/* --- MUOKATTU: Säädetään painikkeiden uudet koot --- */
 .klaro .cookie-modal .cm-btn,
 .klaro .context-notice .cm-btn,
 .klaro .cookie-notice .cm-btn {
@@ -317,13 +322,18 @@ to create a white background.
   background-color: var(--dark2, #5c5c5c);
   border-radius: 4px;
   border-radius: var(--border-radius, 4px);
-  padding: 6px 10px;
+  padding: 0.5em 2.0em;
   margin-right: 0.5em;
   border-style: none;
-  padding: 0.4em;
-  font-size: 1em;
+
+  font-size: 1.2em;
   cursor: pointer;
+  min-width: 150px;
 }
+
+
+
+
 .klaro .cookie-modal .cm-btn:disabled,
 .klaro .context-notice .cm-btn:disabled,
 .klaro .cookie-notice .cm-btn:disabled {
@@ -608,40 +618,75 @@ to create a white background.
   padding-left: 0.2em;
   font-size: 0.8em;
 }
+
+
+
+
+
+
+/* --- MUOKATTU: Muutetaan evästekysely banneriksi alareunaan --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) {
-  background-color: #333;
-  background-color: var(--dark1, #333);
-  z-index: 999;
   position: fixed;
-  width: 100%;
   bottom: 0;
+  left: 0;
   right: 0;
+  top: auto;
+  width: 100%;
+  height: 180px;
+  max-width: 100%;
+  background-color: #fef4c0;
+  z-index: 1000;
+  padding: 1em 1em 0 1em; /* ⬅️ Ei alatyhjää tilaa */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* estää keskittämisen vaakasuunnassa */
+  align-items: stretch;   /* venyttää täyteen leveyteen */
+  border-radius: 0;
 }
+
+
+
+
+
+
+
+/* --- MUOKATTU: Muutetaan evästekysely banneriksi alareunaan myös minimileveys 1024px koossa --- */
 @media (min-width: 1024px) {
   .klaro .cookie-notice:not(.cookie-modal-notice) {
-    border-radius: 4px;
-    border-radius: var(--border-radius, 4px);
     position: fixed;
-    position: var(--notice-position, fixed);
-    right: 20px;
-    right: var(--notice-right, 20px);
-    left: auto;
-    left: var(--notice-left, auto);
-    bottom: 20px;
-    bottom: var(--notice-bottom, 20px);
+    bottom: 0;
+    left: 0;
+    right: 0;
     top: auto;
-    top: var(--notice-top, auto);
-    max-width: 400px;
-    max-width: var(--notice-max-width, 400px);
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 5px 5px 10px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    height: 180px;
+    max-width: 100%;
+    background-color: #fef4c0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* estää keskittämisen vaakasuunnassa */
+    align-items: stretch;   /* venyttää täyteen leveyteen */
+    border-radius: 0;
   }
 }
+
+
+
+
+
+
+
 @media (max-width: 1023px) {
   .klaro .cookie-notice:not(.cookie-modal-notice) {
     border-style: none;
     border-radius: 0;
   }
 }
+
+
+
+
+
 .klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded {
   position: relative;
   height: inherit;
@@ -654,6 +699,11 @@ to create a white background.
 .klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded .cn-body {
   padding-top: 0.5em;
 }
+
+
+
+
+/* --- MUOKATTU: Linkin siirtäminen painikkeiden vasemmalta niiden yläpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body {
   margin-bottom: 0;
   margin-right: 0;
@@ -661,16 +711,31 @@ to create a white background.
   padding: 1em;
   padding-top: 0;
 }
+
+
+
+
+
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p {
   margin-bottom: 0.5em;
 }
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p.cn-changes {
   text-decoration: underline;
 }
+
+
+
+/* --- MUOKATTU: Linkin siirtäminen painikkeiden vasemmalta niiden yläpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
-  display: inline-block;
-  flex-grow: 1;
+  /* display: none;  */
+  /* display: inline-block; */
+  /* flex-grow: 1; */
 }
+
+
+
+
+
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons {
   display: inline-block;
   margin-top: -0.5em;
@@ -688,18 +753,17 @@ to create a white background.
     width: calc(50% - 0.5em);
   }
 }
-.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok {
-  margin-top: -0.5em;
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  justify-content: right;
-  align-items: baseline;
-}
-.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok a,
-.klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-ok div {
-  margin-top: 0.5em;
-}
+
+
+
+
+
+
+
+
+
+
+
 .klaro .cookie-modal-notice {
   background-color: #333;
   background-color: var(--dark1, #333);
@@ -737,4 +801,131 @@ to create a white background.
 }
 .klaro .cookie-notice-hidden {
   display: none !important;
+}
+
+
+
+
+
+
+/* --- MUOKKAUKSET: Fonttiperhe ja -koko --- */
+
+.klaro {
+  --font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  --font-size: 17px;
+}
+
+
+
+#cookie-settings-button {
+  display: block;
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  writing-mode: vertical-lr;         /* Teksti ylhäältä alas */
+  background-color: #00594F;
+  color: white;
+  padding: 12px 6px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;            /* Lisää vaakasuuntaista väliä (kirjainten sisällä) */
+  line-height: 2.0;               /* Lisää pystysuuntaista tilaa */
+  border-radius: 0 10px 10px 0;        /* Pyöristykset oikealle */
+  z-index: 500;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+
+
+body.klaro-visible #cookie-settings-button {
+  pointer-events: none;
+  opacity: 0.6; /* Halutessasi visuaalinen himmennys */
+}
+
+
+
+
+
+
+
+
+/* "Lue lisää" linkin muotoilu painikkeeksi */
+.klaro .cookie-notice .cn-learn-more {
+  order: -1;
+  padding: 0.5em 2.0em;
+  background-color: #2581c4;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2em;
+  cursor: pointer;
+  display: inline-block;
+  min-width: 150px;
+  text-align: center;
+  justify-content: space-evenly;
+  margin-right: 0;
+  flex-shrink: 0;
+  display: inline-flex;     /* Varmistaa keskityksen */
+  align-items: center;      /* Teksti pystysuunnassa keskelle */
+}
+
+
+
+
+
+
+
+/* Hover-efekti "Lue lisää" painikkeelle */
+.klaro .cookie-notice .cn-learn-more:hover {
+  opacity: 0.9;
+}
+
+/* Hyväksy ja Hylkää oikealle */
+.klaro .cookie-notice .cn-ok .cm-btn {
+  margin-left: auto;
+}
+
+
+
+
+
+.klaro .cookie-notice .cn-ok::before {
+  content: '';
+  flex: 1;
+}
+
+
+
+
+
+.klaro .cookie-notice .cn-ok {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  flex: 1;
+  max-width: 100%;
+  align-content: flex-end;
+
+  margin-top: auto;
+  margin-bottom: 0.0em;
+}
+
+
+
+
+
+.klaro .cookie-notice .cn-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Työntää painikkeet alas */
+  flex-grow: 1;              /* Laajenee käytettävään tilaan */
+  height: 100%;
+  overflow: hidden;          /* Estää ylimääräisen kasvun */
 }
