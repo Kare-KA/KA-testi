@@ -849,46 +849,31 @@ to create a white background.
 
 
 
+#cookie-settings-button {
+  display: none;
+}
 
 
-/* Leijuva "Evästeasetukset" -nappi näkyviin */
+
+/* Näytä nappi, jos suostumus on annettu */
 body.klaro-confirmed #cookie-settings-button {
   display: block;
 }
 
-#klaro.cookie-modal,
-#klaro .cookie-notice:not(.cookie-modal-notice) {
-  /* Kun Klaro näkyvissä, piilotetaan kieleke */
-}
 
-/*
-#klaro.cookie-modal ~ #cookie-settings-button,
-#klaro .cookie-notice:not(.cookie-modal-notice) ~ #cookie-settings-button {
+/* Piilota nappi, jos Klaro-banneri tai -modaali on näkyvissä */
+body.klaro-visible #cookie-settings-button {
   display: none !important;
 }
-*/
 
 
-
-
-
-
-/* Piilota painike kun Klaro on näkyvissä */
-/*
-#klaro .cookie-notice:not(.cookie-modal-notice) ~ #cookie-settings-button,
-#klaro .cookie-modal ~ #cookie-settings-button {
-  display: none !important;
-}
-*/
-
-
-
-/* --- LISÄYS: Mahdollista kielekkeen käyttö bannerin päällä ilman, että estetään painikkeiden käyttö --- */
 
 /* Estetään taustaelementin blokkaava vaikutus */
 .klaro .cookie-notice {
   pointer-events: none;
 }
+
+
 
 /* Sallitut klikkialueet säilyvät käyttökelpoisina */
 .klaro .cookie-notice .cm-buttons,
@@ -901,22 +886,10 @@ body.klaro-confirmed #cookie-settings-button {
 }
 
 
-/* Näytä nappi, jos suostumus on annettu */
-body.klaro-confirmed #cookie-settings-button {
-  display: block;
-}
-
-/* Piilota nappi, jos Klaro-banneri tai -modaali on näkyvissä */
-body.klaro-visible #cookie-settings-button {
-  display: none !important;
-}
 
 
 
-#cookie-settings-button {
-  display: none;
-}
 
-body.klaro-confirmed #cookie-settings-button {
-  display: block;
-}
+
+
+
