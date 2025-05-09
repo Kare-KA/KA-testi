@@ -27,23 +27,33 @@ window.addEventListener('DOMContentLoaded', function () {
     const btn = document.getElementById('cookie-settings-button');
     const body = document.body;
 
-    // Viiveellä suostumuksen jälkeen
+    function showButtonIfConsentGivenAndBannerGone() {
+        const isConfirmed = klaro.getManager().confirmed;
+        const banner = document.querySelector('.cookie-notice:not(.cookie-modal-notice)');
+        const modal = document.querySelector('.cookie-modal');
+        const isVisible =
+            (banner && banner.offsetParent !== null) ||
+            (modal && modal.offsetParent !== null);
+
+        if (isConfirmed && !isVisible) {
+            btn.style.display = 'block';
+            body.classList.add('klaro-confirmed');
+        }
+    }
+
+    // 1. Suoraan jos suostumus on jo olemassa ja UI ei näy
+    setTimeout(showButtonIfConsentGivenAndBannerGone, 200);
+
+    // 2. Kun suostumus annetaan, odota ja tarkista
     document.addEventListener('klaro-consent-confirmed', function () {
-        setTimeout(() => {
-            if (klaro.getManager().confirmed) {
-                btn.style.display = 'block';
-                body.classList.add('klaro-confirmed');
-            }
-        }, 300);
+        setTimeout(showButtonIfConsentGivenAndBannerGone, 400);
     });
 
-    // Suoraan jos suostumus on jo tallennettu
-    if (klaro.getManager().confirmed) {
-        btn.style.display = 'block';
-        body.classList.add('klaro-confirmed');
-    }
+    // 3. Kun Klaron UI katoaa
+    document.addEventListener('klaro-ui-hidden', showButtonIfConsentGivenAndBannerGone);
 });
 </script>
+
 
 
 
