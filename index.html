@@ -23,23 +23,39 @@ window.addEventListener('klaro-ready', function () {
     const btn = document.getElementById('cookie-settings-button');
     const body = document.body;
 
-    function updateButton() {
-        const isConfirmed = klaro.getManager().confirmed;
-        if (isConfirmed) {
-            btn.style.display = 'block';
-            body.classList.add('klaro-confirmed');
+    // Watcher-olio
+    const watcher = {
+        update(manager, type, data) {
+            if (type === 'consents' || type === 'applyConsents') {
+                const isConfirmed = manager.confirmed;
+
+                // Tarkista että UI ei ole näkyvissä
+                const banner = document.querySelector('.cookie-notice:not(.cookie-modal-notice)');
+                const modal = document.querySelector('.cookie-modal');
+
+                const isVisible = (banner && banner.offsetParent !== null) || 
+                                  (modal && modal.offsetParent !== null);
+
+                if (isConfirmed && !isVisible) {
+                    btn.style.display = 'block';
+                    body.classList.add('klaro-confirmed');
+                } else {
+                    btn.style.display = 'none';
+                    body.classList.remove('klaro-confirmed');
+                }
+            }
         }
-    }
+    };
 
-    // Ajetaan vain kun UI (banneri tai modaali) sulkeutuu
-    document.addEventListener('klaro-ui-hidden', updateButton);
+    klaro.getManager().watch(watcher);
 
-    // Tarkistus myös heti sivun latauksessa, jos suostumus on jo tallennettu
+    // Tarkistus heti alussa, jos suostumus on jo tallennettu
     if (klaro.getManager().confirmed) {
-        updateButton();
+        watcher.update(klaro.getManager(), 'consents');
     }
 });
 </script>
+
 
 
 
