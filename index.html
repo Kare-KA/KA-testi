@@ -17,6 +17,7 @@
 <!-- End Klaro -->	
 
 
+
 <script>
 function toggleCookieSettingsButton() {
     const btn = document.getElementById('cookie-settings-button');
@@ -35,9 +36,18 @@ function toggleCookieSettingsButton() {
 }
 
 window.addEventListener('DOMContentLoaded', function () {
+    // Tarkista alussa
+    toggleCookieSettingsButton();
+
+    // Kun banneri tai modaali katoaa
     document.addEventListener('klaro-ui-hidden', toggleCookieSettingsButton);
     document.addEventListener('klaro-ui-visible', toggleCookieSettingsButton);
-    toggleCookieSettingsButton(); // Tarkistus heti alussa
+
+    // Kun käyttäjä tekee valinnan → Klaro tallentaa suostumuksen
+    document.addEventListener('klaro-consent-confirmed', function () {
+        // Odota hetki, että DOM ehtii päivittyä
+        setTimeout(toggleCookieSettingsButton, 200);
+    });
 });
 </script>
 
