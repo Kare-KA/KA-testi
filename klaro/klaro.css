@@ -859,7 +859,6 @@ body.klaro-visible #cookie-settings-button {
 /* Tasaus: Lue lisää vasemmalle, Hyväksy ja Hylkää oikealle */
 .klaro .cookie-notice .cn-ok {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   gap: 1em;
@@ -879,7 +878,8 @@ body.klaro-visible #cookie-settings-button {
   display: inline-block;
   min-width: 150px;
   text-align: center;
-  margin-right: auto;
+  margin-right: 0;
+  flex-shrink: 0;
 }
 
 /* Hover-efekti "Lue lisää" painikkeelle */
@@ -890,4 +890,13 @@ body.klaro-visible #cookie-settings-button {
 /* Hyväksy ja Hylkää oikealle */
 .klaro .cookie-notice .cn-ok .cm-btn {
   margin-left: auto;
+}
+
+
+
+
+
+.klaro .cookie-notice .cn-ok::before {
+  content: '';
+  flex: 1;
 }
