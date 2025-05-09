@@ -914,3 +914,10 @@ body.klaro-visible #cookie-settings-button {
 
 
 
+
+.klaro .cookie-notice .cn-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Työntää painikkeet alas */
+  flex-grow: 1;              /* Laajenee käytettävään tilaan */
+}
