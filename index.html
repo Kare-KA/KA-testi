@@ -23,36 +23,24 @@ window.addEventListener('klaro-ready', function () {
     const btn = document.getElementById('cookie-settings-button');
     const body = document.body;
 
-    // Varmistaa että Klaro on ladattu ja btn löytyy
-    if (!btn || typeof klaro.getManager !== 'function') return;
-
     function updateButton() {
         const isConfirmed = klaro.getManager().confirmed;
-        const isBannerVisible = document.querySelector('.cookie-notice:not(.cookie-modal-notice)')?.offsetParent !== null;
-        const isModalVisible = document.querySelector('.cookie-modal')?.offsetParent !== null;
-
-        const klaroVisible = isBannerVisible || isModalVisible;
-
-        if (isConfirmed && !klaroVisible) {
+        if (isConfirmed) {
             btn.style.display = 'block';
             body.classList.add('klaro-confirmed');
-        } else {
-            btn.style.display = 'none';
-            body.classList.remove('klaro-confirmed');
         }
     }
 
-    // 1. Tarkistus heti alussa
-    updateButton();
-
-    // 2. Tapahtumat jotka vaikuttavat näkyvyyteen
+    // Ajetaan vain kun UI (banneri tai modaali) sulkeutuu
     document.addEventListener('klaro-ui-hidden', updateButton);
-    document.addEventListener('klaro-ui-visible', updateButton);
-    document.addEventListener('klaro-consent-confirmed', function () {
-        setTimeout(updateButton, 250); // odota että UI katoaa
-    });
+
+    // Tarkistus myös heti sivun latauksessa, jos suostumus on jo tallennettu
+    if (klaro.getManager().confirmed) {
+        updateButton();
+    }
 });
 </script>
+
 
 
 
