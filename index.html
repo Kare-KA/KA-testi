@@ -19,37 +19,37 @@
 
 
 <script>
-function toggleCookieSettingsButton() {
+window.addEventListener('klaro-ready', function () {
     const btn = document.getElementById('cookie-settings-button');
     const body = document.body;
 
-    const klaroVisible = document.querySelector('#klaro .cookie-notice, #klaro .cookie-modal');
-    const isVisible = klaroVisible && window.getComputedStyle(klaroVisible).display !== 'none';
+    function toggleCookieSettingsButton() {
+        const klaroVisible = document.querySelector('#klaro .cookie-notice, #klaro .cookie-modal');
+        const isVisible = klaroVisible && window.getComputedStyle(klaroVisible).display !== 'none';
 
-    if (klaro.getManager().confirmed && !isVisible) {
-        btn.style.display = 'block';
-        body.classList.add('klaro-confirmed');
-    } else {
-        btn.style.display = 'none';
-        body.classList.remove('klaro-confirmed');
+        if (klaro.getManager().confirmed && !isVisible) {
+            btn.style.display = 'block';
+            body.classList.add('klaro-confirmed');
+        } else {
+            btn.style.display = 'none';
+            body.classList.remove('klaro-confirmed');
+        }
     }
-}
 
-window.addEventListener('DOMContentLoaded', function () {
-    // Tarkista alussa
+    // 1. Tarkista heti kun Klaro on valmis
     toggleCookieSettingsButton();
 
-    // Kun banneri tai modaali katoaa
+    // 2. Kun UI piilotetaan, tarkista uudelleen
     document.addEventListener('klaro-ui-hidden', toggleCookieSettingsButton);
     document.addEventListener('klaro-ui-visible', toggleCookieSettingsButton);
 
-    // Kun käyttäjä tekee valinnan → Klaro tallentaa suostumuksen
+    // 3. Kun käyttäjä antaa suostumuksen (Hyväksy/Hylkää)
     document.addEventListener('klaro-consent-confirmed', function () {
-        // Odota hetki, että DOM ehtii päivittyä
         setTimeout(toggleCookieSettingsButton, 200);
     });
 });
 </script>
+
 
 
 
