@@ -926,4 +926,5 @@ body.klaro-visible #cookie-settings-button {
   justify-content: flex-end; /* Työntää painikkeet alas */
   flex-grow: 1;              /* Laajenee käytettävään tilaan */
   height: 100%;
+  overflow: hidden;          /* Estää ylimääräisen kasvun */
 }
