@@ -360,8 +360,8 @@ to create a white background.
 .klaro .cookie-modal .cm-btn.cm-btn-info,
 .klaro .context-notice .cm-btn.cm-btn-info,
 .klaro .cookie-notice .cm-btn.cm-btn-info {
-  background-color: #2581c4;
-  background-color: var(--blue1, #2581c4);
+  background-color: #004976;
+  background-color: var(--blue1, #004976);
 }
 .klaro .context-notice {
   border-radius: 4px;
@@ -856,7 +856,7 @@ body.klaro-visible #cookie-settings-button {
 .klaro .cookie-notice .cn-learn-more {
   order: -1;
   padding: 0.5em 2.0em;
-  background-color: #2581c4;
+  background-color: #004976;
   color: white;
   text-decoration: none;
   border: none;
