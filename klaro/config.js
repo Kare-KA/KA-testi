@@ -242,26 +242,47 @@ var klaroConfig = {
         },
     },
 
+
+
+
+
+
+
+
     // This is a list of third-party services that Klaro will manage for you.
     services: [
+//        {
+//            name: 'twitter',
+//            default: false,
+//            contextualConsentOnly: true,
+//            purposes: ['marketing'],
+//        },
+//        {
+//            name: 'youtube',
+//            default: true,
+//            purposes: ['marketing'],
+//        },
+
+
+
+
         {
-            name: 'twitter',
-            default: false,
-            contextualConsentOnly: true,
-            purposes: ['marketing'],
-        },
-        {
-            name: 'youtube',
+            name: 'keksitesti',
+			title: 'Keksitesti',
             default: true,
             purposes: ['marketing'],
+			cookies: ['Suklaakeksi'],
         },
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
         {
             // Each service should have a unique (and short) name.
             name: 'matomo',
@@ -338,6 +359,7 @@ var klaroConfig = {
 		
 
         // The services will appear in the modal in the same order as defined here.
+/*
         {
             name: 'inlineTracker',
             title: 'Inline Tracker',
@@ -345,45 +367,36 @@ var klaroConfig = {
             cookies: ['inline-tracker'],
             optOut: false,
         },
+
+
+
         {
             name: 'externalTracker',
             title: 'External Tracker',
             purposes: ['analytics', 'security'],
             cookies: ['external-tracker'],
         },
+*/
+
+
         {
-            name: 'intercom',
-            title: 'Intercom',
+            name: 'livechat',
+            title: 'Livechat',
             default: true,
             purposes: ['livechat'],
         },
-        {
-            name: 'mouseflow',
-            title: 'Mouseflow',
-            purposes: ['analytics'],
-        },
-        {
-            name: 'adsense',
-            // if you omit the title here Klaro will try to look it up in the
-            // translations
-            //title: 'Google AdSense',
-            purposes: ['advertising'],
-        },
-        {
-            name: 'camera',
-            title: 'Surveillance Camera',
-            purposes: ['security'],
-        },
+
+
 /*        {
             name: 'googleFonts',
             title: 'Google Fonts',
             purposes: ['styling'],
-        },*/
-        {
-            name: 'cloudflare',
-            title: 'Cloudflare',
-            purposes: ['security'],
-            required: true,
         },
+*/
+
+
+
+
+
     ],
 };
