@@ -87,14 +87,14 @@ to create a white background.
 .klaro .cookie-modal .cm-list-input:checked + .cm-list-label .slider,
 .klaro .context-notice .cm-list-input:checked + .cm-list-label .slider,
 .klaro .cookie-notice .cm-list-input:checked + .cm-list-label .slider {
-  background-color: #1a936f;
-  background-color: var(--green1, #1a936f);
+  background-color: #00594F;
+  background-color: var(--green1, #00594F);
 }
 .klaro .cookie-modal .cm-list-input.half-checked:checked + .cm-list-label .slider,
 .klaro .context-notice .cm-list-input.half-checked:checked + .cm-list-label .slider,
 .klaro .cookie-notice .cm-list-input.half-checked:checked + .cm-list-label .slider {
-  background-color: #1a936f;
-  background-color: var(--green1, #1a936f);
+  background-color: #00594F;
+  background-color: var(--green1, #00594F);
   opacity: 0.6;
 }
 .klaro .cookie-modal .cm-list-input.half-checked:checked + .cm-list-label .slider::before,
@@ -235,8 +235,8 @@ to create a white background.
 .klaro .cookie-modal a,
 .klaro .context-notice a,
 .klaro .cookie-notice a {
-  color: #1a936f;
-  color: var(--green1, #1a936f);
+  color: #00594F;
+  color: var(--green1, #00594F);
   text-decoration: none;
 }
 .klaro .cookie-modal p,
@@ -318,8 +318,8 @@ to create a white background.
 .klaro .cookie-notice .cm-btn {
   color: #fff;
   color: var(--button-text-color, #fff);
-  background-color: #5c5c5c;
-  background-color: var(--dark2, #5c5c5c);
+  background-color: #888B8D;
+  background-color: var(--dark2, #888B8D);
   border-radius: 4px;
   border-radius: var(--border-radius, 4px);
   padding: 0.5em 2.0em;
@@ -348,8 +348,8 @@ to create a white background.
 .klaro .cookie-modal .cm-btn.cm-btn-success,
 .klaro .context-notice .cm-btn.cm-btn-success,
 .klaro .cookie-notice .cm-btn.cm-btn-success {
-  background-color: #1a936f;
-  background-color: var(--green1, #1a936f);
+  background-color: #00594F;
+  background-color: var(--green1, #00594F);
 }
 .klaro .cookie-modal .cm-btn.cm-btn-success-var,
 .klaro .context-notice .cm-btn.cm-btn-success-var,
@@ -385,8 +385,8 @@ to create a white background.
 .klaro .context-notice.cm-dark {
   background-color: #333;
   background-color: var(--dark1, #333);
-  border-color: #5c5c5c;
-  border-color: var(--dark2, #5c5c5c);
+  border-color: #888B8D;
+  border-color: var(--dark2, #888B8D);
 }
 .klaro .context-notice.cm-dark p {
   color: #fafafa;
@@ -486,8 +486,8 @@ to create a white background.
   stroke: var(--light1, #fafafa);
 }
 .klaro .cookie-modal .cm-modal .cm-footer {
-  border-top-color: #5c5c5c;
-  border-top-color: var(--dark2, #5c5c5c);
+  border-top-color: #888B8D;
+  border-top-color: var(--dark2, #888B8D);
   border-top-width: 1px;
   border-top-width: var(--border-width, 1px);
   border-top-style: solid;
@@ -506,16 +506,16 @@ to create a white background.
   padding-right: 8px;
 }
 .klaro .cookie-modal .cm-modal .cm-footer .cm-powered-by a {
-  color: #5c5c5c;
-  color: var(--dark2, #5c5c5c);
+  color: #888B8D;
+  color: var(--dark2, #888B8D);
 }
 .klaro .cookie-modal .cm-modal .cm-header {
   border-bottom-width: 1px;
   border-bottom-width: var(--border-width, 1px);
   border-bottom-style: solid;
   border-bottom-style: var(--border-style, solid);
-  border-bottom-color: #5c5c5c;
-  border-bottom-color: var(--dark2, #5c5c5c);
+  border-bottom-color: #888B8D;
+  border-bottom-color: var(--dark2, #888B8D);
   padding: 1em;
   padding-right: 24px;
 }
@@ -595,8 +595,8 @@ to create a white background.
   border-top-width: var(--border-width, 1px);
   border-top-style: solid;
   border-top-style: var(--border-style, solid);
-  border-top-color: #5c5c5c;
-  border-top-color: var(--dark2, #5c5c5c);
+  border-top-color: #888B8D;
+  border-top-color: var(--dark2, #888B8D);
   padding-top: 1em;
 }
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service span.cm-list-title,
@@ -613,8 +613,8 @@ to create a white background.
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-service span.cm-required,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-opt-out,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-required {
-  color: #5c5c5c;
-  color: var(--dark2, #5c5c5c);
+  color: #888B8D;
+  color: var(--dark2, #888B8D);
   padding-left: 0.2em;
   font-size: 0.8em;
 }
