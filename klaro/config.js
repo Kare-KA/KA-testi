@@ -376,7 +376,7 @@ var klaroConfig = {
             purposes: ['analytics', 'security'],
             cookies: ['external-tracker'],
         },
-*/
+
 
 
         {
@@ -385,6 +385,9 @@ var klaroConfig = {
             default: true,
             purposes: ['livechat'],
         },
+*/
+
+
 
 
 /*        {
