@@ -285,7 +285,7 @@ fi: {
         {
             name: 'keksitesti',
 			title: 'Keksitesti',
-            default: true,
+            default: false,
             purposes: ['marketing'],
 			cookies: ['Suklaakeksi'],
         },
