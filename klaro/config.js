@@ -251,17 +251,26 @@ var klaroConfig = {
 
     // This is a list of third-party services that Klaro will manage for you.
     services: [
-//        {
-//            name: 'twitter',
-//            default: false,
-//            contextualConsentOnly: true,
-//            purposes: ['marketing'],
-//        },
-//        {
-//            name: 'youtube',
-//            default: true,
-//            purposes: ['marketing'],
-//        },
+
+
+/*
+        {
+            name: 'twitter',
+            default: false,
+            contextualConsentOnly: true,
+            purposes: ['marketing'],
+        },
+*/
+
+
+
+        {
+			name: 'youtube',
+			title: 'YouTube',
+			purposes: ['marketing'],
+			contextualConsentOnly: true,
+			default: false
+        },
 
 
 
