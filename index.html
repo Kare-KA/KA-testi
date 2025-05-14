@@ -166,26 +166,39 @@ document.getElementById('trackingButton').addEventListener('click', function() {
   <h1>Videotesti suostumuksella</h1>
 
   <div id="yt-placeholder">
-    <button onclick="näytäYouTube()">Näytä video</button>
+    <p>Tässä näkyy video, jos olet antanut suostumuksen YouTube-evästeisiin.</p>
   </div>
 
   <script>
     function näytäYouTube() {
-      if (typeof klaro !== 'undefined' && klaro.getConsent('youtube')) {
-        const yt = document.createElement('iframe');
-        yt.src = "https://www.youtube.com/embed/r_JFHawECzY?si=yTmJlHYBaLKqvd64";
-        yt.width = "560";
-        yt.height = "315";
-        yt.allowFullscreen = true;
-        yt.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-        yt.referrerPolicy = "strict-origin-when-cross-origin";
-        yt.frameBorder = "0";
-        document.getElementById('yt-placeholder').innerHTML = '';
-        document.getElementById('yt-placeholder').appendChild(yt);
-      } else {
-        alert("Et ole antanut suostumusta YouTube-evästeisiin.");
-      }
+      const el = document.getElementById('yt-placeholder');
+      if (!el) return;
+      el.innerHTML = '';
+      const yt = document.createElement('iframe');
+      yt.src = "https://www.youtube.com/embed/r_JFHawECzY?si=yTmJlHYBaLKqvd64";
+      yt.width = "560";
+      yt.height = "315";
+      yt.title = "YouTube video player";
+      yt.frameBorder = "0";
+      yt.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      yt.referrerPolicy = "strict-origin-when-cross-origin";
+      yt.allowFullscreen = true;
+      el.appendChild(yt);
     }
+
+    // Näytä video heti, jos suostumus on jo voimassa
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof klaro !== 'undefined' && klaro.getConsent && klaro.getConsent('youtube') === true) {
+        näytäYouTube();
+      }
+    });
+
+    // Näytä video kun suostumus annetaan
+    document.addEventListener('klaro-consent-changed', function(event) {
+      if (event.detail && event.detail.service === 'youtube' && event.detail.consents.youtube === true) {
+        näytäYouTube();
+      }
+    });
   </script>
 
 
