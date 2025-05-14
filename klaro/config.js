@@ -145,7 +145,7 @@ fi: {
     },
 
     contextualConsent: {
-        description: 'Näyttääksesi tämän sisällön sinun on hyväksyttävä evästeet.',
+        description: 'Nähdäksesi tämän sisällön sinun on hyväksyttävä evästeet.',
         acceptOnce: 'Hyväksy vain tällä kertaa',
         acceptAlways: 'Hyväksy aina',
     }
@@ -203,6 +203,11 @@ fi: {
                 styling: 'Styling',
             },
         },
+
+
+
+
+
         en: {
             consentModal: {
                 title: '<u>test</u>',
