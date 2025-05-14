@@ -183,9 +183,9 @@ document.getElementById('trackingButton').addEventListener('click', function() {
 
 
 <script>
-document.addEventListener('klaro-consent-changed', function(event) {
-  // tarkistetaan että kyse on YouTubesta ja suostumus on annettu
-  if (event.detail && event.detail.service === 'youtube' && event.detail.consents.youtube === true) {
+// Tarkistus heti sivun latautuessa (ei vain tapahtumana)
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof klaro !== 'undefined' && klaro.getConsent && klaro.getConsent('youtube') === true) {
     const container = document.querySelector('.klaro[data-name="youtube"]');
 
     if (container && !container.querySelector('iframe')) {
@@ -204,6 +204,7 @@ document.addEventListener('klaro-consent-changed', function(event) {
     }
   }
 });
+
 </script>
 
 
