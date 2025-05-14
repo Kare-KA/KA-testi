@@ -275,7 +275,7 @@ fi: {
 			name: 'youtube',
 			title: 'YouTube',
 			purposes: ['marketing'],
-			contextualConsentOnly: true,
+			contextualConsentOnly: false,
 			default: false
         },
 
