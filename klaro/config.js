@@ -124,25 +124,32 @@ var klaroConfig = {
 
 
 
+fi: {
+    privacyPolicyUrl: '/#privacy',
 
-    fi: {
-        privacyPolicyUrl: '/#privacy',
-		
-        consentNotice: {
-            description: 'Sivustomme käyttää evästeitä parantaakseen käyttökokemusta.'
-        },
-		
-		consentNotice: {
-			learnMore: 'Evästeasetukset',
-		},
-		
-        consentModal: {
-            description: 'Tässä voit valita, mihin evästeisiin suostut.'
-        },
-        acceptAll: 'Hyväksy kaikki',
-        acceptSelected: 'Hyväksy valitut',
-        decline: 'Hylkää'
-	},
+    consentNotice: {
+        description: 'Sivustomme käyttää evästeitä parantaakseen käyttökokemusta.',
+        learnMore: 'Evästeasetukset',
+    },
+
+    consentModal: {
+        description: 'Tässä voit valita, mihin evästeisiin suostut.'
+    },
+
+    acceptAll: 'Hyväksy kaikki',
+    acceptSelected: 'Hyväksy valitut',
+    decline: 'Hylkää',
+
+    purposes: {
+        marketing: 'Markkinointi',
+    },
+
+    contextualConsent: {
+        description: 'Näyttääksesi tämän sisällön sinun on hyväksyttävä evästeet.',
+        acceptOnce: 'Hyväksy vain tällä kertaa',
+        acceptAlways: 'Hyväksy aina',
+    }
+},
 
 
 
