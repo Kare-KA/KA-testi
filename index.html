@@ -165,36 +165,49 @@ document.getElementById('trackingButton').addEventListener('click', function() {
 
   <h1>Videotesti suostumuksella</h1>
 
-  <div id="yt-placeholder">
-    <p>Tässä näkyy video, jos olet antanut suostumuksen YouTube-evästeisiin.</p>
+  <div
+    class="klaro"
+    data-name="youtube"
+    data-type="youtube"
+    data-src="https://www.youtube.com/embed/r_JFHawECzY?si=yTmJlHYBaLKqvd64"
+    data-width="560"
+    data-height="315"
+    data-title="YouTube video player"
+    data-frameborder="0"
+    data-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    data-referrerpolicy="strict-origin-when-cross-origin"
+    data-allowfullscreen="true"
+  >
+    <p>Katsoaksesi tämän videon sinun on sallittava YouTube-evästeet.</p>
   </div>
 
   <script>
-    function näytäYouTube() {
-      const el = document.getElementById('yt-placeholder');
-      if (!el) return;
-      el.innerHTML = '';
-      const yt = document.createElement('iframe');
-      yt.src = "https://www.youtube.com/embed/r_JFHawECzY?si=yTmJlHYBaLKqvd64";
-      yt.width = "560";
-      yt.height = "315";
-      yt.title = "YouTube video player";
-      yt.frameBorder = "0";
-      yt.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-      yt.referrerPolicy = "strict-origin-when-cross-origin";
-      yt.allowFullscreen = true;
-      el.appendChild(yt);
+    function lisääYouTubeIframe() {
+      const container = document.querySelector('.klaro[data-name="youtube"]');
+      if (container && !container.querySelector('iframe')) {
+        const iframe = document.createElement('iframe');
+        iframe.src = container.getAttribute('data-src');
+        iframe.width = container.getAttribute('data-width');
+        iframe.height = container.getAttribute('data-height');
+        iframe.title = container.getAttribute('data-title');
+        iframe.frameBorder = container.getAttribute('data-frameborder');
+        iframe.allow = container.getAttribute('data-allow');
+        iframe.referrerPolicy = container.getAttribute('data-referrerpolicy');
+        iframe.allowFullscreen = container.getAttribute('data-allowfullscreen') === 'true';
+        container.innerHTML = '';
+        container.appendChild(iframe);
+      }
     }
 
     klaro.whenConsentsReady().then(() => {
       if (klaro.getConsent('youtube')) {
-        näytäYouTube();
+        lisääYouTubeIframe();
       }
     });
 
     document.addEventListener('klaro-consent-changed', function(event) {
       if (event.detail && event.detail.service === 'youtube' && event.detail.consents.youtube === true) {
-        näytäYouTube();
+        lisääYouTubeIframe();
       }
     });
   </script>
