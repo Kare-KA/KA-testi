@@ -161,19 +161,29 @@ document.getElementById('trackingButton').addEventListener('click', function() {
 <p>
 
 
-<div
-  class="klaro"
-  data-name="youtube"
-  data-type="youtube"
-  data-src="https://www.youtube.com/embed/r_JFHawECzY?si=yTmJlHYBaLKqvd64"
-  data-width="560"
-  data-height="315"
-  data-title="YouTube video player"
-  data-frameborder="0"
-  data-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  data-referrerpolicy="strict-origin-when-cross-origin"
-  data-allowfullscreen="true"
->
+<script>
+document.addEventListener('klaro-consent-changed', function(event) {
+  // tarkistetaan että kyse on YouTubesta ja suostumus on annettu
+  if (event.detail && event.detail.service === 'youtube' && event.detail.consents.youtube === true) {
+    const container = document.querySelector('.klaro[data-name="youtube"]');
+
+    if (container && !container.querySelector('iframe')) {
+      const iframe = document.createElement('iframe');
+      iframe.src = container.getAttribute('data-src');
+      iframe.width = container.getAttribute('data-width') || '560';
+      iframe.height = container.getAttribute('data-height') || '315';
+      iframe.title = container.getAttribute('data-title') || 'YouTube video player';
+      iframe.frameBorder = container.getAttribute('data-frameborder') || '0';
+      iframe.allow = container.getAttribute('data-allow');
+      iframe.referrerPolicy = container.getAttribute('data-referrerpolicy');
+      iframe.allowFullscreen = container.getAttribute('data-allowfullscreen') === 'true';
+
+      container.innerHTML = '';
+      container.appendChild(iframe);
+    }
+  }
+});
+</script>
 
 
 
