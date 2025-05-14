@@ -124,20 +124,30 @@ End Alkuperäinen Matomo seurantakoodi -->
 
 
 
-<!-- Asetetaan eväste -->
+<!-- Asetetaan Suklaakeksi session storageen, local storageen ja keksinä -->
 <script type="text/plain" data-type="text/javascript" data-name="keksitesti">
-// Määritykset ylläolevassa Klaroa varten
-
-
 
 function setCookie() {
     event.preventDefault();
     var cookieValue = document.getElementById('cookieValue').value;
+
+    // Eväste
     var d = new Date();
     d.setTime(d.getTime() + (7*24*60*60*1000)); // 7 päivää
     var expires = "expires=" + d.toUTCString();
     document.cookie = "Suklaakeksi=" + cookieValue + ";" + expires + ";path=/;SameSite=Lax";
-    document.getElementById('cookieDisplay').innerHTML = "Tallennettu eväste: " + getCookie("Suklaakeksi");
+
+    // localStorage
+    localStorage.setItem("Suklaakeksi", cookieValue);
+
+    // sessionStorage
+    sessionStorage.setItem("Suklaakeksi", cookieValue);
+
+    document.getElementById('cookieDisplay').innerHTML =
+        "Tallennettu:<br>" +
+        "Eväste: " + getCookie("Suklaakeksi") + "<br>" +
+        "localStorage: " + localStorage.getItem("Suklaakeksi") + "<br>" +
+        "sessionStorage: " + sessionStorage.getItem("Suklaakeksi");
 }
 
 function getCookie(name) {
@@ -151,6 +161,7 @@ function getCookie(name) {
     return null;
 }
 </script>
+
 
 
 
