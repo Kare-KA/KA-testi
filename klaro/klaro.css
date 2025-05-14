@@ -413,7 +413,7 @@ to create a white background.
 }
 .klaro .context-notice p.ccn-description-empty-store {
   margin-top: 24px;
-  font-size: 14px;
+  font-size: 20px;
   font-size: var(--font-size, 14px);
 }
 .klaro .cookie-modal {
