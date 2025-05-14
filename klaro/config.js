@@ -282,13 +282,21 @@ fi: {
 
 
 
-        {
-            name: 'keksitesti',
+		{
+			name: 'keksitesti',
 			title: 'Keksitesti',
-            default: false,
-            purposes: ['marketing'],
+			purposes: ['marketing'],
 			cookies: ['Suklaakeksi'],
-        },
+			default: false,
+
+			callback: function(consent, service) {
+			if (!consent) {
+			// Poista localStorage ja sessionStorage, jos suostumus perutaan
+			localStorage.removeItem("Suklaakeksi");
+			sessionStorage.removeItem("Suklaakeksi");
+		}
+	}
+},
 
 
 
