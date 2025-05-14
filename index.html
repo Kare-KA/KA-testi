@@ -95,8 +95,10 @@ End Alkuperäinen Matomo seurantakoodi -->
 <body>
 
 <h1>Tällä sivulla testataan kävijäseurantaa ja evästekyselyä.</h1>
-<h2>Consent Management Platform (CMP) hoitaa evästekyselyn ja Matomo kävijäseurannan.</h2>
+<h2>Klaro hoitaa evästekyselyn ja Matomo kävijäseurannan.</h2>
 
+
+<h3>Testataan miten Matomo hallitsee evästeen kirjoittamista</h3>
 <!-- Lomake evästeen arvon asettamiseen -->
 <form onsubmit="setCookie()">
     <label for="cookieValue">Anna evästeen arvo:</label>
@@ -105,6 +107,9 @@ End Alkuperäinen Matomo seurantakoodi -->
 </form>
 
 <p id="cookieDisplay"></p>
+
+
+
 
 
 
@@ -135,10 +140,11 @@ function getCookie(name) {
 
 
 
+
+
+<h3>Testi kuinka Klaro seuraa napin painamista</h3>
 <!-- Matomon seurannan painike -->
 <button id="trackingButton">Paina minua</button>
-
-
 
 <script>
 // Matomon tapahtumaseuranta
@@ -155,15 +161,13 @@ document.getElementById('trackingButton').addEventListener('click', function() {
 <p>
 <p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/r_JFHawECzY?si=yTmJlHYBaLKqvd64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-<p>
-<p>
 
 
 
 
-  <h1>Videotesti suostumuksella</h1>
+
+
+<h3>Testi kuinka Klaro hallitsee Youtube-upotukset</h3>
 
 <iframe
     width="560"
