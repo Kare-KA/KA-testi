@@ -25,8 +25,8 @@ to create a white background.
 .klaro {
   font-family: inherit;
   font-family: var(--font-family, inherit);
-  font-size: 14px;
-  font-size: var(--font-size, 14px);
+  font-size: 20px;
+  font-size: var(--font-size, 20px);
 }
 .klaro button {
   font-family: inherit;
@@ -322,11 +322,11 @@ to create a white background.
   background-color: var(--dark2, #888B8D);
   border-radius: 4px;
   border-radius: var(--border-radius, 4px);
-  padding: 0.5em 2.0em;
+  padding: 0.5em 1.0em;
   margin-right: 0.5em;
   border-style: none;
   margin-top: 0.5em;
-  font-size: 1.2em;
+  font-size: 1.1em;
   cursor: pointer;
   min-width: 150px;
 }
@@ -413,7 +413,7 @@ to create a white background.
 }
 .klaro .context-notice p.ccn-description-empty-store {
   margin-top: 24px;
-  font-size: 20px;
+  font-size: 14px;
   font-size: var(--font-size, 14px);
 }
 .klaro .cookie-modal {
@@ -855,13 +855,13 @@ body.klaro-visible #cookie-settings-button {
 /* "Lue lisää" linkin muotoilu painikkeeksi */
 .klaro .cookie-notice .cn-learn-more {
   order: -1;
-  padding: 0.5em 2.0em;
+  padding: 0.5em 1.0em;
   background-color: #004976;
   color: white;
   text-decoration: none;
   border: none;
   border-radius: 4px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   cursor: pointer;
   display: inline-block;
   min-width: 150px;
