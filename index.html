@@ -17,12 +17,20 @@
 
 
 
-<!-- Klaro Consent Manager -->
+<!-- LADATAAN ENSIN TYYLITIEDOSTO -->
 <link rel="stylesheet" href="klaro/klaro.css" />
-<script src="klaro/klaro-no-css.js" data-config="klaroConfig"></script>
+
+<!-- LADATAAN ENSIN KONFIGURAATIO -->
 <script src="klaro/config.js"></script>
 
-<!-- End Klaro -->	
+<!-- LADATAAN SITTEN KLARO KIRJASTO -->
+<script src="klaro/klaro-no-css.js"></script>
+
+<!-- KÄYNNISTETÄÄN KLARO MANUAALISESTI, JOTTA SE TOIMII MYÖS iOS-WEBKIT-SELAIMISSA -->
+<script>
+  klaro.start(klaroConfig);
+</script>
+
 
 
 
