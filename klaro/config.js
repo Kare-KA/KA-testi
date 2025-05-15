@@ -301,6 +301,18 @@ fi: {
 
 
 
+		{
+			name: 'valttamaton',
+			title: 'Välttämätön',
+			purposes: ['necessary'],
+			default: true,
+			required: true,
+			cookies: ['Välttämätön'] // evästeen nimi, jonka skripti asettaa
+		}
+
+
+
+
 
 
 
