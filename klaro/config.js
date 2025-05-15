@@ -151,7 +151,7 @@ fi: {
         description: 'Nähdäksesi tämän sisällön sinun on hyväksyttävä kolmannen osapuolen evästeet.',
         acceptOnce: 'Hyväksy vain tällä kertaa',
         acceptAlways: 'Hyväksy aina',
-    }
+    },
 },
 
 
