@@ -346,7 +346,9 @@ var klaroConfig = {
 
             // The purpose(s) of this service. Will be listed on the consent notice.
             // Do not forget to add translations for all purposes you list here.
-//            purposes: ['optional'],
+/*
+			purposes: ['optional'],
+*/
 
             // A list of regex expressions or strings giving the names of
             // cookies set by this service. If the user withdraws consent for a
