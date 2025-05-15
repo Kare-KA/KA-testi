@@ -141,7 +141,8 @@ fi: {
     decline: 'Hylkää',
 
     purposes: {
-        marketing: 'Markkinointi',
+        necessary: 'Välttämättömät',
+		optional: 'Ei-välttämättömät',
     },
 
     contextualConsent: {
@@ -196,11 +197,8 @@ fi: {
                 description: 'Web-Schriftarten von Google gehostet',
             },
             purposes: {
-                analytics: 'Besucher-Statistiken',
-                security: 'Sicherheit',
-                livechat: 'Live Chat',
-                advertising: 'Anzeigen von Werbung',
-                styling: 'Styling',
+			necessary: 'Välttämättömät saksaksi',
+			optional: 'Ei-välttämättömät saksaksi',
             },
         },
 
@@ -279,7 +277,7 @@ fi: {
         {
 			name: 'youtube',
 			title: 'YouTube',
-			purposes: ['marketing'],
+			purposes: ['optional'],
 			contextualConsentOnly: false,
 			default: false
         },
@@ -290,7 +288,7 @@ fi: {
 		{
 			name: 'keksitesti',
 			title: 'Keksitesti',
-			purposes: ['marketing'],
+			purposes: ['optional'],
 			cookies: ['Suklaakeksi'],
 			default: false,
 
@@ -327,7 +325,7 @@ fi: {
 
             // The purpose(s) of this service. Will be listed on the consent notice.
             // Do not forget to add translations for all purposes you list here.
-            purposes: ['analytics'],
+            purposes: ['optional'],
 
             // A list of regex expressions or strings giving the names of
             // cookies set by this service. If the user withdraws consent for a
