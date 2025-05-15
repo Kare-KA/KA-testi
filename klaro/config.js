@@ -123,7 +123,7 @@ var klaroConfig = {
         // translationsed defined under the 'zz' language code act as default
         // translations.
         zz: {
-            privacyPolicyUrl: '/#privacy',
+
         },
 		
 
@@ -132,7 +132,6 @@ var klaroConfig = {
 
 
 		fi: {
-			privacyPolicyUrl: '/#privacy',
 
 			consentNotice: {
 				description: 'Sivustomme käyttää evästeitä parantaakseen käyttökokemusta.',
@@ -144,15 +143,22 @@ var klaroConfig = {
 			},
 
 			acceptAll: 'Hyväksy kaikki',
-			acceptSelected: 'Hyväksy valitut',
-			decline: 'Hylkää',
+				acceptSelected: 'Hyväksy valitut',
+				decline: 'Hylkää',
 
 /*
 			purposes: {
-      		  necessary: 'Välttämättömät',
+				necessary: 'Välttämättömät',
 				optional: 'Ei-välttämättömät',
    		 },
 */
+
+			privacyPolicy: {
+				text: 'Tietosuojaseloste',
+				url: 'https://kansallisarkisto.fi/tietosuoja'
+			}
+
+
 
 			contextualConsent: {
 				description: 'Nähdäksesi tämän sisällön sinun on hyväksyttävä kolmannen osapuolen evästeet.',
@@ -170,7 +176,7 @@ var klaroConfig = {
         // If you erase the "consentModal" translations, Klaro will use the
         // bundled translations.
         de: {
-            privacyPolicyUrl: '/#datenschutz',
+
             consentModal: {
                 description:
                     'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
