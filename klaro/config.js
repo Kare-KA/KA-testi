@@ -128,7 +128,7 @@ fi: {
     privacyPolicyUrl: '/#privacy',
 
     consentNotice: {
-        description: 'Sivustomme käyttää evästeitä parantaakseen käyttökokemusta. äasdkf äöalsk däöasldk äaösldfk öaäsdlfk äöasldk föälasdk fäöaslkd fäölaskdf äölaskd fäölaksd äölaskd fäöalskd fäöalskd äöasldk fäaösld fk',
+        description: 'Sivustomme käyttää evästeitä parantaakseen käyttökokemusta.',
         learnMore: 'Evästeasetukset',
     },
 
