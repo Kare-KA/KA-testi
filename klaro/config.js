@@ -142,10 +142,10 @@ fi: {
     acceptSelected: 'Hyväksy valitut',
     decline: 'Hylkää',
 
-    purposes: {
+//    purposes: {
 //        necessary: 'Välttämättömät',
-		optional: 'Ei-välttämättömät',
-    },
+//		optional: 'Ei-välttämättömät',
+//    },
 
     contextualConsent: {
         description: 'Nähdäksesi tämän sisällön sinun on hyväksyttävä kolmannen osapuolen evästeet.',
@@ -198,10 +198,10 @@ fi: {
             googleFonts: {
                 description: 'Web-Schriftarten von Google gehostet',
             },
-            purposes: {
+//            purposes: {
 //			necessary: 'Välttämättömät saksaksi',
-			optional: 'Ei-välttämättömät saksaksi',
-            },
+//			optional: 'Ei-välttämättömät saksaksi',
+//            },
         },
 
 
@@ -244,10 +244,10 @@ fi: {
             googleFonts: {
                 description: 'Web fonts hosted by Google',
             },
-            purposes: {
+//            purposes: {
 //			necessary: 'Välttämättömät enkuksi',
-			optional: 'Ei-välttämättömät enkuksi',
-            },
+//			optional: 'Ei-välttämättömät enkuksi',
+//            },
         },
     },
 
@@ -276,7 +276,7 @@ fi: {
         {
 			name: 'youtube',
 			title: 'YouTube',
-			purposes: ['optional'],
+//			purposes: ['optional'],
 			contextualConsentOnly: false,
 			default: false
         },
@@ -287,7 +287,7 @@ fi: {
 		{
 			name: 'keksitesti',
 			title: 'Keksitesti',
-			purposes: ['optional'],
+//			purposes: ['optional'],
 			cookies: ['Suklaakeksi'],
 			default: false,
 
@@ -306,7 +306,7 @@ fi: {
 		{
 			name: 'valttamaton',
 			title: 'Välttämätön',
-			purposes: [], // koska välttämättömät ei ole modaalissa mukana, ei sitä mainita tässä
+//			purposes: [necessary], // koska välttämättömät ei ole modaalissa mukana, ei sitä mainita tässä
 			default: true,
 			required: true,
 			cookies: ['Välttämätön'] // evästeen nimi, jonka skripti asettaa
@@ -336,7 +336,7 @@ fi: {
 
             // The purpose(s) of this service. Will be listed on the consent notice.
             // Do not forget to add translations for all purposes you list here.
-            purposes: ['optional'],
+//            purposes: ['optional'],
 
             // A list of regex expressions or strings giving the names of
             // cookies set by this service. If the user withdraws consent for a
