@@ -156,7 +156,7 @@ var klaroConfig = {
 			privacyPolicy: {
 				text: 'Tietosuojaseloste',
 				url: 'https://kansallisarkisto.fi/tietosuoja'
-			}
+			},
 
 
 
