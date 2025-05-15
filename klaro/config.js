@@ -40,8 +40,9 @@ var klaroConfig = {
     // You can group services by their purpose in the modal. This is advisable
     // if you have a large number of services. Users can then enable or disable
     // entire groups of services instead of having to enable or disable every service.
+/*
     groupByPurpose: true,
-
+*/
     // You can make the consent notice autofocused by enabling the following option
     autoFocus: false,
 
