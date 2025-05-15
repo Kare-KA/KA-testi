@@ -124,6 +124,8 @@ var klaroConfig = {
 
 
 
+
+
 fi: {
     privacyPolicyUrl: '/#privacy',
 
@@ -141,7 +143,7 @@ fi: {
     decline: 'Hylkää',
 
     purposes: {
-        necessary: 'Välttämättömät',
+//        necessary: 'Välttämättömät',
 		optional: 'Ei-välttämättömät',
     },
 
@@ -197,7 +199,7 @@ fi: {
                 description: 'Web-Schriftarten von Google gehostet',
             },
             purposes: {
-			necessary: 'Välttämättömät saksaksi',
+//			necessary: 'Välttämättömät saksaksi',
 			optional: 'Ei-välttämättömät saksaksi',
             },
         },
@@ -243,7 +245,7 @@ fi: {
                 description: 'Web fonts hosted by Google',
             },
             purposes: {
-			necessary: 'Välttämättömät enkuksi',
+//			necessary: 'Välttämättömät enkuksi',
 			optional: 'Ei-välttämättömät enkuksi',
             },
         },
@@ -304,7 +306,7 @@ fi: {
 		{
 			name: 'valttamaton',
 			title: 'Välttämätön',
-			purposes: ['necessary'],
+			purposes: [], // koska välttämättömät ei ole modaalissa mukana, ei sitä mainita tässä
 			default: true,
 			required: true,
 			cookies: ['Välttämätön'] // evästeen nimi, jonka skripti asettaa
