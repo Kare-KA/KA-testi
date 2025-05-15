@@ -139,7 +139,8 @@ var klaroConfig = {
 			},
 
 			consentModal: {
-				description: 'Tässä voit valita, mihin evästeisiin suostut. <br> <a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Tietosuojaseloste</a> <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Evästeet</a>'
+				title: 'Valitse haluamasi evästeet'
+				description: '<a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Tietosuojaseloste</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Tietoa evästeistä</a>'
 			},
 
 			acceptAll: 'Hyväksy kaikki',
