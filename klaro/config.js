@@ -139,7 +139,7 @@ var klaroConfig = {
 			},
 
 			consentModal: {
-				description: 'Tässä voit valita, mihin evästeisiin suostut.'
+				description: 'Tässä voit valita, mihin evästeisiin suostut. <a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Tietosuojaseloste</a>'
 			},
 
 			acceptAll: 'Hyväksy kaikki',
@@ -152,12 +152,12 @@ var klaroConfig = {
 				optional: 'Ei-välttämättömät',
    		 },
 */
-
+/*
 			privacyPolicy: {
 				text: 'Tietosuojaseloste',
 				url: 'https://kansallisarkisto.fi/tietosuoja'
 			},
-
+*/
 
 
 			contextualConsent: {
