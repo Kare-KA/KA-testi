@@ -308,7 +308,7 @@ fi: {
 			default: true,
 			required: true,
 			cookies: ['Välttämätön'] // evästeen nimi, jonka skripti asettaa
-		}
+		},
 
 
 
