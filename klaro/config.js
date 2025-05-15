@@ -114,6 +114,10 @@ var klaroConfig = {
 
     // Example config that shows how to overwrite translations:
     // https://github.com/KIProtect/klaro/blob/master/src/configs/i18n.js
+
+
+
+
     translations: {
         // translationsed defined under the 'zz' language code act as default
         // translations.
@@ -126,33 +130,35 @@ var klaroConfig = {
 
 
 
-fi: {
-    privacyPolicyUrl: '/#privacy',
+		fi: {
+			privacyPolicyUrl: '/#privacy',
 
-    consentNotice: {
-        description: 'Sivustomme käyttää evästeitä parantaakseen käyttökokemusta.',
-        learnMore: 'Evästeasetukset',
-    },
+			consentNotice: {
+				description: 'Sivustomme käyttää evästeitä parantaakseen käyttökokemusta.',
+				learnMore: 'Evästeasetukset',
+			},
 
-    consentModal: {
-        description: 'Tässä voit valita, mihin evästeisiin suostut.'
-    },
+			consentModal: {
+				description: 'Tässä voit valita, mihin evästeisiin suostut.'
+			},
 
-    acceptAll: 'Hyväksy kaikki',
-    acceptSelected: 'Hyväksy valitut',
-    decline: 'Hylkää',
+			acceptAll: 'Hyväksy kaikki',
+			acceptSelected: 'Hyväksy valitut',
+			decline: 'Hylkää',
 
-//    purposes: {
-//        necessary: 'Välttämättömät',
-//		optional: 'Ei-välttämättömät',
-//    },
+/*
+			purposes: {
+      		  necessary: 'Välttämättömät',
+				optional: 'Ei-välttämättömät',
+   		 },
+*/
 
-    contextualConsent: {
-        description: 'Nähdäksesi tämän sisällön sinun on hyväksyttävä kolmannen osapuolen evästeet.',
-        acceptOnce: 'Hyväksy vain tällä kertaa',
-        acceptAlways: 'Hyväksy aina',
-    },
-},
+			contextualConsent: {
+				description: 'Nähdäksesi tämän sisällön sinun on hyväksyttävä kolmannen osapuolen evästeet.',
+				acceptOnce: 'Hyväksy vain tällä kertaa',
+				acceptAlways: 'Hyväksy aina',
+			},
+		},
 
 
 
@@ -198,10 +204,12 @@ fi: {
             googleFonts: {
                 description: 'Web-Schriftarten von Google gehostet',
             },
-//            purposes: {
-//			necessary: 'Välttämättömät saksaksi',
-//			optional: 'Ei-välttämättömät saksaksi',
-//            },
+/*
+			purposes: {
+			necessary: 'Välttämättömät saksaksi',
+			optional: 'Ei-välttämättömät saksaksi',
+            },
+*/
         },
 
 
@@ -244,10 +252,12 @@ fi: {
             googleFonts: {
                 description: 'Web fonts hosted by Google',
             },
-//            purposes: {
-//			necessary: 'Välttämättömät enkuksi',
-//			optional: 'Ei-välttämättömät enkuksi',
-//            },
+/*
+			purposes: {
+			necessary: 'Välttämättömät enkuksi',
+			optional: 'Ei-välttämättömät enkuksi',
+            },
+*/
         },
     },
 
@@ -276,7 +286,7 @@ fi: {
         {
 			name: 'youtube',
 			title: 'YouTube',
-//			purposes: ['optional'],
+/*			purposes: ['optional'], */
 			contextualConsentOnly: false,
 			default: false
         },
@@ -287,7 +297,7 @@ fi: {
 		{
 			name: 'keksitesti',
 			title: 'Keksitesti',
-//			purposes: ['optional'],
+/*			purposes: ['optional'], */
 			cookies: ['Suklaakeksi'],
 			default: false,
 
@@ -306,7 +316,7 @@ fi: {
 		{
 			name: 'valttamaton',
 			title: 'Välttämätön',
-//			purposes: [necessary], // koska välttämättömät ei ole modaalissa mukana, ei sitä mainita tässä
+/*			purposes: [necessary], */
 			default: true,
 			required: true,
 			cookies: ['Välttämätön'] // evästeen nimi, jonka skripti asettaa
