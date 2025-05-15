@@ -111,6 +111,22 @@ End Alkuperäinen Matomo seurantakoodi -->
 
 <body>
 
+
+
+
+<script>
+// Luo automaattisesti välttämätön eväste
+(function() {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000)); // 1 vuoden säilytys
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = "Välttämätön=true;" + expires + ";path=/;SameSite=Lax";
+})();
+</script>
+
+
+
+
 <h1>Tällä sivulla testataan kävijäseurantaa ja evästekyselyä.</h1>
 <h2>Klaro hoitaa evästekyselyn ja Matomo kävijäseurannan.</h2>
 

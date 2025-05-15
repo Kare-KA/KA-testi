@@ -243,11 +243,8 @@ fi: {
                 description: 'Web fonts hosted by Google',
             },
             purposes: {
-                analytics: 'Analytics',
-                security: 'Security',
-                livechat: 'Livechat',
-                advertising: 'Advertising',
-                styling: 'Styling',
+			necessary: 'Välttämättömät enkuksi',
+			optional: 'Ei-välttämättömät enkuksi',
             },
         },
     },
