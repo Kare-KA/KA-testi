@@ -390,8 +390,10 @@ var klaroConfig = {
                 
                 if(consent==true){
                     _paq.push(['rememberCookieConsentGiven']);
+					_paq.push(['trackEvent', 'Evästeet', 'Suostumus', service.name]);
                 } else {
                     _paq.push(['forgetCookieConsentGiven']);
+					_paq.push(['trackEvent', 'Evästeet', 'Kieltäytyminen', service.name]);
                 }
                 
             },
