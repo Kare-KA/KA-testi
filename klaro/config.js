@@ -212,7 +212,16 @@ var klaroConfig = {
 			matomo: {
 				title: 'Matomo (besöksanalys)',
 				description: 'Samlar in anonym statistik om webbplatsens användning.',
+				
 			},
+
+			keksitesti: {
+				title: 'Kaktest',
+				description: 'Sparar en utsökt chokladkaka.',
+			},
+
+
+
 		},
 	},
 
