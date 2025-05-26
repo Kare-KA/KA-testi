@@ -134,7 +134,7 @@ var klaroConfig = {
 		fi: {
 
 			consentNotice: {
-				description: 'Tämä sivusto käyttää evästeitä. Välttämättömät evästeet ovat käytössä aina. Valitsemalla "Hyväksy" annat luvan myös ei-välttämättömien evästeiden käyttöön. Valitsemalla "Hylkää" käytämme vain välttämättömiä evästeitä. Valitsemalla "Evästeasetukset" voit valita yksityiskohtaisemmin, mitä evästeitä otat käyttöön.',
+				description: 'Tämä sivusto käyttää evästeitä. Välttämättömät evästeet ovat käytössä aina. Valitsemalla "Hyväksy" annat luvan myös ei-välttämättömien evästeiden käyttöön. Valitsemalla "Hylkää" käytämme vain välttämättömiä evästeitä. Valitsemalla "Evästeasetukset" voit valita yksityiskohtaisemmin, mitä evästeitä otat käyttöön. Lue lisää: <a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Tietosuojaseloste</a> ja <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Tietoa evästeistä</a>.',
 				learnMore: 'Evästeasetukset',
 			},
 
