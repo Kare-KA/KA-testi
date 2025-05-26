@@ -136,12 +136,12 @@ var klaroConfig = {
 			consentNotice: {
 				description: 'Tämä sivusto käyttää evästeitä. Valitsemalla "Hylkää" käytämme vain sivuston toiminnan kannalta välttämättömiä evästeitä. Valitsemalla "Hyväksy" annat luvan myös ei-välttämättömien evästeiden käyttöön. Valitsemalla "Evästeasetukset" voit valita yksityiskohtaisemmin, mitä evästeitä otat käyttöön. Lue lisää: <a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Tietosuojaseloste</a> ja <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Tietoa evästeistä</a>.',
 				learnMore: 'Evästeasetukset',
-			},
+				},
 
 			consentModal: {
 				title: 'Valitse haluamasi evästeet',
 				description: '<a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Tietosuojaseloste</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Tietoa evästeistä</a>',
-			},
+				},
 
 			acceptAll: 'Hyväksy kaikki',
 				acceptSelected: 'Hyväksy valitut',
@@ -151,14 +151,14 @@ var klaroConfig = {
 			purposes: {
 				necessary: 'Välttämättömät',
 				optional: 'Ei-välttämättömät',
-   		 },
+				},
 */
 /*
 			privacyPolicy: {
 				text: 'Tietosuojaseloste',
 				url: 'https://kansallisarkisto.fi/tietosuoja'
-			},
-*/
+				},
+	*/
 
 
 			contextualConsent: {
@@ -166,109 +166,43 @@ var klaroConfig = {
 				acceptOnce: 'Hyväksy vain tällä kertaa',
 				acceptAlways: 'Hyväksy aina',
 				descriptionEmptyStore: 'Nähdäksesi tämän sisällön sinun on hyväksyttävä kolmannen osapuolen evästeet.',
+				},
+
+
+			matomo: {
+				title: 'Matomo (kävijäseuranta)',
+				description: 'Kerää anonyymeja kävijätilastoja.',
+				},
+			},
+
+		sv: {
+			consentNotice: {
+				description: 'Denna webbplats använder cookies. Genom att välja "Neka" använder vi endast cookies som är nödvändiga för att webbplatsen ska fungera. Genom att välja "Godkänn" ger du samtycke till användningen av även icke-nödvändiga cookies. Genom att välja "Cookie-inställningar" kan du mer detaljerat välja vilka cookies du vill tillåta. Läs mer: <a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> och <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Om cookies</a>.',
+				learnMore: 'Cookie-inställningar',
+			},
+
+			consentModal: {
+				title: 'Välj vilka cookies du vill tillåta',
+				description: '<a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Om cookies</a>',
+			},
+
+			acceptAll: 'Godkänn alla',
+				acceptSelected: 'Godkänn valda',
+				decline: 'Neka',
+
+			contextualConsent: {
+				description: 'För att se detta innehåll måste du godkänna tredjepartscookies.',
+				acceptOnce: 'Godkänn endast denna gång',
+				acceptAlways: 'Godkänn alltid',
+				descriptionEmptyStore: 'För att se detta innehåll måste du godkänna tredjepartscookies.',
+			},
+
+			matomo: {
+				title: 'Matomo (besöksanalys)',
+				description: 'Samlar in anonym statistik om webbplatsens användning.',
 			},
 		},
-
-
-
-
-
-
-
-        // If you erase the "consentModal" translations, Klaro will use the
-        // bundled translations.
-        de: {
-
-            consentModal: {
-                description:
-                    'Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln. Einträge die als "Beispiel" gekennzeichnet sind dienen lediglich zu Demonstrationszwecken und werden nicht wirklich verwendet.',
-            },
-            inlineTracker: {
-                description: 'Beispiel für ein Inline-Tracking Skript',
-            },
-            externalTracker: {
-                description: 'Beispiel für ein externes Tracking Skript',
-            },
-            adsense: {
-                description: 'Anzeigen von Werbeanzeigen (Beispiel)',
-                title: 'Google AdSense Werbezeugs',
-            },
-            matomo: {
-                description: 'Sammeln von Besucherstatistiken',
-            },
-            camera: {
-                description:
-                    'Eine Überwachungskamera (nur ein Beispiel zu IMG-Tags)',
-            },
-            cloudflare: {
-                description: 'Schutz gegen DDoS-Angriffe',
-            },
-            intercom: {
-                description:
-                    'Chat Widget & Sammeln von Besucherstatistiken (nur ein Beispiel)',
-            },
-            mouseflow: {
-                description: 'Echtzeit-Benutzeranalyse (nur ein Beispiel)',
-            },
-            googleFonts: {
-                description: 'Web-Schriftarten von Google gehostet',
-            },
-/*
-			purposes: {
-			necessary: 'Välttämättömät saksaksi',
-			optional: 'Ei-välttämättömät saksaksi',
-            },
-*/
-        },
-
-
-
-
-
-        en: {
-            consentModal: {
-                title: '<u>test</u>',
-                description:
-                    'Here you can see and customize the information that we collect about you. Entries marked as "Example" are just for demonstration purposes and are not really used on this website.',
-            },
-            inlineTracker: {
-                description: 'Example of an inline tracking script',
-            },
-            externalTracker: {
-                description: 'Example of an external tracking script',
-            },
-            adsense: {
-                description: 'Displaying of advertisements (just an example)',
-                title: 'Google Adsense Advertisement',
-            },
-            matomo: {
-                description: 'Collecting of visitor statistics',
-            },
-            camera: {
-                description:
-                    'A surveillance camera (just an example for an IMG tag)',
-            },
-            cloudflare: {
-                description: 'Protection against DDoS attacks',
-            },
-            intercom: {
-                description:
-                    'Chat widget & collecting of visitor statistics (just an example)',
-            },
-            mouseflow: {
-                description: 'Real-Time user analytics (just an example)',
-            },
-            googleFonts: {
-                description: 'Web fonts hosted by Google',
-            },
-/*
-			purposes: {
-			necessary: 'Välttämättömät enkuksi',
-			optional: 'Ei-välttämättömät enkuksi',
-            },
-*/
-        },
-    },
+	},
 
 
 
