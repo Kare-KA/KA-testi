@@ -117,7 +117,7 @@ var klaroConfig = {
     // https://github.com/KIProtect/klaro/blob/master/src/configs/i18n.js
 
 
-
+	lang: 'sv', // Pakotetaan kieli
 
     translations: {
         // translationsed defined under the 'zz' language code act as default
