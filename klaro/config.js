@@ -173,6 +173,14 @@ var klaroConfig = {
 				title: 'Matomo (kävijäseuranta)',
 				description: 'Kerää anonyymeja kävijätilastoja.',
 				},
+
+			keksitesti: {
+				title: 'Keksitesti',
+				description: 'Tallentaa herkullisen suklaakeksin.',
+				},
+
+
+
 			},
 
 
