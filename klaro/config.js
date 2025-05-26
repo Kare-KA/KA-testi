@@ -351,7 +351,7 @@ var klaroConfig = {
             default: false,
 
             // The title of your service as listed in the consent modal.
-            title: 'Matomo/Piwik',
+            title: 'Matomo (kävijäseuranta)',
 
             // The purpose(s) of this service. Will be listed on the consent notice.
             // Do not forget to add translations for all purposes you list here.
