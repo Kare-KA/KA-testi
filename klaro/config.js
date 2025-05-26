@@ -175,6 +175,10 @@ var klaroConfig = {
 				},
 			},
 
+
+
+
+
 		sv: {
 			consentNotice: {
 				description: 'Denna webbplats använder cookies. Genom att välja "Neka" använder vi endast cookies som är nödvändiga för att webbplatsen ska fungera. Genom att välja "Godkänn" ger du samtycke till användningen av även icke-nödvändiga cookies. Genom att välja "Cookie-inställningar" kan du mer detaljerat välja vilka cookies du vill tillåta. Läs mer: <a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> och <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Om cookies</a>.',
@@ -285,7 +289,7 @@ var klaroConfig = {
             default: false,
 
             // The title of your service as listed in the consent modal.
-            title: 'Matomo (kävijäseuranta)',
+            // title: 'Matomo (kävijäseuranta)',
 
             // The purpose(s) of this service. Will be listed on the consent notice.
             // Do not forget to add translations for all purposes you list here.
