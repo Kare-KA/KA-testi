@@ -260,7 +260,7 @@ var klaroConfig = {
 
 		{
 			name: 'keksitesti',
-			title: 'Keksitesti',
+
 /*			purposes: ['optional'], */
 			cookies: ['Suklaakeksi'],
 			default: false,
