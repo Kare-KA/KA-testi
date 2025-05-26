@@ -131,7 +131,7 @@ var klaroConfig = {
 
 
 
-		de: {
+		fi: {
 
 			consentNotice: {
 				description: 'Tämä sivusto käyttää evästeitä. Välttämättömät evästeet ovat käytössä aina. Valitsemalla "Hyväksy" annat luvan myös ei-välttämättömien evästeiden käyttöön. Valitsemalla "Hylkää" käytämme vain välttämättömiä evästeitä. Valitsemalla "Evästeasetukset" voit valita yksityiskohtaisemmin, mitä evästeitä otat käyttöön.
@@ -176,7 +176,7 @@ var klaroConfig = {
 
         // If you erase the "consentModal" translations, Klaro will use the
         // bundled translations.
-        fi: {
+        de: {
 
             consentModal: {
                 description:
