@@ -224,9 +224,9 @@ var klaroConfig = {
 			},
 			
 			
-			    purposes: {
-					necessary: 'Nödvändiga',
-					optional: 'Ej nödvändiga', // tai esim. 'Icke nödvändiga'
+			purposes: {
+				necessary: 'Nödvändiga',
+				optional: 'Ej nödvändiga', // tai esim. 'Icke nödvändiga'
 			},
 			
 			
@@ -242,7 +242,7 @@ var klaroConfig = {
 			valttamaton: {
 				title: 'Nödvändiga',
 				description: 'Möjliggör tjänstens grundläggande funktioner (t.ex. sidladdning, informationssäkerhet och sändning av formulär). Dessa cookies behövs alltid och kan inte stängas av.',
-				},			
+			},			
 			
 			
 
