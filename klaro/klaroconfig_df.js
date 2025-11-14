@@ -224,9 +224,18 @@ var klaroConfig = {
 
 			matomo: {
 				title: 'Matomo (besöksanalys)',
-				description: 'Samlar in anonym statistik om webbplatsens användning.',
+				description: 'Samlar in anonym besöksstatistik för att utveckla tjänsten. Vi använder inte uppgifterna för att identifiera enskilda användare.',
 				
 			},
+			
+			
+			
+			valttamaton: {
+				title: 'Välttämätön',
+				description: 'Möjliggör tjänstens grundläggande funktioner (t.ex. sidladdning, informationssäkerhet och sändning av formulär). Dessa cookies behövs alltid och kan inte stängas av.',
+				},			
+			
+			
 
 
 /*
