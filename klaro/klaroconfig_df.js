@@ -284,7 +284,7 @@ var klaroConfig = {
 
 
 
-
+/*
 		{
 			name: 'valttamaton',
 			title: 'Välttämätön',
@@ -293,7 +293,7 @@ var klaroConfig = {
 			required: true,
 			cookies: ['Välttämätön'] // evästeen nimi, jonka skripti asettaa
 		},
-
+*/
 
 
 
