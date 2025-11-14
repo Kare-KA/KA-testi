@@ -158,7 +158,7 @@ var klaroConfig = {
 				text: 'Tietosuojaseloste',
 				url: 'https://kansallisarkisto.fi/tietosuoja'
 				},
-	*/
+*/
 
 
 			contextualConsent: {
@@ -173,12 +173,12 @@ var klaroConfig = {
 				title: 'Matomo (kävijäseuranta)',
 				description: 'Kerää anonyymeja kävijätilastoja.',
 				},
-
+/*
 			keksitesti: {
 				title: 'Keksitesti',
 				description: 'Tallentaa herkullisen suklaakeksin.',
 				},
-
+*/
 
 
 			},
