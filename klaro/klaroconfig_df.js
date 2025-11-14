@@ -231,7 +231,7 @@ var klaroConfig = {
 			
 			
 			valttamaton: {
-				title: 'Välttämättömät',
+				title: 'Nödvändiga',
 				description: 'Möjliggör tjänstens grundläggande funktioner (t.ex. sidladdning, informationssäkerhet och sändning av formulär). Dessa cookies behövs alltid och kan inte stängas av.',
 				},			
 			
