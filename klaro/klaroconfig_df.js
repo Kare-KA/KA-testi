@@ -173,12 +173,12 @@ var klaroConfig = {
 				title: 'Matomo (kävijäseuranta)',
 				description: 'Kerää anonyymeja kävijätilastoja.',
 				},
-/*
+
 			keksitesti: {
 				title: 'Keksitesti',
 				description: 'Tallentaa herkullisen suklaakeksin.',
 				},
-*/
+
 
 
 			},
@@ -257,7 +257,7 @@ var klaroConfig = {
 
 
 
-
+/*
 		{
 			name: 'keksitesti',
 
@@ -272,11 +272,15 @@ var klaroConfig = {
 			sessionStorage.removeItem("Suklaakeksi");
 		}
 	}
+
+
+
 },
+*/
 
 
 
-/*
+
 		{
 			name: 'valttamaton',
 			title: 'Välttämätön',
@@ -285,7 +289,7 @@ var klaroConfig = {
 			required: true,
 			cookies: ['Välttämätön'] // evästeen nimi, jonka skripti asettaa
 		},
- */
+
 
 
 
