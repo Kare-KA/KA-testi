@@ -178,12 +178,12 @@ var klaroConfig = {
 
 
 
-
+/*
 			keksitesti: {
 				title: 'Keksitesti',
 				description: 'Tallentaa herkullisen suklaakeksin.',
 				},
-
+*/
 
 
 			},
@@ -220,11 +220,13 @@ var klaroConfig = {
 				
 			},
 
+
+/*
 			keksitesti: {
 				title: 'Kaktest',
 				description: 'Sparar en utsökt chokladkaka.',
 			},
-
+*/
 
 
 		},
