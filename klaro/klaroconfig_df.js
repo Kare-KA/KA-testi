@@ -171,7 +171,7 @@ var klaroConfig = {
 
 
 			valttamaton: {
-				title: 'Välttämätön',
+				title: 'Välttämättömät',
 				description: 'Mahdollistavat palvelun perustoiminnot (esim. sivun latautuminen, tietoturva ja lomakkeiden lähetys). Näitä evästeitä tarvitaan aina, eikä niitä voi poistaa käytöstä.',
 				},
 
@@ -231,7 +231,7 @@ var klaroConfig = {
 			
 			
 			valttamaton: {
-				title: 'Välttämätön',
+				title: 'Välttämättömät',
 				description: 'Möjliggör tjänstens grundläggande funktioner (t.ex. sidladdning, informationssäkerhet och sändning av formulär). Dessa cookies behövs alltid och kan inte stängas av.',
 				},			
 			
@@ -308,7 +308,7 @@ var klaroConfig = {
 
 		{
 			name: 'valttamaton',
-			title: 'Välttämätön',
+			title: 'Välttämättömät',
 			purposes: ['necessary'],
 			default: true,
 			required: true,
