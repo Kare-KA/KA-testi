@@ -261,7 +261,7 @@ var klaroConfig = {
 		{
 			name: 'keksitesti',
 
-/*			purposes: ['optional'], */
+			purposes: ['optional'],
 			cookies: ['Suklaakeksi'],
 			default: false,
 
@@ -272,9 +272,6 @@ var klaroConfig = {
 			sessionStorage.removeItem("Suklaakeksi");
 		}
 	}
-
-
-
 },
 */
 
