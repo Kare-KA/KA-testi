@@ -210,6 +210,7 @@ var klaroConfig = {
 				title: 'Välj vilka cookies du vill tillåta',
 				description: '<a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Om cookies</a>',
 			},
+			
 
 			acceptAll: 'Godkänn alla',
 				acceptSelected: 'Godkänn valda',
@@ -221,6 +222,14 @@ var klaroConfig = {
 				acceptAlways: 'Godkänn alltid',
 				descriptionEmptyStore: 'För att se detta innehåll måste du godkänna tredjepartscookies.',
 			},
+			
+			
+			    purposes: {
+					necessary: 'Nödvändiga',
+					optional: 'Ej nödvändiga', // tai esim. 'Icke nödvändiga'
+			},
+			
+			
 
 			matomo: {
 				title: 'Matomo (besöksanalys)',
