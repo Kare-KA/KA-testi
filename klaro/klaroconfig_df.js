@@ -147,12 +147,12 @@ var klaroConfig = {
 				acceptSelected: 'Hyväksy valitut',
 				decline: 'Hylkää',
 
-/*
+
 			purposes: {
 				necessary: 'Välttämättömät',
 				optional: 'Ei-välttämättömät',
 				},
-*/
+
 /*
 			privacyPolicy: {
 				text: 'Tietosuojaseloste',
@@ -169,10 +169,15 @@ var klaroConfig = {
 				},
 
 
+
+
 			matomo: {
 				title: 'Matomo (kävijäseuranta)',
 				description: 'Kerää anonyymeja kävijätilastoja.',
 				},
+
+
+
 
 			keksitesti: {
 				title: 'Keksitesti',
