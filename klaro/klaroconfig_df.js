@@ -170,8 +170,7 @@ var klaroConfig = {
 
 
 
-			services: {
-				valttamaton: {
+			valttamaton: {
 				title: 'Välttämätön',
 				description: 'Välttämättömiä evästeitä käytetään, jotta verkkopalvelu toimii teknisesti oikein ja turvallisesti. Näiden avulla pidämme istunnon voimassa, muistamme evästevalintasi ja suojaamme lomakkeita väärinkäytöksiltä. Välttämättömät evästeet eivät sisällä markkinointi- tai kävijäseurantatietoja, eikä niitä voi kytkeä pois päältä.',
 				},
