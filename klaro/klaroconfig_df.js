@@ -170,10 +170,19 @@ var klaroConfig = {
 
 
 
+			services: {
+				valttamaton: {
+				title: 'Välttämätön',
+				description: 'Välttämättömiä evästeitä käytetään, jotta verkkopalvelu toimii teknisesti oikein ja turvallisesti. Näiden avulla pidämme istunnon voimassa, muistamme evästevalintasi ja suojaamme lomakkeita väärinkäytöksiltä. Välttämättömät evästeet eivät sisällä markkinointi- tai kävijäseurantatietoja, eikä niitä voi kytkeä pois päältä.',
+				},
+
+
+
+
 
 			matomo: {
 				title: 'Matomo (kävijäseuranta)',
-				description: 'Kerää anonyymeja kävijätilastoja.',
+				description: 'Kerää anonyymeja kävijätilastoja palvelun kehittämistä varten. Emme käytä tietoja yksittäisten käyttäjien tunnistamiseen.',
 				},
 
 
