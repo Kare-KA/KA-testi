@@ -254,13 +254,17 @@ var klaroConfig = {
 
 
 
+
+/*
         {
 			name: 'youtube',
 			title: 'YouTube',
-/*			purposes: ['optional'], */
+			purposes: ['optional'],
 			contextualConsentOnly: false,
 			default: false
         },
+*/
+
 
 
 
