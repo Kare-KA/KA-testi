@@ -3,7 +3,8 @@
     var cookieTabConfig = {
         position: {
             bottom: '40px',   // etäisyys alareunasta
-            side: 'right'     // <-- TÄMÄ: 'right' = oikea laita, 'left' = vasen
+            side: 'left'      // *** AKTIIVINEN: kieleke VASEMMASSA reunassa
+            // side: 'right'  // *** VAIHTOEHTO: ota tämä käyttöön, jos haluat kielekkeen OIKEAAN reunaan
         },
         texts: {
             fi: {
@@ -28,7 +29,10 @@
     font-family: 'Montserrat', Arial, sans-serif;
     letter-spacing: 1px;
     line-height: 2.0;
-    border-radius: 10px 0 0 10px;     /* Pyöristykset vasemmalle, koska ollaan oikeassa reunassa */
+
+    border-radius: 0 10px 10px 0;     /* *** AKTIIVINEN: pyöristykset OIKEALLE, koska kieleke on VASEMMASSA reunassa */
+    /* border-radius: 10px 0 0 10px;  *** VAIHTOEHTO: pyöristykset VASEMMALLE, kun kieleke on OIKEASSA reunassa */
+
     z-index: 500;
     text-align: center;
     text-decoration: none;
@@ -65,11 +69,11 @@ body.klaro-visible #cookie-settings-button {
 
         // Sijainti (oikea/vasen + alareuna)
         btn.style.bottom = cookieTabConfig.position.bottom;
-        if (cookieTabConfig.position.side === 'right') {
-            btn.style.right = '0';
+        if (cookieTabConfig.position.side === 'right') {   // *** Tämä ehto päättää käytetäänkö oikeaa vai vasenta reunaa
+            btn.style.right = '0';                         // *** Oikea reuna aktiivinen, kun side === 'right'
             btn.style.left = 'auto';
         } else {
-            btn.style.left = '0';
+            btn.style.left = '0';                          // *** Vasen reuna aktiivinen kaikissa muissa tapauksissa
             btn.style.right = 'auto';
         }
 
