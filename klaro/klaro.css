@@ -891,7 +891,11 @@ body.klaro-visible #cookie-settings-button {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin-left: 0;
+=======
+  margin-left: auto;
+>>>>>>> parent of 2c3c283 (Update klaro.css)
   margin-right: 0;   /* ➜ poistaa ylimääräisen tyhjän tilan oikeasta reunasta */
 =======
   margin-left: auto;
@@ -919,7 +923,7 @@ body.klaro-visible #cookie-settings-button {
 
 .klaro .cookie-notice .cn-ok {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   gap: 1em;
