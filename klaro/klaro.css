@@ -637,7 +637,8 @@ to create a white background.
   max-width: 100%;
   background-color: #FFF7E1;
   z-index: 1000;
-  padding: 1em 2em 1em 2em;  /* ylä 1em, OIKEA 2em, ala 1em, VASEN 2em */
+  box-sizing: border-box;        /* ➜ padding lasketaan mukaan leveuteen */
+  padding: 1em 2em 1em 2em;      /* ➜ “kunnon” marginaali molemmille reunoille */
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column; /* estää keskittämisen vaakasuunnassa */
@@ -664,6 +665,8 @@ to create a white background.
     height: auto;           /* Salli kasvu sisällön mukaan */
     max-width: 100%;
     background-color: #FFF7E1;
+	box-sizing: border-box;       /* ➜ sama logiikka myös leveillä näytöillä */
+    padding: 1em 2em 1em 2em;     /* ➜ sama marginaali */
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column; /* estää keskittämisen vaakasuunnassa */
