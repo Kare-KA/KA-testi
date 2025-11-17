@@ -1,23 +1,26 @@
 (function () {
-    // Kaikki säädettävä yhdessä paikassa:
-    var cookieTabConfig = {
-        position: {
-            bottom: '40px',   // etäisyys alareunasta
-            side: 'left'      // *** AKTIIVINEN: kieleke VASEMMASSA reunassa
-            // side: 'right'  // *** VAIHTOEHTO: ota tämä käyttöön, jos haluat kielekkeen OIKEAAN reunaan
+    // *** MÄÄRITÄ TÄSTÄ KUMMALLA PUOLELLA KIELEKE ON ***
+
+    var side = 'left';   // *** AKTIIVINEN: kieleke VASEMMASSA reunassa
+    // var side = 'right'; // *** VAIHTOEHTO: ota tämä käyttöön, jos haluat kielekkeen OIKEAAN reunaan
+
+    var bottom = '40px'; // etäisyys alareunasta
+
+    // Tekstit kieliversioille
+    var texts = {
+        fi: {
+            label: 'Evästeasetukset',
+            ariaLabel: 'Avaa evästeasetukset'
         },
-        texts: {
-            fi: {
-                label: 'Evästeasetukset',
-                ariaLabel: 'Avaa evästeasetukset'
-            },
-            sv: {
-                label: 'Cookie-inställningar',
-                ariaLabel: 'Öppna cookie-inställningarna'
-            }
-        },
-        styles: `
-#cookie-settings-button {
+        sv: {
+            label: 'Cookie-inställningar',
+            ariaLabel: 'Öppna cookie-inställningarna'
+        }
+    };
+
+    // Tyylit – HUOM: reunakohtainen border-radius on merkitty kommenteilla
+    var css = `
+#cookie-settings-tab {
     display: block;
     position: fixed;
     writing-mode: vertical-lr;        /* Teksti ylhäältä alas */
@@ -30,8 +33,8 @@
     letter-spacing: 1px;
     line-height: 2.0;
 
-    border-radius: 0 10px 10px 0;     /* *** AKTIIVINEN: pyöristykset OIKEALLE, koska kieleke on VASEMMASSA reunassa */
-    /* border-radius: 10px 0 0 10px;  *** VAIHTOEHTO: pyöristykset VASEMMALLE, kun kieleke on OIKEASSA reunassa */
+    border-radius: 0 10px 10px 0;     /* *** AKTIIVINEN: kieleke VASEMMASSA reunassa → pyöristys oikealle */
+    /* border-radius: 10px 0 0 10px;  *** VAIHTOEHTO: kieleke OIKEASSA reunassa → ota tämä käyttöön ja kommentoi ylempi pois */
 
     z-index: 500;
     text-align: center;
@@ -39,18 +42,22 @@
     box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
 }
 
-body.klaro-visible #cookie-settings-button {
+body.klaro-visible #cookie-settings-tab {
     pointer-events: none;
     opacity: 0.6; /* kun banneri auki, kieleke ei ole klikattavissa */
 }
-        `
-    };
+`;
 
     function createCookieTab() {
-        // Lisätään tyylit <head>-osioon
+        // Älä luo toista kielekettä jos se on jo olemassa
+        if (document.getElementById('cookie-settings-tab')) {
+            return;
+        }
+
+        // Lisää tyylit <head>-osioon
         var style = document.createElement('style');
         style.type = 'text/css';
-        style.textContent = cookieTabConfig.styles;
+        style.textContent = css;
         document.head.appendChild(style);
 
         // Valitaan kieli html lang -attribuutista (fi/sv)
@@ -58,22 +65,22 @@ body.klaro-visible #cookie-settings-button {
             .toLowerCase()
             .substring(0, 2);
 
-        var t = cookieTabConfig.texts[lang] || cookieTabConfig.texts.fi;
+        var t = texts[lang] || texts.fi;
 
         // Luodaan kieleke-elementti
         var btn = document.createElement('a');
-        btn.id = 'cookie-settings-button';
+        btn.id = 'cookie-settings-tab';       // *** HUOM: eri id kuin sivusi vanhassa kielekkeessä
         btn.href = '#';
         btn.textContent = t.label;
         btn.setAttribute('aria-label', t.ariaLabel);
 
         // Sijainti (oikea/vasen + alareuna)
-        btn.style.bottom = cookieTabConfig.position.bottom;
-        if (cookieTabConfig.position.side === 'right') {   // *** Tämä ehto päättää käytetäänkö oikeaa vai vasenta reunaa
-            btn.style.right = '0';                         // *** Oikea reuna aktiivinen, kun side === 'right'
+        btn.style.bottom = bottom;
+        if (side === 'right') {              // *** Tämä ehto päättää, käytetäänkö oikeaa vai vasenta reunaa
+            btn.style.right = '0';           // *** Oikea reuna aktiivinen, kun side === 'right'
             btn.style.left = 'auto';
         } else {
-            btn.style.left = '0';                          // *** Vasen reuna aktiivinen kaikissa muissa tapauksissa
+            btn.style.left = '0';            // *** Vasen reuna aktiivinen kaikissa muissa tapauksissa
             btn.style.right = 'auto';
         }
 
