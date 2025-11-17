@@ -888,8 +888,12 @@ body.klaro-visible #cookie-settings-button {
 
 /* Hyväksy ja Hylkää oikealle */
 .klaro .cookie-notice .cn-ok .cm-btn {
+<<<<<<< HEAD
   margin-left: 0;
   margin-right: 0;   /* ➜ poistaa ylimääräisen tyhjän tilan oikeasta reunasta */
+=======
+  margin-left: auto;
+>>>>>>> parent of e3a9b52 (Update klaro.css)
 }
 
 
@@ -918,7 +922,6 @@ body.klaro-visible #cookie-settings-button {
 
   margin-top: auto;
   margin-bottom: 0.0em;
-  padding-right: 1em;   /* sama kuin bannerin vasemman puolen paddings */
 }
 
 
