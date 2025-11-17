@@ -202,13 +202,13 @@ var klaroConfig = {
 
 		sv: {
 			consentNotice: {
-				description: 'Denna webbplats använder cookies. Genom att välja "Neka" använder vi endast cookies som är nödvändiga för att webbplatsen ska fungera. Genom att välja "Godkänn" ger du samtycke till användningen av cookies som hjälper oss att analysera användningen och utveckla våra onlinetjänster. Genom att välja "Cookie-inställningar" kan du mer detaljerat välja vilka cookies du vill tillåta. Läs mer: <a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> och <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Om cookies</a>.',
+				description: 'Denna webbplats använder cookies. Genom att välja "Neka" använder vi endast cookies som är nödvändiga för att webbplatsen ska fungera. Genom att välja "Godkänn" ger du samtycke till användningen av cookies som hjälper oss att analysera användningen och utveckla våra onlinetjänster. Genom att välja "Cookie-inställningar" kan du mer detaljerat välja vilka cookies du vill tillåta. Läs mer: <a href="https://kansallisarkisto.fi/sv/dataskydd" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> och <a href="https://kansallisarkisto.fi/sv/cookies" target="_blank" rel="noopener">Om cookies</a>.',
 				learnMore: 'Cookie-inställningar',
 			},
 
 			consentModal: {
 				title: 'Välj vilka cookies du vill tillåta',
-				description: '<a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Om cookies</a>',
+				description: '<a href="https://kansallisarkisto.fi/sv/dataskydd" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/sv/cookies" target="_blank" rel="noopener">Om cookies</a>',
 			},
 			
 
