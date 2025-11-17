@@ -669,6 +669,7 @@ to create a white background.
     flex-direction: column; /* estää keskittämisen vaakasuunnassa */
     align-items: stretch;   /* venyttää täyteen leveyteen */
     border-radius: 0;
+	padding: 1em 2em 1em 2em;
   }
 }
 
@@ -707,11 +708,9 @@ to create a white background.
 
 /* --- MUOKATTU: Linkin siirtäminen painikkeiden vasemmalta niiden yläpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body {
-  margin-bottom: 0;
-  margin-right: 0;
+  margin: 0;
+  padding: 0;   /* kaikki marginaali tulee nyt ulommasta banner-paddingista */
   bottom: 0;
-  padding: 1em;
-  padding-top: 0;
 }
 
 
