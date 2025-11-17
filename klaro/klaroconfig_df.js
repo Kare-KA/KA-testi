@@ -242,7 +242,6 @@ var klaroConfig = {
 
 
 
-
 en: {
 
     consentNotice: {
@@ -283,6 +282,7 @@ en: {
 
 },
 
+},
 
 
 
