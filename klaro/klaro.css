@@ -637,7 +637,7 @@ to create a white background.
   max-width: 100%;
   background-color: #FFF7E1;
   z-index: 1000;
-  padding: 1em 1em 0 1em; /* ⬅️ Ei alatyhjää tilaa */
+  padding: 1em 2em 1em 2em;  /* ylä 1em, OIKEA 2em, ala 1em, VASEN 2em */
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column; /* estää keskittämisen vaakasuunnassa */
