@@ -893,10 +893,7 @@ body.klaro-visible #cookie-settings-button {
 }
 
 
-/* Toinen nappi ja sitä seuraavat: väli edelliseen nappiin */
-.klaro .cookie-notice .cn-ok .cm-btn + .cm-btn {
-  margin-left: 1em;
-}
+
 
 
 .klaro .cookie-notice .cn-ok::before {
@@ -913,7 +910,7 @@ body.klaro-visible #cookie-settings-button {
   justify-content: flex-end;
   flex-wrap: wrap;
   align-items: center;
-
+  gap: 1em;
   width: 100%;
   flex: 1;
   max-width: 100%;
