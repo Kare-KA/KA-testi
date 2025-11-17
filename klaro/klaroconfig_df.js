@@ -147,7 +147,6 @@ var klaroConfig = {
 				acceptSelected: 'Hyväksy valitut',
 				decline: 'Hylkää',
 
-
 			purposes: {
 				necessary: 'Välttämättömät',
 				optional: 'Ei-välttämättömät',
@@ -160,7 +159,6 @@ var klaroConfig = {
 				},
 */
 
-
 			contextualConsent: {
 				description: 'Nähdäksesi tämän sisällön sinun on hyväksyttävä kolmannen osapuolen evästeet.',
 				acceptOnce: 'Hyväksy vain tällä kertaa',
@@ -169,22 +167,15 @@ var klaroConfig = {
 				},
 
 
-
 			valttamaton: {
 				title: 'Välttämättömät',
 				description: 'Mahdollistavat palvelun perustoiminnot (esim. sivun latautuminen, tietoturva ja lomakkeiden lähetys). Näitä evästeitä tarvitaan aina, eikä niitä voi poistaa käytöstä.',
 				},
 
-
-
-
-
 			matomo: {
 				title: 'Matomo (kävijäseuranta)',
 				description: 'Kerää anonyymeja kävijätilastoja palvelun kehittämistä varten. Emme käytä tietoja yksittäisten käyttäjien tunnistamiseen.',
 				},
-
-
 
 /*
 			keksitesti: {
@@ -193,8 +184,9 @@ var klaroConfig = {
 				},
 */
 
-
 			},
+
+
 
 
 
@@ -211,7 +203,6 @@ var klaroConfig = {
 				description: '<a href="https://kansallisarkisto.fi/sv/dataskydd" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/sv/cookies" target="_blank" rel="noopener">Om cookies</a>',
 			},
 			
-
 			acceptAll: 'Godkänn alla',
 				acceptSelected: 'Godkänn valda',
 				decline: 'Neka',
@@ -222,30 +213,21 @@ var klaroConfig = {
 				acceptAlways: 'Godkänn alltid',
 				descriptionEmptyStore: 'För att se detta innehåll måste du godkänna tredjepartscookies.',
 			},
-			
-			
+						
 			purposes: {
 				necessary: 'Nödvändiga',
 				optional: 'Ej nödvändiga', // tai esim. 'Icke nödvändiga'
 			},
 			
-			
-
 			matomo: {
 				title: 'Matomo (besöksanalys)',
 				description: 'Samlar in anonym besöksstatistik för att utveckla tjänsten. Vi använder inte uppgifterna för att identifiera enskilda användare.',
-				
 			},
-			
-			
-			
+						
 			valttamaton: {
 				title: 'Nödvändiga',
 				description: 'Möjliggör tjänstens grundläggande funktioner (t.ex. sidladdning, informationssäkerhet och sändning av formulär). Dessa cookies behövs alltid och kan inte stängas av.',
 			},			
-			
-			
-
 
 /*
 			keksitesti: {
@@ -254,9 +236,55 @@ var klaroConfig = {
 			},
 */
 
+			},
 
-		},
-	},
+
+
+
+
+
+en: {
+
+    consentNotice: {
+        description: 'This website uses cookies. By selecting "Decline", we will only use cookies that are strictly necessary for the basic functioning of the site. By selecting "Accept", you also consent to cookies that help us analyse usage and improve our online services. By selecting "Cookie settings", you can choose in more detail which cookies you allow. Read more: <a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Privacy notice</a> and <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Information about cookies</a>.',
+        learnMore: 'Cookie settings',
+    },
+
+    consentModal: {
+        title: 'Select the cookies you want to allow',
+        description: '<a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Privacy notice</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Information about cookies</a>',
+    },
+
+    acceptAll: 'Accept all',
+    acceptSelected: 'Accept selected',
+    decline: 'Decline',
+
+    purposes: {
+        necessary: 'Necessary',
+        optional: 'Optional',
+    },
+
+    contextualConsent: {
+        description: 'To view this content, you must accept third-party cookies.',
+        acceptOnce: 'Accept this time only',
+        acceptAlways: 'Always accept',
+        descriptionEmptyStore: 'To view this content, you must accept third-party cookies.',
+    },
+
+    valttamaton: {
+        title: 'Necessary',
+        description: 'Enable the essential functions of the service (e.g. page loading, security, and form submissions). These cookies are always required and cannot be disabled.',
+    },
+
+    matomo: {
+        title: 'Matomo (analytics)',
+        description: 'Collects anonymous visitor statistics to help us improve the service. We do not use this information to identify individual users.',
+    },
+
+},
+
+
+
 
 
 
