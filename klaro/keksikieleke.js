@@ -1,12 +1,11 @@
 (function () {
-    // *** MÄÄRITÄ TÄSTÄ KUMMALLA PUOLELLA KIELEKE ON ***
 
-    var side = 'left';   // *** AKTIIVINEN: kieleke VASEMMASSA reunassa
-    // var side = 'right'; // *** VAIHTOEHTO: ota tämä käyttöön, jos haluat kielekkeen OIKEAAN reunaan
+    var side = 'left';   // kieleke vasemmassa reunassa
+    // var side = 'right'; // kielekkeen oikeassa reunassa
 
     var bottom = '40px'; // etäisyys alareunasta
 
-    // Tekstit kieliversioille
+    // Kieliversiot
     var texts = {
         fi: {
             label: 'Evästeasetukset',
@@ -18,7 +17,7 @@
         }
     };
 
-    // Tyylit – HUOM: reunakohtainen border-radius on merkitty kommenteilla
+    // Tyylit
     var css = `
 #cookie-settings-tab {
     display: block;
@@ -33,8 +32,8 @@
     letter-spacing: 1px;
     line-height: 2.0;
 
-    border-radius: 0 10px 10px 0;     /* *** AKTIIVINEN: kieleke VASEMMASSA reunassa → pyöristys oikealle */
-    /* border-radius: 10px 0 0 10px;  *** VAIHTOEHTO: kieleke OIKEASSA reunassa → ota tämä käyttöön ja kommentoi ylempi pois */
+    border-radius: 0 10px 10px 0;     /* kieleke vasemmassa reunassa → pyöristys oikealle */
+    /* border-radius: 10px 0 0 10px;  kieleke oikeassa reunassa */
 
     z-index: 500;
     text-align: center;
@@ -44,7 +43,7 @@
 
 body.klaro-visible #cookie-settings-tab {
     pointer-events: none;
-    opacity: 0.6; /* kun banneri auki, kieleke ei ole klikattavissa */
+    opacity: 0.6; /* kun banneri auki, kieleke ei klikattavissa */
 }
 `;
 
@@ -69,22 +68,22 @@ body.klaro-visible #cookie-settings-tab {
 
         // Luodaan kieleke-elementti
         var btn = document.createElement('a');
-        btn.id = 'cookie-settings-tab';       // *** HUOM: eri id kuin sivusi vanhassa kielekkeessä
+        btn.id = 'cookie-settings-tab';
         btn.href = '#';
         btn.textContent = t.label;
         btn.setAttribute('aria-label', t.ariaLabel);
 
         // Sijainti (oikea/vasen + alareuna)
         btn.style.bottom = bottom;
-        if (side === 'right') {              // *** Tämä ehto päättää, käytetäänkö oikeaa vai vasenta reunaa
-            btn.style.right = '0';           // *** Oikea reuna aktiivinen, kun side === 'right'
+        if (side === 'right') {              // Tämä ehto päättää, käytetäänkö oikeaa vai vasenta reunaa
+            btn.style.right = '0';           // Oikea reuna aktiivinen, kun side='right'
             btn.style.left = 'auto';
         } else {
-            btn.style.left = '0';            // *** Vasen reuna aktiivinen kaikissa muissa tapauksissa
+            btn.style.left = '0';            // Vasen reuna aktiivinen kaikissa muissa tapauksissa
             btn.style.right = 'auto';
         }
 
-        // Klikkaus → avaa Klaron modaalin
+        // Klikkaus avaa Klaron modaalin
         btn.addEventListener('click', function (e) {
             e.preventDefault();
             if (window.klaro && typeof klaro.show === 'function') {
