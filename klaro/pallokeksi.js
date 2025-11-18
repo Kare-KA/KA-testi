@@ -11,6 +11,10 @@
         }
     };
 
+
+
+
+
     // Tyylit – sininen pilleri vasemmassa alakulmassa, jossa kellertävä "keksi"
     var css = `
 #cookie-settings-fab {
@@ -152,7 +156,7 @@ body.klaro-visible #cookie-settings-fab {
 
 
     function createCookieFab() {
-        // Älä luo toista, jos olemassa
+        // Tarkistetaan onko pilleri jo olemassa, jos on niin ei luoda uutta
         if (document.getElementById('cookie-settings-fab')) {
             return;
         }
@@ -181,8 +185,9 @@ body.klaro-visible #cookie-settings-fab {
         // Keksi-ikoni
         var icon = document.createElement('div');
         icon.className = 'cookie-icon';
+		icon.setAttribute('aria-hidden', 'true');   // Ruudunlukija lukee vain aria-label arvo, ei näkyvää tekstiä
 
-        // Placeholder-ikoni – VOIT KORVATA OMALLA SVG:LLÄSI
+        // Keksi-ikoni
         var iconInner = document.createElement('span');
         iconInner.textContent = '🍪'; // korvaa kun piirrät oman keksikuvasi
         icon.appendChild(iconInner);
@@ -191,11 +196,11 @@ body.klaro-visible #cookie-settings-fab {
         var label = document.createElement('span');
         label.className = 'cookie-label';
         label.textContent = t.label;
-
+        label.setAttribute('aria-hidden', 'true'); // Ruudunlukija lukee vain aria-label arvo, ei näkyvää tekstiä
         btn.appendChild(icon);
         btn.appendChild(label);
 
-        // Klikkaus → avaa Klaron asetukset
+        // Avaa Klaron asetukset
         btn.addEventListener('click', function (e) {
             e.preventDefault();
             if (window.klaro && typeof klaro.show === 'function') {
