@@ -147,10 +147,14 @@ var klaroConfig = {
 				acceptSelected: 'Hyväksy valitut',
 				decline: 'Hylkää',
 
+
+
 			purposes: {
-				necessary: 'Välttämättömät',
+				necessary: 'Tekninen toiminta ja tietoturva',
 				optional: 'Ei-välttämättömät',
 				},
+
+
 
 /*
 			privacyPolicy: {
@@ -215,7 +219,7 @@ var klaroConfig = {
 			},
 						
 			purposes: {
-				necessary: 'Nödvändiga',
+				necessary: 'Teknisk funktion och säkerhet',
 				optional: 'Ej nödvändiga', // tai esim. 'Icke nödvändiga'
 			},
 			
@@ -259,7 +263,7 @@ en: {
     decline: 'Decline',
 
     purposes: {
-        necessary: 'Necessary',
+        necessary: 'Technical operation and security',
         optional: 'Optional',
     },
 
