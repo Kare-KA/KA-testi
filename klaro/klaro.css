@@ -635,7 +635,7 @@ to create a white background.
   min-height: 200px;     /* Minimikorkeus */
   height: auto;           /* Salli kasvu sisällön mukaan */
   max-width: 100%;
-  background-color: #FFF7E1;
+  background-color: #F4F3EF;
   z-index: 1000;
   box-sizing: border-box;        /* ➜ padding lasketaan mukaan leveuteen */
   padding: 1em 1.5em 1em 2em;      /* ➜ “kunnon” marginaali molemmille reunoille */
@@ -664,7 +664,7 @@ to create a white background.
     min-height: 200px;     /* Minimikorkeus */
     height: auto;           /* Salli kasvu sisällön mukaan */
     max-width: 100%;
-    background-color: #FFF7E1;
+    background-color: #F4F3EF;
 	box-sizing: border-box;       /* ➜ sama logiikka myös leveillä näytöillä */
     padding: 1em 1.5em 1em 2em;     /* ➜ sama marginaali */
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
