@@ -349,11 +349,10 @@ en: {
 
 		{
 			name: 'valttamaton',
-			title: 'Välttämättömät',
 			purposes: ['necessary'],
 			default: true,
 			required: true,
-			cookies: ['Välttämätön'] // evästeen nimi, jonka skripti asettaa
+/*			cookies: ['Välttämätön'] // evästeen nimi, jonka skripti asettaa */
 		},
 
 
