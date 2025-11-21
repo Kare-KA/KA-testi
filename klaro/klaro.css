@@ -923,12 +923,24 @@ body.klaro-visible #cookie-settings-button {
 
 
 
+/* Tietosuojaseloste ja Tietoa evästeistä alleviivaus */
+.klaro .cookie-notice a[href="https://kansallisarkisto.fi/tietosuoja"],
+.klaro .cookie-notice a[href="https://kansallisarkisto.fi/evasteet"] {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
 
-.klaro .cookie-notice .cn-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Työntää painikkeet alas */
-  flex-grow: 1;              /* Laajenee käytettävään tilaan */
-  height: 100%;
-  overflow: hidden;          /* Estää ylimääräisen kasvun */
+
+/* Tietosuojaseloste ja Tietoa ulkoisen linkin ikoni */
+.klaro a[href="https://kansallisarkisto.fi/tietosuoja"]::after,
+.klaro a[href="https://kansallisarkisto.fi/evasteet"]::after {
+    content: "";
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: 0.25em;
+    vertical-align: text-bottom;
+    background-image: url("external-link-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
 }
