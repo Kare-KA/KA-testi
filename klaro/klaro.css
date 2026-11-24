@@ -207,7 +207,6 @@ to create a white background.
 .klaro .context-notice .cm-list-label input:focus + .slider,
 .klaro .cookie-notice .cm-list-label input:focus + .slider {
   box-shadow-color: #48dfb2;
-  box-shadow-color: var(--green3, #48dfb2);
   box-shadow: 0 0 1px var(--box-shadow-color, green3);
 }
 .klaro .cookie-modal .cm-list-label input:checked + .slider::before,
@@ -220,6 +219,16 @@ to create a white background.
 .klaro .context-notice .cm-list-input:focus + .cm-list-label .slider,
 .klaro .cookie-notice .cm-list-input:focus + .cm-list-label .slider {
   box-shadow: 0 4px 6px 0 rgba(125, 125, 125, 0.2), 5px 5px 10px 0 rgba(125, 125, 125, 0.19);
+}
+/* Näppäimistöfokus evästekytkimille */
+.klaro .cookie-modal .cm-list-input:focus + .cm-list-label .slider,
+.klaro .cookie-modal .cm-list-input:focus-visible + .cm-list-label .slider,
+.klaro .context-notice .cm-list-input:focus + .cm-list-label .slider,
+.klaro .context-notice .cm-list-input:focus-visible + .cm-list-label .slider,
+.klaro .cookie-notice .cm-list-input:focus + .cm-list-label .slider,
+.klaro .cookie-notice .cm-list-input:focus-visible + .cm-list-label .slider {
+  outline: 3px solid #000;
+  outline-offset: 3px;
 }
 .klaro .cookie-modal .cm-list-input:checked + .cm-list-label .slider::before,
 .klaro .context-notice .cm-list-input:checked + .cm-list-label .slider::before,
@@ -236,7 +245,6 @@ to create a white background.
 .klaro .context-notice a,
 .klaro .cookie-notice a {
   color: #00594F;
-  color: var(--green1, #00594F);
   text-decoration: none;
 }
 .klaro .cookie-modal p,
@@ -308,32 +316,42 @@ to create a white background.
   margin-right: 0.5em;
   vertical-align: middle;
 }
-
-
-
-
 /* --- MUOKATTU: Säädetään painikkeiden uudet koot --- */
 .klaro .cookie-modal .cm-btn,
 .klaro .context-notice .cm-btn,
 .klaro .cookie-notice .cm-btn {
-  color: #fff;
-  color: var(--button-text-color, #fff);
-  background-color: #888B8D;
-  background-color: var(--dark2, #888B8D);
+  color: #000000;
+  /* color: var(--button-text-color, #ffffff); */
+  background-color: #AAD9D6;
+  outline: 3px solid #669e98;
+  outline-offset: -3px;
   border-radius: 4px;
   border-radius: var(--border-radius, 4px);
   padding: 0.5em 1.0em;
   margin-right: 0.5em;
   border-style: none;
   margin-top: 0.5em;
-  font-size: 1.1em;
+  font-size: 1.0em;
   cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease; /* Hooverointi/tabulaattori */
   min-width: 150px;
 }
+/* Hoover+focus säännöt */
+.klaro .cookie-modal .cm-btn:hover,
+.klaro .context-notice .cm-btn:hover,
+.klaro .cookie-notice .cm-btn:hover,
+.klaro .cookie-modal .cm-btn:focus,
+.klaro .context-notice .cm-btn:focus,
+.klaro .cookie-notice .cm-btn:focus,
+.klaro .cookie-modal .cm-btn:focus-visible,
+.klaro .context-notice .cm-btn:focus-visible,
+.klaro .cookie-notice .cm-btn:focus-visible {
+  background-color: #00594F;
+  color: #ffffff;
+  outline: 3px solid #000000;
+  outline-offset: -3px;
 
-
-
-
+}
 .klaro .cookie-modal .cm-btn:disabled,
 .klaro .context-notice .cm-btn:disabled,
 .klaro .cookie-notice .cm-btn:disabled {
@@ -343,25 +361,39 @@ to create a white background.
 .klaro .context-notice .cm-btn.cm-btn-close,
 .klaro .cookie-notice .cm-btn.cm-btn-close {
   background-color: #c8c8c8;
-  background-color: var(--light2, #c8c8c8);
 }
 .klaro .cookie-modal .cm-btn.cm-btn-success,
 .klaro .context-notice .cm-btn.cm-btn-success,
 .klaro .cookie-notice .cm-btn.cm-btn-success {
-  background-color: #00594F;
-  background-color: var(--green1, #00594F);
+  background-color: #AAD9D6;
+  outline: 3px solid #669e98;
+  outline-offset: -3px;
+}
+.klaro .cookie-modal .cm-btn.cm-btn-success:hover,
+.klaro .context-notice .cm-btn.cm-btn-success:hover,
+.klaro .cookie-notice .cm-btn.cm-btn-success:hover,
+.klaro .cookie-modal .cm-btn.cm-btn-success:focus,
+.klaro .context-notice .cm-btn.cm-btn-success:focus,
+.klaro .cookie-notice .cm-btn.cm-btn-success:focus,
+.klaro .cookie-modal .cm-btn.cm-btn-success:focus-visible,
+.klaro .context-notice .cm-btn.cm-btn-success:focus-visible,
+.klaro .cookie-notice .cm-btn.cm-btn-success:focus-visible {
+  background-color: #00594F; /* valitse haluamasi tumma */
+  color: #ffffff;
+  outline: 3px solid #000000;
+  outline-offset: -3px;
 }
 .klaro .cookie-modal .cm-btn.cm-btn-success-var,
 .klaro .context-notice .cm-btn.cm-btn-success-var,
 .klaro .cookie-notice .cm-btn.cm-btn-success-var {
   background-color: #00594e;
-  background-color: var(--green2, #00594e);
 }
 .klaro .cookie-modal .cm-btn.cm-btn-info,
 .klaro .context-notice .cm-btn.cm-btn-info,
 .klaro .cookie-notice .cm-btn.cm-btn-info {
-  background-color: #004976;
-  background-color: var(--blue1, #004976);
+  background-color: #AAD9D6;
+  outline: 3px solid #669e98;
+  outline-offset: -3px;
 }
 .klaro .context-notice {
   border-radius: 4px;
@@ -386,7 +418,6 @@ to create a white background.
   background-color: #333;
   background-color: var(--dark1, #333);
   border-color: #888B8D;
-  border-color: var(--dark2, #888B8D);
 }
 .klaro .context-notice.cm-dark p {
   color: #fafafa;
@@ -487,7 +518,6 @@ to create a white background.
 }
 .klaro .cookie-modal .cm-modal .cm-footer {
   border-top-color: #888B8D;
-  border-top-color: var(--dark2, #888B8D);
   border-top-width: 1px;
   border-top-width: var(--border-width, 1px);
   border-top-style: solid;
@@ -507,7 +537,6 @@ to create a white background.
 }
 .klaro .cookie-modal .cm-modal .cm-footer .cm-powered-by a {
   color: #888B8D;
-  color: var(--dark2, #888B8D);
 }
 .klaro .cookie-modal .cm-modal .cm-header {
   border-bottom-width: 1px;
@@ -515,7 +544,6 @@ to create a white background.
   border-bottom-style: solid;
   border-bottom-style: var(--border-style, solid);
   border-bottom-color: #888B8D;
-  border-bottom-color: var(--dark2, #888B8D);
   padding: 1em;
   padding-right: 24px;
 }
@@ -596,7 +624,6 @@ to create a white background.
   border-top-style: solid;
   border-top-style: var(--border-style, solid);
   border-top-color: #888B8D;
-  border-top-color: var(--dark2, #888B8D);
   padding-top: 1em;
 }
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-services li.cm-service span.cm-list-title,
@@ -614,17 +641,10 @@ to create a white background.
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-opt-out,
 .klaro .cookie-modal .cm-modal .cm-body ul.cm-purposes li.cm-purpose span.cm-required {
   color: #888B8D;
-  color: var(--dark2, #888B8D);
   padding-left: 0.2em;
   font-size: 0.8em;
 }
-
-
-
-
-
-
-/* --- MUOKATTU: Muutetaan evästekysely banneriksi alareunaan --- */
+/* --- Muutetaan evästekysely banneriksi alareunaan --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) {
   position: fixed;
   bottom: 0;
@@ -637,22 +657,15 @@ to create a white background.
   max-width: 100%;
   background-color: #F4F3EF;
   z-index: 1000;
-  box-sizing: border-box;        /* ➜ padding lasketaan mukaan leveuteen */
-  padding: 1em 1.5em 1em 2em;      /* ➜ “kunnon” marginaali molemmille reunoille */
+  box-sizing: border-box;
+  padding: 1em 1.5em 1em 2em;      /* marginaali molemmille reunoille */
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column; /* estää keskittämisen vaakasuunnassa */
   align-items: stretch;   /* venyttää täyteen leveyteen */
   border-radius: 0;
 }
-
-
-
-
-
-
-
-/* --- MUOKATTU: Muutetaan evästekysely banneriksi alareunaan myös minimileveys 1024px koossa --- */
+/* --- Muutetaan evästekysely banneriksi alareunaan myös minimileveys 1024px koossa --- */
 @media (min-width: 1024px) {
   .klaro .cookie-notice:not(.cookie-modal-notice) {
     position: fixed;
@@ -665,8 +678,8 @@ to create a white background.
     height: auto;           /* Salli kasvu sisällön mukaan */
     max-width: 100%;
     background-color: #F4F3EF;
-	box-sizing: border-box;       /* ➜ sama logiikka myös leveillä näytöillä */
-    padding: 1em 1.5em 1em 2em;     /* ➜ sama marginaali */
+	box-sizing: border-box;       /* sama logiikka myös leveillä näytöillä */
+    padding: 1em 1.5em 1em 2em;     /* sama marginaali */
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column; /* estää keskittämisen vaakasuunnassa */
@@ -674,24 +687,12 @@ to create a white background.
     border-radius: 0;
   }
 }
-
-
-
-
-
-
-
 @media (max-width: 1023px) {
   .klaro .cookie-notice:not(.cookie-modal-notice) {
     border-style: none;
     border-radius: 0;
   }
 }
-
-
-
-
-
 .klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded {
   position: relative;
   height: inherit;
@@ -704,41 +705,25 @@ to create a white background.
 .klaro .cookie-notice:not(.cookie-modal-notice).cn-embedded .cn-body {
   padding-top: 0.5em;
 }
-
-
-
-
-/* --- MUOKATTU: Linkin siirtäminen painikkeiden vasemmalta niiden yläpuolelle --- */
+/* --- Linkin siirtäminen painikkeiden vasemmalta niiden yläpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body {
   margin: 0;
-  padding: 0;   /* kaikki marginaali tulee nyt ulommasta banner-paddingista */
+  padding: 0;
   bottom: 0;
 }
-
-
-
-
-
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p {
-  margin-bottom: 0.5em;
+  margin-top: 0.0em;     /* pienennä -> teksti ylemmäs */
+  margin-bottom: 1.5em;
 }
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body p.cn-changes {
   text-decoration: underline;
 }
-
-
-
-/* --- MUOKATTU: Linkin siirtäminen painikkeiden vasemmalta niiden yläpuolelle --- */
+/* --- Linkin siirtäminen painikkeiden vasemmalta niiden yläpuolelle --- */
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-learn-more {
   /* display: none;  */
   /* display: inline-block; */
   /* flex-grow: 1; */
 }
-
-
-
-
-
 .klaro .cookie-notice:not(.cookie-modal-notice) .cn-body .cn-buttons {
   display: inline-block;
   margin-top: -0.5em;
@@ -756,17 +741,6 @@ to create a white background.
     width: calc(50% - 0.5em);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 .klaro .cookie-modal-notice {
   background-color: #333;
   background-color: var(--dark1, #333);
@@ -805,21 +779,11 @@ to create a white background.
 .klaro .cookie-notice-hidden {
   display: none !important;
 }
-
-
-
-
-
-
-/* --- MUOKKAUKSET: Fonttiperhe ja -koko --- */
-
+/* --- Fonttiperhe ja -koko
 .klaro {
   --font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   --font-size: 20px;
-}
-
-
-
+} --- */
 #cookie-settings-button {
   display: block;
   position: fixed;
@@ -840,27 +804,18 @@ to create a white background.
   text-decoration: none;
   box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
 }
-
-
-
 body.klaro-visible #cookie-settings-button {
   pointer-events: none;
-  opacity: 0.6; /* Halutessasi visuaalinen himmennys */
+  opacity: 0.6; /* visuaalinen himmennys */
 }
-
-
-
-
-
-
-
-
 /* "Lue lisää" linkin muotoilu painikkeeksi */
 .klaro .cookie-notice .cn-learn-more {
   order: -1;
   padding: 0.5em 1.0em;
-  background-color: #004976;
-  color: white;
+  background-color: #A3C9EC;
+  outline: 3px solid #749cb6;
+  outline-offset: -3px;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   border: none;
   border-radius: 4px;
@@ -874,37 +829,25 @@ body.klaro-visible #cookie-settings-button {
   flex-shrink: 0;
   display: inline-flex;     /* Varmistaa keskityksen */
   align-items: center;      /* Teksti pystysuunnassa keskelle */
+  transition: background-color 120ms ease, color 120ms ease; /* Hooverointi/tabulator säännöt */
 }
-
-
-
-
-
-
-
 /* Hover-efekti "Lue lisää" painikkeelle */
-.klaro .cookie-notice .cn-learn-more:hover {
-  opacity: 0.9;
+.klaro .cookie-notice .cn-learn-more:hover,
+.klaro .cookie-notice .cn-learn-more:focus,
+.klaro .cookie-notice .cn-learn-more:focus-visible {
+  background-color: #004976;
+  color: #ffffff;
+  outline: 3px solid #000000;
+  outline-offset: -3px;
 }
-
 /* Hyväksy ja Hylkää oikealle */
 .klaro .cookie-notice .cn-ok .cm-btn {
   margin-left: auto;
 }
-
-
-
-
-
 .klaro .cookie-notice .cn-ok::before {
   content: '';
   flex: 1;
 }
-
-
-
-
-
 .klaro .cookie-notice .cn-ok {
   display: flex;
   justify-content: space-between;
@@ -919,28 +862,40 @@ body.klaro-visible #cookie-settings-button {
   margin-top: auto;
   margin-bottom: 0.0em;
 }
-
-
-
-
 /* Tietosuojaseloste ja Tietoa evästeistä alleviivaus */
-.klaro .cookie-notice a[href="https://kansallisarkisto.fi/tietosuoja"],
-.klaro .cookie-notice a[href="https://kansallisarkisto.fi/evasteet"] {
+.klaro .cookie-notice a.homepagelink {
     text-decoration: underline;
     text-underline-offset: 0.15em;
 }
-
-
 /* Tietosuojaseloste ja Tietoa ulkoisen linkin ikoni */
-.klaro a[href="https://kansallisarkisto.fi/tietosuoja"]::after,
-.klaro a[href="https://kansallisarkisto.fi/evasteet"]::after {
+.klaro a.homepagelink::after {
     content: "";
     display: inline-block;
     width: 0.9em;
     height: 0.9em;
     margin-left: 0.25em;
     vertical-align: text-bottom;
-    background-image: url("external-link-svgrepo-com.svg");
+    background-image: url("svg/external-link-svgrepo-com.svg");
     background-repeat: no-repeat;
     background-size: contain;
 }
+/* Cookielist in Modal */
+.klaro .cookie-table {
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 0.75em;
+}
+.klaro .cookie-table th,
+.klaro .cookie-table td {
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 1px 3px;
+  vertical-align: top;
+}
+.klaro .cookie-table th {
+  font-weight: 600;
+}
+/* Toiveleveys "Voimassaolo" -sarakkeelle */
+.klaro .cookie-table .col-ttl {
+  width: 6.3rem;
+}
+

@@ -44,7 +44,7 @@ var klaroConfig = {
     groupByPurpose: false, //postetaan pääryhmät käytöstä
 
     // You can make the consent notice autofocused by enabling the following option
-    autoFocus: false,
+    autoFocus: true,
 
     // You can show a title in the consent notice by enabling the following option
     showNoticeTitle: false,
@@ -127,25 +127,22 @@ var klaroConfig = {
         },
 		
 
-
-
-
-
 		fi: {
 
 			consentNotice: {
-				description: 'Tämä sivusto käyttää evästeitä. Valitsemalla "Hylkää" käytämme vain sivuston toiminnan kannalta välttämättömiä evästeitä. Valitsemalla "Hyväksy" annat luvan myös evästeisiin, joiden avulla analysoimme käyttöä ja kehitämme verkkopalveluitamme. Valitsemalla "Evästeasetukset" voit valita yksityiskohtaisemmin, mitä evästeitä otat käyttöön. Lue lisää: <a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Tietosuojaseloste</a> ja <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Tietoa evästeistä</a>.',
+				description: 'Tämä sivusto käyttää evästeitä.<br><br>Valitsemalla ”<b>Hyväksyn vain välttämättömät</b>” estät Matomon analytiikkaevästeet. Palvelun käytöstä voidaan edelleen kerätä rajattua evästeetöntä tilastotietoa verkkopalveluiden analysointia ja kehittämistä varten. Valitsemalla ”<b>Hyväksyn kaikki</b>” annat luvan myös analytiikkaevästeisiin, jotka parantavat käyttötilastojen tarkkuutta. Valitsemalla ”<b>Evästeasetukset</b>” voit valita yksityiskohtaisemmin, mitä evästeitä otat käyttöön. Lisätietoja on <a href="https://kansallisarkisto.fi/tietosuoja" class="homepagelink" target="_blank" rel="noopener">Tietosuojaselosteessa</a>',
 				learnMore: 'Evästeasetukset',
 				},
 
 			consentModal: {
 				title: 'Valitse haluamasi evästeet',
-				description: '<a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Tietosuojaseloste</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Tietoa evästeistä</a>',
+				description: '<a href="https://kansallisarkisto.fi/tietosuoja" class="homepagelink" target="_blank" rel="noopener">Tietosuojaseloste</a>',
 				},
 
-			acceptAll: 'Hyväksy kaikki',
-				acceptSelected: 'Hyväksy valitut',
-				decline: 'Hylkää',
+            acceptAll: 'Hyväksyn kaikki',
+            ok: 'Hyväksyn kaikki',
+			acceptSelected: 'Hyväksyn valitut',
+			decline: 'Hyväksyn vain välttämättömät',
 
 
 
@@ -155,13 +152,6 @@ var klaroConfig = {
 				},
 
 
-
-/*
-			privacyPolicy: {
-				text: 'Tietosuojaseloste',
-				url: 'https://kansallisarkisto.fi/tietosuoja'
-				},
-*/
 
 			contextualConsent: {
 				description: 'Nähdäksesi tämän sisällön sinun on hyväksyttävä kolmannen osapuolen evästeet.',
@@ -173,43 +163,62 @@ var klaroConfig = {
 
 			valttamaton: {
 				title: 'Välttämättömät',
-				description: 'Mahdollistavat palvelun perustoiminnot (esim. sivun latautuminen, tietoturva ja lomakkeiden lähetys). Näitä evästeitä tarvitaan aina, eikä niitä voi poistaa käytöstä.',
+				description: 'Tarvitaan palvelun perustoimintoihin (esim. sivun latautuminen, tietoturva ja lomakkeiden lähetys). Näitä evästeitä tarvitaan aina, eikä niitä voi poistaa käytöstä.',
 				},
 
-			matomo: {
-				title: 'Matomo (kävijäseuranta)',
-				description: 'Kerää anonyymeja kävijätilastoja palvelun kehittämistä varten. Emme käytä tietoja yksittäisten käyttäjien tunnistamiseen.',
-				},
+            matomo: {
+                title: 'Matomo (palvelun käytön tilastointi)',
+                description: `
+                    <p>Kerää käyttötilastoja palvelun kehittämistä varten. Jos et hyväksy analytiikkaevästeitä, palvelussa voidaan silti kerätä evästeetöntä käyttötilastotietoa. Tietoja ei käytetä yksittäisten henkilöiden tunnistamiseen, profilointiin tai markkinointiin. Tietojen käsittely perustuu yleistä etua koskevaan tehtävään. Tietoja käytetään palvelujen kehittämiseen sekä toiminnan tuottavuuden ja vaikuttavuuden mittaamiseen. Lisätietoja tietosuojaselosteessa.</p>
 
-/*
-			keksitesti: {
-				title: 'Keksitesti',
-				description: 'Tallentaa herkullisen suklaakeksin.',
-				},
-*/
+                    <table class="cookie-table">
+                        <thead>
+                            <tr>
+                                <th class="col-cookie">Eväste</th>
+                                <th>Tarkoitus</th>
+                                <th class="col-ttl">Voimassaolo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-cookie">_pk_id</td>
+                                <td>Erottaa uudet ja palaavat käynnit ja laskee käyntikertoja.</td>
+                                <td class="col-ttl">13 kuukautta</td>
+                            </tr>
+                            <tr>
+                                <td>_pk_ref</td>
+                                <td>Tallentaa tiedon palvelusta, josta käyttäjä saapui sivustolle.</td>
+                                <td>6 kuukautta</td>
+                            </tr>
+                            <tr>
+                                <td>_pk_ses</td>
+                                <td>Yhdistää saman käynnin sivulataukset.</td>
+                                <td>30 minuuttia</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                 `,
+                 },
 
 			},
 
 
-
-
-
-
-
 		sv: {
 			consentNotice: {
-				description: 'Denna webbplats använder cookies. Genom att välja "Neka" använder vi endast cookies som är nödvändiga för att webbplatsen ska fungera. Genom att välja "Godkänn" ger du samtycke till användningen av cookies som hjälper oss att analysera användningen och utveckla våra onlinetjänster. Genom att välja "Cookie-inställningar" kan du mer detaljerat välja vilka cookies du vill tillåta. Läs mer: <a href="https://kansallisarkisto.fi/sv/dataskydd" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> och <a href="https://kansallisarkisto.fi/sv/cookies" target="_blank" rel="noopener">Om cookies</a>.',
+				description: 'Denna webbplats använder cookies.<br><br>Genom att välja ”<b>Godkänn endast nödvändiga</b>” förhindrar du Matomos analyscookies. Begränsad cookiefri statistik om användningen av tjänsten kan fortfarande samlas in för analys och utveckling av webbtjänsterna. Genom att välja ”<b>Godkänn alla</b>” ger du även samtycke till analyscookies, som förbättrar användningsstatistikens noggrannhet. Genom att välja ”<b>Cookie-inställningar</b>” kan du mer detaljerat välja vilka cookies du vill tillåta. Mer information finns i <a href="https://kansallisarkisto.fi/sv/dataskydd" class="homepagelink" target="_blank" rel="noopener">Dataskyddsbeskrivning</a>',
 				learnMore: 'Cookie-inställningar',
 			},
 
 			consentModal: {
 				title: 'Välj vilka cookies du vill tillåta',
-				description: '<a href="https://kansallisarkisto.fi/sv/dataskydd" target="_blank" rel="noopener">Dataskyddsbeskrivning</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/sv/cookies" target="_blank" rel="noopener">Om cookies</a>',
+				description: '<a href="https://kansallisarkisto.fi/sv/dataskydd" class="homepagelink" target="_blank" rel="noopener">Dataskyddsbeskrivning</a>',
 			},
 			
-			acceptAll: 'Godkänn alla',
-				acceptSelected: 'Godkänn valda',
-				decline: 'Neka',
+            acceptAll: 'Godkänn alla',
+            ok: 'Godkänn alla',
+            acceptSelected: 'Godkänn valda',
+            decline: 'Godkänn endast nödvändiga',
 
 			contextualConsent: {
 				description: 'För att se detta innehåll måste du godkänna tredjepartscookies.',
@@ -220,47 +229,68 @@ var klaroConfig = {
 						
 			purposes: {
 				necessary: 'Teknisk funktion och säkerhet',
-				optional: 'Ej nödvändiga', // tai esim. 'Icke nödvändiga'
+				optional: 'Ej nödvändiga',
 			},
 			
 			matomo: {
-				title: 'Matomo (besöksanalys)',
-				description: 'Samlar in anonym besöksstatistik för att utveckla tjänsten. Vi använder inte uppgifterna för att identifiera enskilda användare.',
+				title: 'Matomo (statistik över användningen av tjänsten)',
+				description: `<p>Samlar in användningsstatistik för att utveckla tjänsten. Om du inte godkänner analyscookies kan cookiefri användningsstatistik fortfarande samlas in i tjänsten. Uppgifterna används inte för att identifiera enskilda personer, profilering eller marknadsföring. Behandlingen av uppgifterna grundar sig på en uppgift av allmänt intresse. Uppgifterna används för att utveckla tjänsterna samt för att mäta verksamhetens produktivitet och genomslag. Mer information finns i dataskyddsbeskrivningen.<p>
+
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th class="col-cookie">Cookie</th>
+                            <th>Syfte</th>
+                            <th class="col-ttl">Giltighetstid</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-cookie">_pk_id</td>
+                            <td>Skiljer mellan nya och återkommande besök och räknar antalet besök.</td>
+                            <td class="col-ttl">13 månader</td>
+                        </tr>
+                        <tr>
+                            <td>_pk_ref</td>
+                            <td>Sparar information om varifrån besökaren kom till webbplatsen.</td>
+                            <td>6 månader</td>
+                        </tr>
+                        <tr>
+                             <td>_pk_ses</td>
+                             <td>Kopplar samman sidvisningar under samma besök (session).</td>
+                             <td>30 minuter</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    
+                 `,
+
 			},
 						
 			valttamaton: {
 				title: 'Nödvändiga',
-				description: 'Möjliggör tjänstens grundläggande funktioner (t.ex. sidladdning, informationssäkerhet och sändning av formulär). Dessa cookies behövs alltid och kan inte stängas av.',
+				description: 'Behövs för webbplatsens grundläggande funktioner (t.ex. sidladdning, informationssäkerhet och formulärinlämning). Dessa cookies behövs alltid och kan inte stängas av.',
 			},			
 
-/*
-			keksitesti: {
-				title: 'Kaktest',
-				description: 'Sparar en utsökt chokladkaka.',
-			},
-*/
 
 			},
-
-
-
-
 
 en: {
 
     consentNotice: {
-        description: 'This website uses cookies. By selecting "Decline", we will only use cookies that are strictly necessary for the basic functioning of the site. By selecting "Accept", you also consent to cookies that help us analyse usage and improve our online services. By selecting "Cookie settings", you can choose in more detail which cookies you allow. Read more: <a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Privacy notice</a> and <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Information about cookies</a>.',
+        description: 'This website uses cookies.<br><br>By selecting “<b>Accept only necessary</b>”, you prevent Matomo analytics cookies from being used. Limited cookieless statistics about the use of the service may still be collected for analysing and improving our online services. By selecting “<b>Accept all</b>”, you also consent to analytics cookies, which improve the accuracy of usage statistics. By selecting “<b>Cookie settings</b>”, you can choose in more detail which cookies you allow. More information is available in the <a href="https://kansallisarkisto.fi/en/data-protection" class="homepagelink" target="_blank" rel="noopener">Privacy notice</a>',
         learnMore: 'Cookie settings',
     },
 
     consentModal: {
         title: 'Select the cookies you want to allow',
-        description: '<a href="https://kansallisarkisto.fi/tietosuoja" target="_blank" rel="noopener">Privacy notice</a> &nbsp; &nbsp; &nbsp; <a href="https://kansallisarkisto.fi/evasteet" target="_blank" rel="noopener">Information about cookies</a>',
+        description: '<a href="https://kansallisarkisto.fi/en/data-protection" class="homepagelink" target="_blank" rel="noopener">Privacy notice</a>',
     },
 
     acceptAll: 'Accept all',
+    ok: 'Accept all',
     acceptSelected: 'Accept selected',
-    decline: 'Decline',
+    decline: 'Accept only necessary',
 
     purposes: {
         necessary: 'Technical operation and security',
@@ -276,75 +306,49 @@ en: {
 
     valttamaton: {
         title: 'Necessary',
-        description: 'Enable the essential functions of the service (e.g. page loading, security, and form submissions). These cookies are always required and cannot be disabled.',
+        description: 'Necessary for the basic functioning of the service (e.g. page loading, security, and form submissions). These cookies are always required and cannot be disabled.',
     },
 
     matomo: {
-        title: 'Matomo (analytics)',
-        description: 'Collects anonymous visitor statistics to help us improve the service. We do not use this information to identify individual users.',
+        title: 'Matomo (service usage statistics)',
+        description: `<p>Collects usage statistics to help improve the service. If you do not accept analytics cookies, cookieless usage statistics may still be collected in the service. The information is not used to identify individual persons, for profiling or for marketing. The processing of the data is based on a task carried out in the public interest. The data is used to develop services and to measure the productivity and impact of our activities. More information is available in the privacy notice.<p>
+
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th class="col-cookie">Cookie</th>
+                            <th>Purpose</th>
+                            <th class="col-ttl">Retention</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-cookie">_pk_id</td>
+                            <td>Distinguishes between new and returning visits and counts visits.</td>
+                            <td class="col-ttl">13 months</td>
+                        </tr>
+                        <tr>
+                            <td>_pk_ref</td>
+                            <td>Stores information on where the visitor came from (referrer).</td>
+                            <td>6 months</td>
+                        </tr>
+                        <tr>
+                             <td>_pk_ses</td>
+                             <td>Links page views within the same visit (session).</td>
+                             <td>30 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    
+                 `,
     },
 
 },
 
 },
 
-
-
-
-
-
-
-
-
-
     // This is a list of third-party services that Klaro will manage for you.
     services: [
-
-
-/*
-        {
-            name: 'twitter',
-            default: false,
-            contextualConsentOnly: true,
-            purposes: ['marketing'],
-        },
-*/
-
-
-
-
-/*
-        {
-			name: 'youtube',
-			title: 'YouTube',
-			purposes: ['optional'],
-			contextualConsentOnly: false,
-			default: false
-        },
-*/
-
-
-
-
-/*
-		{
-			name: 'keksitesti',
-
-			purposes: ['optional'],
-			cookies: ['Suklaakeksi'],
-			default: false,
-
-			callback: function(consent, service) {
-			if (!consent) {
-			// Poista localStorage ja sessionStorage, jos suostumus perutaan
-			localStorage.removeItem("Suklaakeksi");
-			sessionStorage.removeItem("Suklaakeksi");
-		}
-	}
-},
-*/
-
-
 
 
 		{
@@ -355,14 +359,13 @@ en: {
 /*			cookies: ['Välttämätön'] // evästeen nimi, jonka skripti asettaa */
 		},
 
-
-
-
-
-
-
-
-
+        // {
+           // name: 'youtube',
+            // purposes: ['optional'],
+            // default: false,
+            // required: false,
+            // optOut: false,
+        // },
 
         {
             // Each service should have a unique (and short) name.
@@ -379,9 +382,9 @@ en: {
 
             // The purpose(s) of this service. Will be listed on the consent notice.
             // Do not forget to add translations for all purposes you list here.
-/*
+
 			purposes: ['optional'],
-*/
+
 
             // A list of regex expressions or strings giving the names of
             // cookies set by this service. If the user withdraws consent for a
@@ -397,7 +400,7 @@ en: {
                 // Notice that it is not possible to delete cookies that were set
                 // on a third-party domain! See the note at mdn:
                 // https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie#new-cookie_domain
-                [/^_pk_.*$/, '/', 'klaro.kiprotect.com'], //for the production version
+                [/^_pk_.*$/, '/', 'df.narc.fi'], //for the production version
                 [/^_pk_.*$/, '/', 'localhost'], //for the local version
                 'piwik_ignore',
             ],
@@ -405,22 +408,27 @@ en: {
             // An optional callback function that will be called each time
             // the consent state for the service changes (true=consented). Passes
             // the `service` config as the second parameter as well.
+
+            //Tätä callbackia kutsutaan, kun Matomo-palvelun suostumustila muuttuu Klarossa.
+            // Matomo-seuranta itsessään jatkuu aina. Suostumus vaikuttaa evästeisiin ja
+            // browser feature detectioniin.
             callback: function(consent, service) {
-                // This is an example callback function.
+
+                // Testausta varten: näyttää suostumustilan selaimen konsolissa.
                 console.log(
-                    'User consent for service ' + service.name + ': consent=' + consent
+                    'User consent for service ' +
+                    service.name +
+                    ': consent=' +
+                    consent
                 );
-                // To be used in conjunction with Matomo 'requireCookieConsent' Feature, Matomo 3.14.0 or newer
-                // For further Information see https://matomo.org/faq/new-to-piwik/how-can-i-still-track-a-visitor-without-cookies-even-if-they-decline-the-cookie-consent/
-                
-                if(consent==true){
-                    _paq.push(['rememberCookieConsentGiven']);
-					_paq.push(['trackEvent', 'Evästeet', 'Suostumus', service.name]);
-                } else {
-                    _paq.push(['forgetCookieConsentGiven']);
-					_paq.push(['trackEvent', 'Evästeet', 'Kieltäytyminen', service.name]);
+
+                // Jos suostumus perutaan ja Matomo on käynnissä, pysäytetään
+                // seuranta. Seurantakoodin requireConsent-käsky mahdollistaa tämän.
+                // Komentojonoa ei luoda, jos sitä ei ole, jotta jonoon ei jää
+                // käskyjä, jotka suoritettaisiin myöhemmän suostumuksen jälkeen.
+                if (!consent && window._paq) {
+                    window._paq.push(['forgetConsentGiven']);
                 }
-                
             },
 
             // If "required" is set to true, Klaro will not allow this service to
@@ -434,13 +442,8 @@ en: {
 
             // If "onlyOnce" is set to true, the service will only be executed
             // once regardless how often the user toggles it on and off.
-            onlyOnce: true,
+            onlyOnce: false,
         },
-		
-		
-		
-		
-		
 		
 
         // The services will appear in the modal in the same order as defined here.
@@ -453,16 +456,12 @@ en: {
             optOut: false,
         },
 
-
-
         {
             name: 'externalTracker',
             title: 'External Tracker',
             purposes: ['analytics', 'security'],
             cookies: ['external-tracker'],
         },
-
-
 
         {
             name: 'livechat',
@@ -472,18 +471,12 @@ en: {
         },
 */
 
-
-
-
 /*        {
             name: 'googleFonts',
             title: 'Google Fonts',
             purposes: ['styling'],
         },
 */
-
-
-
 
 
     ],

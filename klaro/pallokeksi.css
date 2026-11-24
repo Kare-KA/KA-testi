@@ -8,10 +8,10 @@
     justify-content: flex-start;
     gap: 0;
 
-    background-color: #00594F;
+    background-color: #004976;
     color: #ffffff;
     border-radius: 999px;
-    padding: 0.35rem 0.40rem 0.35rem 0.35rem;
+    padding: 0.35rem 0.35rem 0.35rem 0.35rem;
     border: none;
 
     cursor: pointer;
@@ -20,7 +20,6 @@
 
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 20px;
-    line-height: 1;
 
     box-sizing: border-box;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
@@ -41,8 +40,6 @@
 #cookie-settings-fab .cookie-icon {
     width: 32px;
     height: 32px;
-    border-radius: 0%;
-    background-color: #00594F;
     flex-shrink: 0;
 
     display: flex;
@@ -87,7 +84,7 @@
     max-width: 220px;
     opacity: 1;
     margin-left: 0.5rem;
-    padding: 0 0.3rem;  /* tyhjä tila ennen ja jälkeen tekstin */
+    padding: 0 0.6rem;  /* tyhjä tila ennen ja jälkeen tekstin */
 }
 
 
@@ -131,3 +128,4 @@ body.klaro-visible #cookie-settings-fab {
     #cookie-settings-fab:focus-visible .cookie-label {
         max-width: 180px;
     }
+}

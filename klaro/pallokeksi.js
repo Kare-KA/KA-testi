@@ -8,7 +8,11 @@
         sv: {
             label: 'Cookie-inställningar',
             ariaLabel: 'Öppna cookie-inställningarna'
-        }
+        },
+        en: {
+            label: 'Cookie settings',
+            ariaLabel: 'Open cookie settings'
+        },
     };
 
 
@@ -38,15 +42,18 @@
         // Keksi-ikoni
         const icon = document.createElement('div');
         icon.className = 'cookie-icon';
-		icon.setAttribute('aria-hidden', 'true');   // Ruudunlukija lukee vain aria-label arvo, ei näkyvää tekstiä
+        icon.setAttribute('aria-hidden', 'true');   // Ruudunlukija lukee vain aria-label arvo, ei näkyvää tekstiä
 
-		// Keksi-ikoni SVG-tiedostosta
-		const iconImg = document.createElement('img');
-		iconImg.src = 'klaro/napit.svg';
-		iconImg.alt = '';                    // tyhjä alt, koska nappi saa nimen aria-labelista
-		iconImg.setAttribute('aria-hidden', 'true');
+        // Keksi-ikoni SVG-tiedostosta
+        const iconImg = document.createElement('img');
+        // ikoni sijaitsee samalla palvelimella kuin tämä tiedosto
+        const scriptUrl = new URL(document.currentScript.src);
+        const baseUrl = new URL('.', scriptUrl);
+        iconImg.src = new URL('svg/napit.svg', baseUrl).href;
+        iconImg.alt = '';                    // tyhjä alt, koska nappi saa nimen aria-labelista
+        iconImg.setAttribute('aria-hidden', 'true');
 
-		icon.appendChild(iconImg);
+        icon.appendChild(iconImg);
 
         // Teksti (näkyy vain hover/focus-tilassa)
         const label = document.createElement('span');
