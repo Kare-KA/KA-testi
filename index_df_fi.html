@@ -29,28 +29,31 @@
 <!-- Kirjasto -->
 <script src="klaro/klaro-no-css.js"></script>
 
-<!-- Varmistetaan iOS-wekit selaintuki ja <script src="klaro/klaro-no-css.js" data-config="klaroConfig"></script>
- sijaan kokeillaan tätä  -->
-<script>klaro.start(klaroConfig);</script>
+<!-- Jos Klaro ei käynnisty automaattisesti esim. iPhonella tai iPadilla, varmistetaan iOS:n WebKit-selainten tuki asettammalla käynnistys tässä. Jos alla oleva otetaan käyttöön, pitää Klaron konfiguraatiossa asetus noAutoLoad: true. 
+<script>klaro.setup(klaroConfig);</script> -->
 
 <!-- kielekeskripti -->
 <script src="klaro/pallokeksi.js" defer></script>
 
+<!-- Modaalin alle jäävä sivu inert tilaan -->
+<script src="klaro-accessibility-fixes.js"></script>
 
 
 
-    <a href="index_df_fi.html">FI</a> /
-    <a href="index_df_sv.html">SV</a> /
-	<a href="index_df_en.html">EN</a>&nbsp;&nbsp;Tämä sivu on suomenkielinen.
 
 
-
-<!-- Matomo seurantakoodi. Seuranta pysäytetään kokonaan, jos suostumusta ei annettu (vaatii muutoksia config.js) -->
-<script>
+<!-- Matomo seurantakoodi. Matomo toimii evästeettömästi, jos analytiikkaevästeitä ei ole hyväksytty. -->
+<script type="text/plain" data-type="text/javascript" data-name="matomo">
   var _paq = window._paq = window._paq || [];
 
-  // Estää evästeet ja seurannan ilman käyttäjän suostumusta (Klaro hallitsee)
-  _paq.push(['requireCookieConsent']);
+  // Sallii evästeettömän seurannan ilman suostumusta ja ottaa evästeet käyttöön vasta suostumuksen jälkeen. Edellyttää, ettei koodia estetä (type="text/plain" poistetaan) ja että Klaron callback lähettää käskyn setCookieConsentGiven.
+  // _paq.push(['requireCookieConsent']);
+
+  // Kytkee Matomon tilaan, jossa se lähettää tietoja vain voimassa olevalla suostumuksella. Klaron callback voi pysäyttää seurannan käskyllä forgetConsentGiven, jos käyttäjä peruu suostumuksen kesken sivun.
+  _paq.push(['requireConsent']);
+
+  // Antaa suostumuksen.
+  _paq.push(['setConsentGiven']);
 
   // Asetetaan ensin seurannan asetukset ennen tapahtumien lähettämistä
   var u = "https://japetus.narc.fi/piwik/";
@@ -104,23 +107,17 @@ End Alkuperäinen Matomo seurantakoodi -->
     End Matomo Tag Manager -->
 
 
-
-
-
-
-
 </head>
-
-
-
-
-
-
 
 
 <body>
 
+<main id="page-content">
 
+
+<a href="index_df_fi.html">FI</a> /
+<a href="index_df_sv.html">SV</a> /
+<a href="index_df_en.html">EN</a>&nbsp;&nbsp;Tämä sivu on suomenkielinen.
 
 
 <script>
@@ -230,20 +227,13 @@ document.getElementById('trackingButton').addEventListener('click', function() {
 <iframe
     width="560"
     height="315"
+    title="YouTube-video: [videon nimi]"
     data-name="youtube"
-    data-src="https://www.youtube.com/embed/r_JFHawECzY?si=yTmJlHYBaLKqvd64"
-    frameborder="0"
-    allow="accelerometer;
-           autoplay;
-           clipboard-write;
-           encrypted-media;
-           gyroscope;
-           picture-in-picture"
+    data-src="https://www.youtube-nocookie.com/embed/r_JFHawECzY"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen>
 </iframe>
-
-
-
 
 
 
@@ -255,10 +245,7 @@ document.getElementById('trackingButton').addEventListener('click', function() {
 </a>
 -->
 
+</main>
 
-
-
-
-<p>I'm hosted with GitHub Pages.</p>
 </body>
 </html>
